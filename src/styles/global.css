@@ -1,55 +1,83 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap');
 @import "tailwindcss";
 
 /* ============================================
-   DESIGN TOKENS — Full Blue Spectrum + Refined System
-   Trades / Emergency — trust, speed, reliability
+   DESIGN TOKENS — Plumbing Identity System
+   Copper + Navy + Water Blue
    ============================================ */
 @theme {
-  /* Primary blue spectrum — generated from #1E3A5F */
-  --color-primary-50: #EFF6FF;
-  --color-primary-100: #DBEAFE;
-  --color-primary-200: #BFDBFE;
-  --color-primary-300: #93C5FD;
-  --color-primary-400: #60A5FA;
-  --color-primary-500: #3B82F6;
-  --color-primary-600: #2563EB;
-  --color-primary-700: #1E3A5F;
-  --color-primary-800: #162D4A;
-  --color-primary-900: #0F1D33;
+  /* Navy depth spectrum */
+  --color-navy-50: #E8EDF4;
+  --color-navy-100: #C5D0E0;
+  --color-navy-200: #8DA1C0;
+  --color-navy-300: #5672A0;
+  --color-navy-400: #2E4A7A;
+  --color-navy-500: #1A3254;
+  --color-navy-600: #152A47;
+  --color-navy-700: #0F2039;
+  --color-navy-800: #0C1B2E;
+  --color-navy-900: #070F1C;
+  --color-navy-950: #040913;
 
-  /* Legacy aliases */
-  --color-primary: #1E3A5F;
-  --color-primary-dark: #0F1D33;
-  --color-primary-light: #3B82F6;
-  --color-primary-lighter: #60A5FA;
+  /* Copper/Brass accent — THE plumbing colour */
+  --color-copper-50: #FDF5ED;
+  --color-copper-100: #FAEBD7;
+  --color-copper-200: #F0D4AA;
+  --color-copper-300: #E4B87A;
+  --color-copper-400: #D49A4E;
+  --color-copper-500: #C87533;
+  --color-copper-600: #B5622A;
+  --color-copper-700: #964E24;
+  --color-copper-800: #7A3F22;
+  --color-copper-900: #65351F;
 
-  /* Accent — ONLY for CTAs and action elements */
-  --color-accent: #F97316;
-  --color-accent-hover: #EA580C;
-  --color-accent-glow: rgba(249, 115, 22, 0.25);
+  /* Water blue — secondary accent */
+  --color-water-50: #F0F9FF;
+  --color-water-100: #E0F2FE;
+  --color-water-200: #BAE6FD;
+  --color-water-300: #7DD3FC;
+  --color-water-400: #38BDF8;
+  --color-water-500: #0EA5E9;
+  --color-water-600: #0284C7;
+  --color-water-700: #0369A1;
+  --color-water-800: #075985;
+  --color-water-900: #0C4A6E;
 
-  /* Neutral spectrum — careful grey ladder for depth */
+  /* Legacy aliases for easy use */
+  --color-primary: #0C1B2E;
+  --color-primary-dark: #070F1C;
+  --color-primary-light: #1A3254;
+  --color-accent: #C87533;
+  --color-accent-hover: #B5622A;
+  --color-accent-light: #E4B87A;
+  --color-accent-glow: rgba(200, 117, 51, 0.3);
+  --color-water: #0EA5E9;
+
+  /* Neutrals — warm tones to match copper */
   --color-bg-white: #FFFFFF;
-  --color-bg-light: #F8FAFC;
-  --color-bg-warm: #F1F5F9;
-  --color-bg-muted: #E2E8F0;
-  --color-text-primary: #0F172A;
-  --color-text-secondary: #475569;
-  --color-text-muted: #94A3B8;
-  --color-text-faint: #CBD5E1;
-  --color-border: #E2E8F0;
-  --color-border-light: #F1F5F9;
+  --color-bg-cream: #FDFBF7;
+  --color-bg-light: #F8F6F1;
+  --color-bg-warm: #F0EDE6;
+  --color-bg-muted: #E2DDD4;
+  --color-text-primary: #1A1714;
+  --color-text-secondary: #524D45;
+  --color-text-muted: #8E877C;
+  --color-text-faint: #C4BFB6;
+  --color-border: #E2DDD4;
+  --color-border-light: #F0EDE6;
 
-  /* Layered shadow system (Josh Comeau inspired) */
-  --shadow-xs: 0 1px 2px rgba(15, 29, 51, 0.04);
-  --shadow-soft: 0 1px 3px rgba(15, 29, 51, 0.03), 0 4px 12px rgba(15, 29, 51, 0.05);
-  --shadow-medium: 0 2px 4px rgba(15, 29, 51, 0.03), 0 8px 24px rgba(15, 29, 51, 0.07);
-  --shadow-elevated: 0 4px 8px rgba(15, 29, 51, 0.04), 0 12px 32px rgba(15, 29, 51, 0.08), 0 24px 56px rgba(15, 29, 51, 0.06);
-  --shadow-dramatic: 0 8px 16px rgba(15, 29, 51, 0.06), 0 24px 48px rgba(15, 29, 51, 0.1);
+  /* Layered shadow system — warmer tones */
+  --shadow-xs: 0 1px 2px rgba(26, 23, 20, 0.04);
+  --shadow-soft: 0 1px 3px rgba(26, 23, 20, 0.04), 0 4px 12px rgba(26, 23, 20, 0.06);
+  --shadow-medium: 0 2px 4px rgba(26, 23, 20, 0.04), 0 8px 24px rgba(26, 23, 20, 0.08);
+  --shadow-elevated: 0 4px 8px rgba(26, 23, 20, 0.05), 0 12px 32px rgba(26, 23, 20, 0.1), 0 24px 56px rgba(26, 23, 20, 0.07);
+  --shadow-dramatic: 0 8px 16px rgba(26, 23, 20, 0.08), 0 24px 48px rgba(26, 23, 20, 0.12);
+  --shadow-copper: 0 4px 16px rgba(200, 117, 51, 0.25), 0 8px 32px rgba(200, 117, 51, 0.15);
+  --shadow-inset: inset 0 2px 4px rgba(26, 23, 20, 0.06), inset 0 -1px 0 rgba(255, 255, 255, 0.1);
 
   /* Font */
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
 }
 
 /* ============================================
@@ -69,68 +97,63 @@ body {
   line-height: 1.65;
   letter-spacing: -0.01em;
   text-rendering: optimizeLegibility;
+  background: var(--color-bg-cream);
 }
 
-/* Typographic scale — 1.25 ratio (Major Third) with clamp() */
+/* Typographic scale — aggressive contrast */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-sans);
   font-weight: 800;
   color: var(--color-text-primary);
   text-wrap: balance;
-  letter-spacing: -0.025em;
-  line-height: 1.1;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
 }
 
-h1 { font-size: clamp(2.25rem, 4vw + 1rem, 3.75rem); }
-h2 { font-size: clamp(1.75rem, 2.5vw + 0.75rem, 2.75rem); }
+h1 { font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem); }
+h2 { font-size: clamp(2rem, 3vw + 0.75rem, 3.25rem); }
 h3 { font-size: clamp(1.25rem, 0.5vw + 1rem, 1.5rem); letter-spacing: -0.02em; }
 h4 { font-size: 1.125rem; letter-spacing: -0.015em; }
+
+/* Display heading — serif accent for character */
+.display-heading {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-style: italic;
+  color: var(--color-copper-500);
+}
 
 /* ============================================
    SELECTION
    ============================================ */
 ::selection {
-  background-color: rgba(59, 130, 246, 0.15);
+  background-color: rgba(200, 117, 51, 0.2);
   color: var(--color-primary);
 }
 
 /* ============================================
-   SCROLLBAR
+   SCROLLBAR — Copper themed
    ============================================ */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--color-bg-light); }
-::-webkit-scrollbar-thumb { background: var(--color-bg-muted); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--color-primary-500); }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--color-navy-900); }
+::-webkit-scrollbar-thumb { background: var(--color-copper-600); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-copper-500); }
 
 /* ============================================
-   BUTTONS — Clear action hierarchy
-   Orange = action colour trail (ONLY on CTAs)
+   TRANSITIONS
    ============================================ */
 a, button {
-  transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 /* ============================================
-   CARDS — Refined lift + shadow on hover
-   ============================================ */
-.card-lift {
-  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              box-shadow 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.card-lift:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-elevated);
-}
-
-/* ============================================
-   SCROLL-TRIGGERED REVEAL — Fast for trades (300-400ms)
+   SCROLL-TRIGGERED REVEAL
    ============================================ */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateY(32px);
+  transition: opacity 0.6s cubic-bezier(0.22, 0.61, 0.36, 1),
+              transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 .reveal.visible {
@@ -138,14 +161,40 @@ a, button {
   transform: translateY(0);
 }
 
-/* Stagger delays for grid items */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.6s cubic-bezier(0.22, 0.61, 0.36, 1),
+              transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.6s cubic-bezier(0.22, 0.61, 0.36, 1),
+              transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Stagger delays */
 .stagger-1 { transition-delay: 0ms; }
-.stagger-2 { transition-delay: 80ms; }
-.stagger-3 { transition-delay: 160ms; }
-.stagger-4 { transition-delay: 240ms; }
+.stagger-2 { transition-delay: 100ms; }
+.stagger-3 { transition-delay: 200ms; }
+.stagger-4 { transition-delay: 300ms; }
+.stagger-5 { transition-delay: 400ms; }
+.stagger-6 { transition-delay: 500ms; }
 
 /* ============================================
-   FORM — Oversized inputs for mobile tapping
+   FORM INPUTS
    ============================================ */
 input, select, textarea {
   font-family: var(--font-sans);
@@ -155,146 +204,334 @@ input, select, textarea {
 input:focus,
 textarea:focus,
 select:focus {
-  outline: 2px solid var(--color-primary-500);
+  outline: 2px solid var(--color-copper-500);
   outline-offset: 2px;
 }
 
-/* Film grain texture overlay */
+/* ============================================
+   DECORATIVE PATTERNS & TEXTURES
+   ============================================ */
+
+/* Film grain overlay */
 .grain-overlay::after {
   content: '';
   position: fixed;
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  opacity: 0.025;
+  opacity: 0.02;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 256px 256px;
+}
+
+/* Blueprint dot grid — deeper, more technical */
+.blueprint-grid {
+  background-image:
+    radial-gradient(circle, rgba(14, 165, 233, 0.15) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Pipe connector line pattern */
+.pipe-lines {
+  background-image:
+    linear-gradient(0deg, rgba(200, 117, 51, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200, 117, 51, 0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Water ripple effect */
+.water-ripple {
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(14, 165, 233, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 50%, rgba(14, 165, 233, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(14, 165, 233, 0.04) 0%, transparent 50%);
 }
 
 /* Section label — technical monospace markers */
 .section-label {
   font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
   font-size: 0.6875rem;
-  letter-spacing: 0.12em;
-  color: var(--color-text-muted);
+  letter-spacing: 0.14em;
+  color: var(--color-copper-500);
   text-transform: uppercase;
+  font-weight: 600;
 }
 
-/* Blueprint dot grid pattern */
-.blueprint-grid {
-  background-image: radial-gradient(circle, rgba(59, 130, 246, 0.12) 1px, transparent 1px);
-  background-size: 24px 24px;
+/* Copper accent bar */
+.copper-bar {
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-copper-500), var(--color-copper-300));
+  border-radius: 2px;
 }
 
-/* Service card with top accent border */
-.service-card-enhanced {
+/* ============================================
+   SECTION DIVIDERS — Layered depth
+   ============================================ */
+
+/* Angled section divider */
+.section-angle-top {
+  position: relative;
+}
+
+.section-angle-top::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: inherit;
+  clip-path: polygon(0 0, 100% 0, 100% 30%, 0 100%);
+  z-index: 1;
+}
+
+/* Curved wave divider */
+.wave-divider {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 60px;
+}
+
+/* ============================================
+   CARDS — Layered depth system
+   ============================================ */
+
+/* Service card */
+.service-card {
   position: relative;
   background: white;
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
   border: 1px solid var(--color-border-light);
   box-shadow: var(--shadow-soft);
-  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-.service-card-enhanced::before {
+.service-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-copper-500), var(--color-copper-300));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-elevated);
+  border-color: var(--color-copper-200);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Testimonial card */
+.testimonial-card {
+  position: relative;
+  background: white;
+  border-radius: 20px;
+  border: 1px solid var(--color-border-light);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.testimonial-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--color-copper-500), var(--color-water-500));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.testimonial-card:hover {
+  box-shadow: var(--shadow-medium);
+  transform: translateY(-6px);
+}
+
+.testimonial-card:hover::after {
+  opacity: 1;
+}
+
+.testimonial-card .quote-mark {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  font-size: 6rem;
+  line-height: 1;
+  color: var(--color-copper-500);
+  opacity: 0.06;
+  font-family: var(--font-display);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Trust badge */
+.trust-badge {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid var(--color-border);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.trust-badge::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
-  background: var(--color-accent);
-  transition: height 0.3s ease;
-}
-
-.service-card-enhanced:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-elevated);
-  border-color: var(--color-accent);
-}
-
-.service-card-enhanced:hover::before {
-  height: 6px;
-}
-
-/* Card index number */
-.card-index {
-  position: absolute;
-  top: 16px;
-  right: 20px;
-  font-size: 4rem;
-  font-weight: 900;
-  line-height: 1;
-  color: var(--color-primary-100);
-  pointer-events: none;
-  user-select: none;
-  z-index: 0;
-}
-
-/* Testimonial card with left border and quote mark */
-.testimonial-card {
-  position: relative;
-  background: white;
-  border-radius: 16px;
-  border: 1px solid var(--color-border-light);
-  border-left: 4px solid var(--color-primary-500);
-  box-shadow: var(--shadow-soft);
-  overflow: hidden;
-  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.testimonial-card:hover {
-  box-shadow: var(--shadow-medium);
-  transform: translateY(-4px);
-  border-left-color: var(--color-accent);
-}
-
-.testimonial-card .quote-mark {
-  position: absolute;
-  top: 20px;
-  right: 24px;
-  font-size: 5rem;
-  line-height: 1;
-  color: var(--color-primary-500);
-  opacity: 0.08;
-  font-family: Georgia, serif;
-  pointer-events: none;
-  user-select: none;
-}
-
-/* Trust badge with distinct container */
-.trust-badge {
-  background: white;
-  border-radius: 16px;
-  border: 1px solid var(--color-border);
-  padding: 1.5rem 1.25rem;
-  box-shadow: var(--shadow-soft), 0 0 0 1px rgba(59, 130, 246, 0.03);
-  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-copper-400), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .trust-badge:hover {
-  box-shadow: var(--shadow-medium), 0 0 0 1px rgba(59, 130, 246, 0.08);
+  box-shadow: var(--shadow-medium);
   transform: translateY(-4px);
-  border-color: var(--color-primary-200);
+  border-color: var(--color-copper-200);
 }
 
-/* CTA geometric pattern */
+.trust-badge:hover::before {
+  opacity: 1;
+}
+
+/* Floating card — depth layer */
+.float-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: var(--shadow-elevated);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+/* Glass card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+}
+
+/* Dark card for navy sections */
+.dark-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  transition: all 0.35s ease;
+}
+
+.dark-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(200, 117, 51, 0.3);
+  transform: translateY(-4px);
+}
+
+/* ============================================
+   CTA PATTERNS
+   ============================================ */
 .cta-pattern {
   background-image:
-    linear-gradient(30deg, rgba(255,255,255,0.03) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,0.03) 87.5%),
-    linear-gradient(150deg, rgba(255,255,255,0.03) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,0.03) 87.5%),
-    linear-gradient(30deg, rgba(255,255,255,0.03) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,0.03) 87.5%),
-    linear-gradient(150deg, rgba(255,255,255,0.03) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,0.03) 87.5%);
+    linear-gradient(30deg, rgba(255,255,255,0.02) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,0.02) 87.5%),
+    linear-gradient(150deg, rgba(255,255,255,0.02) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,0.02) 87.5%),
+    linear-gradient(30deg, rgba(255,255,255,0.02) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,0.02) 87.5%),
+    linear-gradient(150deg, rgba(255,255,255,0.02) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,0.02) 87.5%);
   background-size: 80px 140px;
   background-position: 0 0, 0 0, 40px 70px, 40px 70px;
 }
 
-/* Counter animation */
-@keyframes counter-glow {
-  0%, 100% { text-shadow: none; }
-  50% { text-shadow: 0 0 20px rgba(249, 115, 22, 0.3); }
+/* ============================================
+   STAT COUNTER
+   ============================================ */
+.stat-number {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
+  background: linear-gradient(135deg, var(--color-copper-400), var(--color-copper-600));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================
+   PIPE CONNECTOR DECORATIONS
+   ============================================ */
+.pipe-connector {
+  position: relative;
+}
+
+.pipe-connector::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    var(--color-copper-300) 10%,
+    var(--color-copper-300) 90%,
+    transparent 100%
+  );
+  transform: translateX(-50%);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.75); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes drip {
+  0% { transform: translateY(-100%) scaleY(0); opacity: 0; }
+  20% { transform: translateY(0) scaleY(1); opacity: 1; }
+  100% { transform: translateY(100vh) scaleY(1.5); opacity: 0; }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 4s ease-in-out 2s infinite;
 }
 
 /* ============================================
@@ -307,5 +544,5 @@ select:focus {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  .reveal { opacity: 1; transform: none; }
+  .reveal, .reveal-left, .reveal-right { opacity: 1; transform: none; }
 }

@@ -4,25 +4,28 @@ import CtaBanner from '../components/CtaBanner.astro';
 
 const services = [
   {
-    icon: '<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>',
+    icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>',
     title: 'Emergency Repairs',
-    description: 'Burst pipes, blocked drains, gas leaks — we respond within 60 minutes across the CBD.',
+    description: 'Burst pipes, blocked drains, gas leaks — we respond within 60 minutes, day or night.',
     image: 'https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=600&h=400&fit=crop',
     alt: 'Plumbing tools including pipe wrench laid out for emergency repair work',
+    tag: 'URGENT',
   },
   {
-    icon: '<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955a1.126 1.126 0 011.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/></svg>',
+    icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955a1.126 1.126 0 011.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/></svg>',
     title: 'Bathroom Renovations',
-    description: 'Complete bathroom renovations from design to completion, on time and on budget.',
+    description: 'Complete design-to-build service. Plumbing, tiling, waterproofing — on time, on budget.',
     image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&h=400&fit=crop',
     alt: 'Modern renovated bathroom with clean white fixtures and elegant tiling',
+    tag: 'POPULAR',
   },
   {
-    icon: '<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/></svg>',
+    icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/></svg>',
     title: 'Commercial Plumbing',
     description: 'Ongoing maintenance contracts and fit-outs for offices, restaurants, and retail.',
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop',
-    alt: 'Modern commercial office building with glass facade reflecting the sky',
+    alt: 'Modern commercial office building with glass facade',
+    tag: 'B2B',
   },
 ];
 
@@ -31,39 +34,49 @@ const testimonials = [
     quote: "Hartley & Co fixed our burst pipe at 11pm on a Sunday. Professional, fast, and reasonably priced. Can't recommend them enough.",
     name: 'Sarah M.',
     location: 'Darlinghurst',
+    rating: 5,
   },
   {
-    quote: "We've used them for our office building maintenance for 3 years now. Always reliable, always on time.",
+    quote: "We've used them for our office building maintenance for 3 years now. Always reliable, always on time. Worth every cent.",
     name: 'James T.',
-    location: 'Building Manager, Martin Place',
+    location: 'Martin Place',
+    rating: 5,
   },
   {
-    quote: 'The bathroom renovation exceeded our expectations. They kept us informed every step of the way.',
+    quote: 'The bathroom renovation exceeded our expectations. They kept us informed every step of the way and the finish is impeccable.',
     name: 'David & Lisa K.',
     location: 'Surry Hills',
+    rating: 5,
   },
+];
+
+const stats = [
+  { number: '2,400+', label: 'Jobs Completed', detail: 'and counting' },
+  { number: '20+', label: 'Years Experience', detail: 'est. 2003' },
+  { number: '60', label: 'Min Response', detail: 'emergency avg.' },
+  { number: '4.9', label: 'Google Rating', detail: '200+ reviews' },
 ];
 
 const badges = [
   {
     icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>',
     label: 'Licensed & Insured',
-    detail: 'NSW Licensed',
+    detail: 'NSW Fair Trading',
   },
   {
     icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>',
     label: '24/7 Emergency',
-    detail: '60 Min Response',
+    detail: 'Always on call',
   },
   {
     icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>',
-    label: '20+ Years Experience',
-    detail: 'Est. 2003',
+    label: '4.9★ Google Rating',
+    detail: '200+ verified reviews',
   },
   {
-    icon: '<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>',
-    label: 'Google 4.9★ Rating',
-    detail: '200+ Reviews',
+    icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/></svg>',
+    label: 'Workmanship Guarantee',
+    detail: 'We stand behind every job',
   },
 ];
 ---
@@ -72,92 +85,149 @@ const badges = [
   title="Hartley & Co Plumbing — Sydney CBD's Trusted Plumbing Experts"
   description="Licensed, insured plumbers in Sydney CBD. 24/7 emergency repairs, bathroom renovations, and commercial plumbing. Call 0412 555 178 for a free quote."
 >
-  <!-- Hero -->
-  <section class="relative overflow-hidden">
-    <!-- Multi-layer gradient background -->
-    <div class="absolute inset-0 bg-gradient-to-br from-primary-dark via-primary to-primary"></div>
-    <!-- Ambient glow -->
-    <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-light/15 rounded-full blur-[120px] -translate-y-1/3 translate-x-1/4 pointer-events-none"></div>
-    <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary-lighter/10 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4 pointer-events-none"></div>
-    <!-- Blueprint dot grid -->
-    <div class="absolute inset-0 blueprint-grid opacity-40"></div>
+  <!-- ========================================
+       HERO — Asymmetric, layered, bold
+       ======================================== -->
+  <section class="relative overflow-hidden bg-navy-900">
+    <!-- Background layers -->
+    <div class="absolute inset-0 bg-gradient-to-br from-navy-950 via-navy-900 to-navy-800"></div>
+    <!-- Blueprint grid pattern -->
+    <div class="absolute inset-0 blueprint-grid opacity-30"></div>
+    <!-- Pipe line grid -->
+    <div class="absolute inset-0 pipe-lines opacity-40"></div>
     <!-- Diagonal accent lines -->
-    <div class="absolute inset-0 opacity-[0.04]" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(255,255,255,0.5) 60px, rgba(255,255,255,0.5) 61px);"></div>
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: repeating-linear-gradient(-45deg, transparent, transparent 80px, rgba(200,117,51,0.5) 80px, rgba(200,117,51,0.5) 81px);"></div>
+    <!-- Ambient glows -->
+    <div class="absolute top-0 right-0 w-[700px] h-[700px] bg-copper-500/[0.06] rounded-full blur-[150px] -translate-y-1/3 translate-x-1/4 pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-water-500/[0.04] rounded-full blur-[120px] translate-y-1/3 -translate-x-1/4 pointer-events-none"></div>
+    <!-- Vertical pipe accent lines -->
+    <div class="absolute top-0 left-[8%] w-px h-full bg-gradient-to-b from-transparent via-copper-500/15 to-transparent"></div>
+    <div class="absolute top-0 right-[12%] w-px h-full bg-gradient-to-b from-transparent via-water-500/10 to-transparent"></div>
 
-    <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-28 md:py-36 lg:py-44">
-      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <div class="text-center lg:text-left">
+    <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-24 md:py-32 lg:py-40">
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+        <!-- Content — takes 7 columns for asymmetry -->
+        <div class="lg:col-span-7 text-center lg:text-left">
           <!-- Section label -->
-          <div class="section-label text-blue-300/60 mb-3">// SYDNEY CBD PLUMBING</div>
-          <!-- Badge -->
-          <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-blue-100 text-sm font-medium px-4 py-2 rounded-full mb-8 border border-white/10">
-            <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+          <div class="section-label text-copper-400/70 mb-4">// SYDNEY CBD PLUMBING</div>
+
+          <!-- Availability badge -->
+          <div class="inline-flex items-center gap-2.5 bg-white/[0.05] backdrop-blur-sm text-white text-sm font-semibold px-5 py-2.5 rounded-full mb-8 border border-white/[0.08]">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
+            </span>
             Available 24/7 for emergencies
           </div>
 
-          <h1 class="text-[44px] sm:text-[56px] md:text-[64px] lg:text-[72px] font-extrabold text-white leading-[1.05] tracking-[-0.025em] mb-6">
-            Sydney CBD's<br />Trusted Plumbing<br />
-            <span class="text-accent">Experts</span>
+          <h1 class="text-[42px] sm:text-[52px] md:text-[62px] lg:text-[72px] font-extrabold text-white leading-[1.02] tracking-[-0.035em] mb-4">
+            Sydney's Most<br />
+            <span class="relative inline-block">
+              Trusted
+              <!-- Copper underline accent -->
+              <span class="absolute -bottom-1 left-0 right-0 h-[5px] bg-gradient-to-r from-copper-500 to-copper-300 rounded-full opacity-80"></span>
+            </span>
+            <br />
+            <span class="display-heading text-[0.95em]">Plumbers</span>
           </h1>
-          <!-- Decorative accent line -->
+
+          <!-- Decorative copper connector line -->
           <div class="flex items-center gap-3 mb-6 justify-center lg:justify-start">
-            <div class="w-12 h-0.5 bg-accent"></div>
-            <div class="w-2 h-2 bg-accent rounded-full"></div>
-            <div class="w-6 h-0.5 bg-accent/40"></div>
+            <div class="w-12 h-[3px] bg-gradient-to-r from-copper-500 to-copper-400 rounded-full"></div>
+            <div class="w-2.5 h-2.5 border-2 border-copper-500 rounded-full"></div>
+            <div class="w-8 h-[2px] bg-copper-500/30 rounded-full"></div>
           </div>
-          <p class="text-lg md:text-xl text-blue-100/80 max-w-xl mb-12 leading-relaxed">
-            Licensed, insured, and available 24/7 for emergency repairs across the Sydney CBD and surrounding suburbs.
+
+          <p class="text-lg md:text-xl text-navy-300 max-w-xl mb-12 leading-relaxed">
+            Licensed, insured, and on your doorstep within the hour. We fix what others can't — from burst mains to full bathroom renovations.
           </p>
+
           <div class="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4">
             <a
               href="/contact"
-              class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-accent hover:bg-accent-hover text-white font-semibold px-8 py-4 rounded-full text-lg shadow-[0_4px_16px_rgba(249,115,22,0.4)] hover:shadow-[0_6px_24px_rgba(249,115,22,0.5)] hover:-translate-y-0.5 transition-all"
+              class="w-full sm:w-auto group inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-copper-500 to-copper-600 hover:from-copper-600 hover:to-copper-700 text-white font-bold px-9 py-4.5 rounded-full text-lg shadow-[var(--shadow-copper)] hover:shadow-[0_6px_24px_rgba(200,117,51,0.4)] hover:-translate-y-0.5 transition-all"
             >
               Get a Free Quote
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              <svg class="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </a>
             <a
               href="/services"
-              class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/15 text-white font-semibold px-8 py-4 rounded-full text-lg transition-all"
+              class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/[0.06] hover:bg-white/[0.1] backdrop-blur-sm border border-white/[0.08] hover:border-copper-500/30 text-white font-semibold px-9 py-4.5 rounded-full text-lg transition-all"
             >
               Our Services
             </a>
           </div>
         </div>
-        <div class="hidden lg:block">
+
+        <!-- Hero visual — 5 columns, layered composition -->
+        <div class="lg:col-span-5 hidden lg:block">
           <div class="relative">
-            <img
-              src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&h=1000&fit=crop"
-              alt="Modern clean bathroom showcasing professional plumbing installation with white fixtures"
-              class="w-full rounded-2xl shadow-2xl object-cover aspect-[4/5]"
-              width="800"
-              height="1000"
-              loading="eager"
-            />
-            <div class="absolute inset-0 rounded-2xl ring-1 ring-white/10"></div>
-            <!-- Floating stat badge -->
-            <div class="absolute -left-6 bottom-12 bg-white rounded-2xl shadow-[var(--shadow-elevated)] p-4 flex items-center gap-3">
-              <div class="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center">
-                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <!-- Background decorative frame -->
+            <div class="absolute -inset-4 bg-gradient-to-br from-copper-500/10 to-water-500/5 rounded-3xl -rotate-3"></div>
+            <div class="absolute -inset-2 bg-gradient-to-br from-copper-500/5 to-transparent rounded-3xl rotate-1"></div>
+
+            <!-- Main image -->
+            <div class="relative rounded-2xl overflow-hidden shadow-[var(--shadow-dramatic)]">
+              <img
+                src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&h=1000&fit=crop"
+                alt="Modern clean bathroom showcasing professional plumbing installation"
+                class="w-full object-cover aspect-[4/5]"
+                width="800"
+                height="1000"
+                loading="eager"
+              />
+              <!-- Gradient overlay for depth -->
+              <div class="absolute inset-0 bg-gradient-to-t from-navy-900/40 via-transparent to-transparent"></div>
+              <div class="absolute inset-0 rounded-2xl ring-1 ring-white/10"></div>
+            </div>
+
+            <!-- Floating stat badge — overlaps image -->
+            <div class="absolute -left-8 bottom-16 float-card p-5 flex items-center gap-4 animate-float">
+              <div class="w-12 h-12 bg-gradient-to-br from-copper-500 to-copper-600 rounded-xl flex items-center justify-center shadow-[var(--shadow-copper)]">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               </div>
               <div>
-                <p class="text-lg font-extrabold text-text-primary leading-none">60 min</p>
-                <p class="text-xs text-text-muted">response time</p>
+                <p class="text-2xl font-extrabold text-text-primary leading-none">60 min</p>
+                <p class="text-xs text-text-muted mt-1">avg. response time</p>
               </div>
             </div>
+
+            <!-- Floating review badge — top right -->
+            <div class="absolute -right-6 top-12 float-card p-4 animate-float-delayed">
+              <div class="flex items-center gap-1.5 mb-1.5">
+                {Array(5).fill(null).map(() => (
+                  <svg class="w-3.5 h-3.5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                ))}
+              </div>
+              <p class="text-sm font-bold text-text-primary">4.9 Rating</p>
+              <p class="text-[11px] text-text-muted">200+ Google Reviews</p>
+            </div>
+
+            <!-- Decorative corner bracket -->
+            <div class="absolute -bottom-3 -right-3 w-16 h-16 border-r-2 border-b-2 border-copper-500/30 rounded-br-xl"></div>
+            <div class="absolute -top-3 -left-3 w-16 h-16 border-l-2 border-t-2 border-copper-500/30 rounded-tl-xl"></div>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Wave divider into trust badges -->
+    <div class="wave-divider">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" preserveAspectRatio="none" fill="#FDFBF7">
+        <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,60 L0,60 Z"></path>
+      </svg>
+    </div>
   </section>
 
-  <!-- Trust Badges -->
-  <section class="relative -mt-8 z-10 pb-16">
+  <!-- ========================================
+       TRUST BADGES — Overlapping section
+       ======================================== -->
+  <section class="relative -mt-4 z-10 pb-8">
     <div class="max-w-6xl mx-auto px-5 sm:px-8 lg:px-10">
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
         {badges.map((badge, i) => (
-          <div class={`reveal stagger-${i + 1} trust-badge flex items-start gap-4`}>
-            <div class="w-12 h-12 bg-primary-50 border border-primary-100 rounded-xl flex items-center justify-center text-primary-600 shrink-0 shadow-[0_2px_8px_rgba(59,130,246,0.08)]" set:html={badge.icon} />
+          <div class={`reveal stagger-${i + 1} trust-badge flex items-start gap-3.5`}>
+            <div class="w-11 h-11 bg-copper-50 border border-copper-100 rounded-xl flex items-center justify-center text-copper-600 shrink-0" set:html={badge.icon} />
             <div class="min-w-0">
               <p class="font-bold text-text-primary text-sm leading-tight">{badge.label}</p>
               <p class="text-text-muted text-xs mt-1">{badge.detail}</p>
@@ -168,29 +238,70 @@ const badges = [
     </div>
   </section>
 
-  <!-- Services Preview -->
-  <section class="py-24 md:py-36 relative">
-    <!-- Subtle background texture -->
-    <div class="absolute inset-0 opacity-[0.015]" style="background-image: radial-gradient(circle, var(--color-primary-300) 1px, transparent 1px); background-size: 40px 40px;"></div>
-    <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
-      <div class="text-center mb-16 md:mb-20 reveal">
-        <p class="section-label mb-3">// SERVICES</p>
-        <p class="text-primary-500 text-xs font-semibold tracking-[0.15em] uppercase mb-4">What We Do</p>
-        <h2 class="mb-5">Professional Plumbing Services</h2>
-        <p class="text-text-secondary text-lg max-w-xl mx-auto leading-relaxed">Trusted solutions for homes and businesses across Sydney's CBD and inner suburbs.</p>
+  <!-- ========================================
+       STATS — Bold numbers, plumbing identity
+       ======================================== -->
+  <section class="py-20 md:py-28 bg-bg-cream relative overflow-hidden">
+    <!-- Subtle pipe line texture -->
+    <div class="absolute inset-0 pipe-lines opacity-30"></div>
+    <div class="relative max-w-6xl mx-auto px-5 sm:px-8 lg:px-10">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+        {stats.map((stat, i) => (
+          <div class={`reveal stagger-${i + 1} text-center`}>
+            <p class="stat-number text-5xl md:text-6xl lg:text-7xl mb-2">{stat.number}</p>
+            <p class="text-text-primary font-bold text-sm tracking-tight">{stat.label}</p>
+            <p class="text-text-muted text-xs mt-1">{stat.detail}</p>
+          </div>
+        ))}
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+    </div>
+  </section>
+
+  <!-- ========================================
+       SERVICES — Layered cards with depth
+       ======================================== -->
+  <section class="py-24 md:py-36 bg-white relative overflow-hidden">
+    <!-- Background layers -->
+    <div class="absolute inset-0 water-ripple"></div>
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
+
+    <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+      <!-- Section header — asymmetric -->
+      <div class="grid lg:grid-cols-12 gap-6 mb-16 md:mb-20">
+        <div class="lg:col-span-7 reveal">
+          <p class="section-label mb-3">// SERVICES</p>
+          <div class="copper-bar mb-5"></div>
+          <h2 class="mb-4">What We Do <span class="display-heading text-[0.85em]">Best</span></h2>
+          <p class="text-text-secondary text-lg max-w-lg leading-relaxed">Trusted solutions for homes and businesses. Every pipe, every fixture — done right the first time.</p>
+        </div>
+        <div class="lg:col-span-5 flex items-end justify-start lg:justify-end reveal-right">
+          <a href="/services" class="inline-flex items-center gap-2 text-copper-600 font-bold text-sm hover:gap-3 transition-all group">
+            View all services
+            <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Service cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
         {services.map((service, i) => (
-          <a href="/services" class={`reveal stagger-${i + 1} service-card-enhanced group block`}>
-            <div class="h-52 overflow-hidden relative">
-              <img src={service.image} alt={service.alt} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width="600" height="400" />
+          <a href="/services" class={`reveal stagger-${i + 1} service-card group block`}>
+            <!-- Image with overlay -->
+            <div class="h-56 overflow-hidden relative">
+              <img src={service.image} alt={service.alt} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="600" height="400" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+              <!-- Tag -->
+              <span class="absolute top-4 left-4 bg-copper-500 text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">{service.tag}</span>
+              <!-- Large index number -->
+              <span class="absolute bottom-3 right-4 text-white/10 text-[80px] font-black leading-none pointer-events-none">0{i + 1}</span>
             </div>
-            <div class="p-8 md:p-10 relative">
-              <span class="card-index">0{i + 1}</span>
-              <div class="w-14 h-14 bg-primary-50 group-hover:bg-primary-100 rounded-2xl flex items-center justify-center text-primary mb-6 transition-colors duration-300 relative z-10" set:html={service.icon} />
-              <h3 class="text-xl font-bold text-text-primary mb-3 relative z-10">{service.title}</h3>
-              <p class="text-text-secondary text-[15px] leading-relaxed mb-6 relative z-10">{service.description}</p>
-              <span class="text-primary-500 font-semibold text-sm inline-flex items-center gap-1.5 group-hover:gap-2.5 transition-all duration-300 relative z-10">
+
+            <!-- Content -->
+            <div class="p-7 md:p-8">
+              <div class="w-12 h-12 bg-copper-50 group-hover:bg-copper-100 border border-copper-100 rounded-xl flex items-center justify-center text-copper-600 mb-5 transition-colors" set:html={service.icon} />
+              <h3 class="text-xl font-bold text-text-primary mb-3 tracking-tight">{service.title}</h3>
+              <p class="text-text-secondary text-[15px] leading-relaxed mb-5">{service.description}</p>
+              <span class="text-copper-600 font-bold text-sm inline-flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
                 Learn More
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
               </span>
@@ -201,37 +312,174 @@ const badges = [
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="bg-bg-light py-24 md:py-36 relative overflow-hidden">
+  <!-- ========================================
+       WHY CHOOSE US — Dark section, high contrast
+       ======================================== -->
+  <section class="relative py-24 md:py-36 bg-navy-900 overflow-hidden">
+    <!-- Texture layers -->
+    <div class="absolute inset-0 blueprint-grid opacity-20"></div>
+    <div class="absolute inset-0 pipe-lines opacity-20"></div>
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-copper-500/30 to-transparent"></div>
+    <!-- Copper ambient glow -->
+    <div class="absolute -top-32 -right-32 w-[500px] h-[500px] bg-copper-500/[0.05] rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute -bottom-32 -left-32 w-[400px] h-[400px] bg-water-500/[0.04] rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+      <div class="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+        <!-- Left — Content -->
+        <div class="reveal-left">
+          <p class="section-label text-copper-400/70 mb-3">// WHY HARTLEY & CO</p>
+          <div class="copper-bar mb-6"></div>
+          <h2 class="text-white mb-6">Not Just Another <span class="display-heading text-[0.9em]">Plumber</span></h2>
+          <p class="text-navy-300 text-lg leading-relaxed mb-10">
+            We're third-generation plumbers who believe in doing things properly. No shortcuts, no surprises, no dodgy work. Just honest, quality plumbing from people who give a damn.
+          </p>
+
+          <!-- Feature list -->
+          <div class="space-y-5">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-copper-500/10 border border-copper-500/20 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-5 h-5 text-copper-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div>
+                <p class="text-white font-bold text-sm mb-1">60-Minute Emergency Response</p>
+                <p class="text-navy-400 text-sm leading-relaxed">We don't make you wait. Our nearest plumber is dispatched the moment you call.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-copper-500/10 border border-copper-500/20 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-5 h-5 text-copper-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg>
+              </div>
+              <div>
+                <p class="text-white font-bold text-sm mb-1">Upfront, Transparent Pricing</p>
+                <p class="text-navy-400 text-sm leading-relaxed">You'll know exactly what it costs before we start. No hidden fees, ever.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-copper-500/10 border border-copper-500/20 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-5 h-5 text-copper-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+              </div>
+              <div>
+                <p class="text-white font-bold text-sm mb-1">Lifetime Workmanship Guarantee</p>
+                <p class="text-navy-400 text-sm leading-relaxed">If something we fixed breaks, we come back and fix it free. Full stop.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right — Image composition -->
+        <div class="reveal-right hidden lg:block">
+          <div class="relative">
+            <!-- Offset background card for depth -->
+            <div class="absolute top-6 -right-4 bottom-6 -left-0 bg-copper-500/[0.06] rounded-2xl border border-copper-500/10"></div>
+
+            <div class="relative rounded-2xl overflow-hidden shadow-[var(--shadow-dramatic)]">
+              <img
+                src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=700&h=900&fit=crop"
+                alt="Professional plumber with tools ready for work"
+                class="w-full object-cover aspect-[3/4]"
+                width="700"
+                height="900"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-navy-900/50 via-transparent to-transparent"></div>
+            </div>
+
+            <!-- Floating experience badge -->
+            <div class="absolute -left-6 -bottom-6 bg-gradient-to-br from-copper-500 to-copper-700 text-white rounded-2xl p-6 shadow-[var(--shadow-copper)]">
+              <p class="text-3xl font-extrabold leading-none">20+</p>
+              <p class="text-copper-200 text-xs font-semibold mt-1 tracking-wide uppercase">Years Exp.</p>
+            </div>
+
+            <!-- Corner accents -->
+            <div class="absolute -top-2 -right-2 w-12 h-12 border-t-2 border-r-2 border-copper-500/40 rounded-tr-lg"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       TESTIMONIALS — Refined, warm
+       ======================================== -->
+  <section class="py-24 md:py-36 bg-bg-light relative overflow-hidden">
     <!-- Subtle texture -->
-    <div class="absolute inset-0 opacity-[0.02]" style="background-image: linear-gradient(90deg, var(--color-primary-200) 1px, transparent 1px), linear-gradient(var(--color-primary-200) 1px, transparent 1px); background-size: 48px 48px;"></div>
+    <div class="absolute inset-0 pipe-lines opacity-20"></div>
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
+    <!-- Water ripple accent -->
+    <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-water-500/[0.03] rounded-full blur-[100px] translate-x-1/4 translate-y-1/4 pointer-events-none"></div>
+
     <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
       <div class="text-center mb-16 md:mb-20 reveal">
         <p class="section-label mb-3">// TESTIMONIALS</p>
-        <p class="text-primary-500 text-xs font-semibold tracking-[0.15em] uppercase mb-4">Client Feedback</p>
-        <h2>What Our Clients Say</h2>
+        <div class="copper-bar mx-auto mb-5"></div>
+        <h2 class="mb-4">What Sydney <span class="display-heading text-[0.9em]">Says</span></h2>
+        <p class="text-text-secondary text-lg max-w-md mx-auto">Real reviews from real customers across Sydney's CBD and inner suburbs.</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
         {testimonials.map((t, i) => (
-          <div class={`reveal stagger-${i + 1} testimonial-card p-8 md:p-10`}>
+          <div class={`reveal stagger-${i + 1} testimonial-card p-7 md:p-8`}>
             <span class="quote-mark">&ldquo;</span>
-            <div class="flex gap-1 text-amber-400 mb-6 relative z-10">
-              {Array(5).fill(null).map(() => (
-                <svg class="w-[18px] h-[18px]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <!-- Stars -->
+            <div class="flex gap-1 text-amber-400 mb-5 relative z-10">
+              {Array(t.rating).fill(null).map(() => (
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
               ))}
             </div>
-            <blockquote class="text-text-secondary text-[15px] leading-[1.75] mb-8 relative z-10">"{t.quote}"</blockquote>
-            <div class="flex items-center gap-3 pt-6 border-t border-border relative z-10">
-              <div class="w-11 h-11 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full flex items-center justify-center shadow-[0_2px_8px_rgba(59,130,246,0.2)]">
+            <blockquote class="text-text-secondary text-[15px] leading-[1.8] mb-8 relative z-10">"{t.quote}"</blockquote>
+            <div class="flex items-center gap-3.5 pt-6 border-t border-border-light relative z-10">
+              <div class="w-11 h-11 bg-gradient-to-br from-copper-500 to-copper-700 rounded-full flex items-center justify-center shadow-[0_2px_8px_rgba(200,117,51,0.25)]">
                 <span class="text-white font-bold text-sm">{t.name.split(' ').map(n => n[0]).join('')}</span>
               </div>
               <div>
-                <p class="text-text-primary font-semibold text-sm">{t.name}</p>
+                <p class="text-text-primary font-bold text-sm">{t.name}</p>
                 <p class="text-text-muted text-xs mt-0.5">{t.location}</p>
               </div>
             </div>
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       SERVICE AREA — Map with copper accents
+       ======================================== -->
+  <section class="py-20 md:py-28 bg-white relative">
+    <div class="absolute inset-0 water-ripple opacity-50"></div>
+    <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div class="reveal-left">
+          <p class="section-label mb-3">// SERVICE AREA</p>
+          <div class="copper-bar mb-5"></div>
+          <h2 class="mb-4">Covering All of <span class="display-heading text-[0.85em]">Inner Sydney</span></h2>
+          <p class="text-text-secondary text-lg leading-relaxed mb-8">
+            Based in the CBD, we service all surrounding suburbs within a 15km radius. For larger commercial jobs, we cover the greater Sydney metro area.
+          </p>
+          <!-- Suburb tags -->
+          <div class="flex flex-wrap gap-2">
+            {['Sydney CBD', 'Darlinghurst', 'Surry Hills', 'Pyrmont', 'Ultimo', 'Chippendale', 'Glebe', 'Newtown', 'Redfern', 'Paddington'].map(suburb => (
+              <span class="bg-navy-900 text-white text-xs font-semibold px-4 py-2 rounded-full">{suburb}</span>
+            ))}
+          </div>
+        </div>
+        <div class="reveal-right">
+          <div class="relative rounded-2xl overflow-hidden shadow-[var(--shadow-elevated)] border border-border-light">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.9!2d151.209!3d-33.867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae3e3f05c8b1%3A0x5017d681632c7e0!2s78%20Pitt%20St%2C%20Sydney%20NSW%202000!5e0!3m2!1sen!2sau!4v1700000000000"
+              width="100%"
+              height="400"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Hartley & Co Plumbing location"
+            ></iframe>
+            <!-- Copper border accent -->
+            <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-copper-500 via-copper-400 to-copper-500"></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

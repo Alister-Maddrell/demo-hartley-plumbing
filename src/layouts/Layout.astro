@@ -21,34 +21,36 @@ const { title, description } = Astro.props;
     <meta property="og:description" content={description} />
     <meta property="og:image" content="/og-image.jpg" />
     <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#1E3A5F" />
+    <meta name="theme-color" content="#0C1B2E" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <title>{title}</title>
   </head>
-  <body class="min-h-screen flex flex-col bg-white antialiased grain-overlay">
+  <body class="min-h-screen flex flex-col bg-bg-cream antialiased grain-overlay">
     <Navbar />
-    <!-- Emergency Alert Banner -->
-    <div id="emergency-banner" class="relative bg-[#DC2626] text-white">
-      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-3 flex items-center justify-center gap-3 text-sm font-semibold">
-        <span class="inline-block w-2.5 h-2.5 bg-white rounded-full animate-[pulse-dot_2s_ease-in-out_infinite] shrink-0"></span>
-        <span>24/7 Emergency Service Available — <a href="tel:0412555178" class="underline underline-offset-2 hover:no-underline">Call 0412 555 178</a></span>
+
+    <!-- Emergency Alert Strip -->
+    <div id="emergency-banner" class="relative bg-gradient-to-r from-red-700 via-red-600 to-red-700 text-white overflow-hidden">
+      <!-- Subtle animated shimmer -->
+      <div class="absolute inset-0 opacity-10" style="background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); background-size: 200% 100%; animation: shimmer 3s linear infinite;"></div>
+      <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-3 flex items-center justify-center gap-3 text-sm font-semibold">
+        <span class="relative flex h-3 w-3 shrink-0">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-60"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+        </span>
+        <span>Emergency Plumber On Call — <a href="tel:0412555178" class="underline underline-offset-2 decoration-white/60 hover:decoration-white transition-colors">0412 555 178</a></span>
         <button id="dismiss-banner" class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 w-7 h-7 flex items-center justify-center rounded-full hover:bg-white/20 transition-colors" aria-label="Dismiss banner">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
       </div>
     </div>
+
     <main class="flex-1">
       <slot />
     </main>
     <Footer />
-    <style>
-      @keyframes pulse-dot {
-        0%, 100% { opacity: 1; transform: scale(1); }
-        50% { opacity: 0.4; transform: scale(0.75); }
-      }
-    </style>
+
     <script>
       document.getElementById('dismiss-banner')?.addEventListener('click', () => {
         document.getElementById('emergency-banner')?.remove();
@@ -62,9 +64,9 @@ const { title, description } = Astro.props;
             revealObserver.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
 
-      document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+      document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => revealObserver.observe(el));
     </script>
   </body>
 </html>
