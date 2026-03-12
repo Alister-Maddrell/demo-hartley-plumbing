@@ -181,12 +181,14 @@ const faqs = [
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-5">
         {steps.map((step, i) => (
           <div class={`reveal stagger-${i + 1} relative`}>
-            <div class="bg-gradient-to-br from-copper-500 to-copper-600 rounded-2xl border border-copper-400/30 p-7 text-center h-full shadow-[var(--shadow-copper)] hover:shadow-[0_6px_24px_rgba(200,117,51,0.4)] hover:-translate-y-1 transition-all">
+            <div class="bg-gradient-to-br from-copper-500 via-copper-600 to-navy-800 rounded-2xl border border-copper-400/20 p-7 text-center h-full shadow-[var(--shadow-copper)] hover:shadow-[0_6px_24px_rgba(200,117,51,0.4)] hover:-translate-y-1 transition-all relative overflow-hidden">
+              <!-- Blue glow accent -->
+              <div class="absolute bottom-0 right-0 w-32 h-32 bg-water-500/15 rounded-full blur-2xl pointer-events-none"></div>
               <!-- Step number -->
-              <div class="text-5xl font-black text-white/15 mb-4 font-[var(--font-display)] italic">{step.number}</div>
-              <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-white mx-auto mb-5" set:html={step.icon} />
-              <h3 class="text-lg font-bold text-white mb-2 tracking-tight">{step.title}</h3>
-              <p class="text-copper-100 text-sm leading-relaxed">{step.description}</p>
+              <div class="relative text-5xl font-black text-white/15 mb-4 font-[var(--font-display)] italic">{step.number}</div>
+              <div class="relative w-12 h-12 bg-navy-800/40 border border-water-400/20 rounded-xl flex items-center justify-center text-water-300 mx-auto mb-5" set:html={step.icon} />
+              <h3 class="relative text-lg font-bold text-white mb-2 tracking-tight">{step.title}</h3>
+              <p class="relative text-copper-100/80 text-sm leading-relaxed">{step.description}</p>
             </div>
             {i < steps.length - 1 && (
               <div class="hidden lg:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10 w-6 h-6 items-center justify-center">
