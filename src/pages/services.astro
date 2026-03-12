@@ -181,16 +181,16 @@ const faqs = [
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-5">
         {steps.map((step, i) => (
           <div class={`reveal stagger-${i + 1} relative`}>
-            <div class="dark-card p-7 text-center h-full">
-              <!-- Step number with copper gradient -->
-              <div class="stat-number text-5xl mb-4 opacity-30">{step.number}</div>
-              <div class="w-12 h-12 bg-copper-500/10 border border-copper-500/20 rounded-xl flex items-center justify-center text-copper-400 mx-auto mb-5" set:html={step.icon} />
+            <div class="bg-gradient-to-br from-copper-500 to-copper-600 rounded-2xl border border-copper-400/30 p-7 text-center h-full shadow-[var(--shadow-copper)] hover:shadow-[0_6px_24px_rgba(200,117,51,0.4)] hover:-translate-y-1 transition-all">
+              <!-- Step number -->
+              <div class="text-5xl font-black text-white/15 mb-4 font-[var(--font-display)] italic">{step.number}</div>
+              <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-white mx-auto mb-5" set:html={step.icon} />
               <h3 class="text-lg font-bold text-white mb-2 tracking-tight">{step.title}</h3>
-              <p class="text-navy-400 text-sm leading-relaxed">{step.description}</p>
+              <p class="text-copper-100 text-sm leading-relaxed">{step.description}</p>
             </div>
             {i < steps.length - 1 && (
               <div class="hidden lg:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10 w-6 h-6 items-center justify-center">
-                <svg class="w-4 h-4 text-copper-500/40" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                <svg class="w-4 h-4 text-copper-400" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
               </div>
             )}
           </div>
