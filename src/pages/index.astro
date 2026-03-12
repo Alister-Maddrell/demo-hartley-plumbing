@@ -5,45 +5,45 @@ import CtaBanner from '../components/CtaBanner.astro';
 const services = [
   {
     icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>',
-    title: 'Emergency Repairs',
-    description: 'Burst pipes, blocked drains, gas leaks — we respond within 60 minutes, day or night.',
+    title: '24/7 Emergency Plumbing',
+    description: 'Burst pipe flooding your kitchen at 2am? Your emergency plumber arrives in under 60 minutes across Sydney CBD, Surry Hills, and Darlinghurst — so the damage stops fast, not next morning.',
     image: 'https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=600&h=400&fit=crop',
-    alt: 'Plumbing tools including pipe wrench laid out for emergency repair work',
+    alt: 'Licensed Sydney emergency plumber with tools ready for burst pipe repair',
     tag: 'URGENT',
   },
   {
     icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955a1.126 1.126 0 011.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/></svg>',
     title: 'Bathroom Renovations',
-    description: 'Complete design-to-build service. Plumbing, tiling, waterproofing — on time, on budget.',
+    description: 'Transform your outdated bathroom into a space you love. Full design-to-build renovations with licensed plumbing, waterproofing, and tiling — delivered on time, on budget, and backed by warranty.',
     image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&h=400&fit=crop',
-    alt: 'Modern renovated bathroom with clean white fixtures and elegant tiling',
+    alt: 'Modern bathroom renovation completed by Hartley & Co in inner Sydney',
     tag: 'POPULAR',
   },
   {
     icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/></svg>',
     title: 'Commercial Plumbing',
-    description: 'Ongoing maintenance contracts and fit-outs for offices, restaurants, and retail.',
+    description: 'Keep your Sydney CBD business running without plumbing headaches. Scheduled maintenance contracts, new fit-outs, and compliance work — so you stay open, compliant, and worry-free.',
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop',
-    alt: 'Modern commercial office building with glass facade',
+    alt: 'Commercial plumbing maintenance for Sydney CBD office building',
     tag: 'B2B',
   },
 ];
 
 const testimonials = [
   {
-    quote: "Hartley & Co fixed our burst pipe at 11pm on a Sunday. Professional, fast, and reasonably priced. Can't recommend them enough.",
+    quote: "Our hot water system died on a Sunday night. Hartley & Co had a plumber at our Darlinghurst apartment within 45 minutes and replaced the entire unit by Monday morning. Honestly lifesavers.",
     name: 'Sarah M.',
     location: 'Darlinghurst',
     rating: 5,
   },
   {
-    quote: "We've used them for our office building maintenance for 3 years now. Always reliable, always on time. Worth every cent.",
+    quote: "We manage three office buildings near Martin Place and Hartley & Co handles all our plumbing maintenance. Three years running, not a single missed appointment. They just get the job done.",
     name: 'James T.',
     location: 'Martin Place',
     rating: 5,
   },
   {
-    quote: 'The bathroom renovation exceeded our expectations. They kept us informed every step of the way and the finish is impeccable.',
+    quote: "Hired them for a full bathroom reno in our Surry Hills terrace. They gutted and rebuilt the whole thing in under three weeks — new tiling, waterproofing, the lot. The result is stunning.",
     name: 'David & Lisa K.',
     location: 'Surry Hills',
     rating: 5,
@@ -51,22 +51,22 @@ const testimonials = [
 ];
 
 const stats = [
-  { number: '2,400+', label: 'Jobs Completed', detail: 'and counting' },
-  { number: '20+', label: 'Years Experience', detail: 'est. 2003' },
-  { number: '60', label: 'Min Response', detail: 'emergency avg.' },
-  { number: '4.9', label: 'Google Rating', detail: '200+ reviews' },
+  { number: '2,400+', label: 'Jobs Completed', detail: 'across inner Sydney' },
+  { number: '20+', label: 'Years in Sydney', detail: 'est. 2003' },
+  { number: '60', label: 'Min Response', detail: 'avg. emergency arrival' },
+  { number: '4.9', label: 'Google Rating', detail: '200+ verified reviews' },
 ];
 
 const badges = [
   {
     icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>',
-    label: 'Licensed & Insured',
-    detail: 'NSW Fair Trading',
+    label: 'Fully Licensed & Insured',
+    detail: 'Your work is protected & covered',
   },
   {
     icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>',
-    label: '24/7 Emergency',
-    detail: 'Always on call',
+    label: '24/7 Emergency Callouts',
+    detail: 'At your door in under 60 min',
   },
   {
     icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>',
@@ -75,15 +75,15 @@ const badges = [
   },
   {
     icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/></svg>',
-    label: 'Workmanship Guarantee',
-    detail: 'We stand behind every job',
+    label: 'Lifetime Workmanship Guarantee',
+    detail: 'If it breaks, we fix it free',
   },
 ];
 ---
 
 <Layout
-  title="Hartley & Co Plumbing — Sydney CBD's Trusted Plumbing Experts"
-  description="Licensed, insured plumbers in Sydney CBD. 24/7 emergency repairs, bathroom renovations, and commercial plumbing. Call 0412 555 178 for a free quote."
+  title="Sydney CBD Plumber | 24/7 Emergency | Hartley & Co"
+  description="Burst pipe or blocked drain in Sydney CBD? Hartley & Co plumbers arrive in under 60 minutes, 24/7. Licensed, insured, guaranteed. Get your free quote today."
 >
   <!-- ========================================
        HERO — Asymmetric, layered, bold
@@ -121,14 +121,14 @@ const badges = [
           </div>
 
           <h1 class="text-[42px] sm:text-[52px] md:text-[62px] lg:text-[72px] font-extrabold text-white leading-[1.02] tracking-[-0.035em] mb-4">
-            Sydney's Most<br />
+            Burst Pipe?<br />
             <span class="relative inline-block">
-              Trusted
+              We're There
               <!-- Copper underline accent -->
               <span class="absolute -bottom-1 left-0 right-0 h-[5px] bg-gradient-to-r from-copper-500 to-copper-300 rounded-full opacity-80"></span>
             </span>
             <br />
-            <span class="display-heading text-[0.95em]">Plumbers</span>
+            <span class="display-heading text-[0.95em]">in 60 Minutes</span>
           </h1>
 
           <!-- Decorative copper connector line -->
@@ -139,7 +139,7 @@ const badges = [
           </div>
 
           <p class="text-lg md:text-xl text-navy-300 max-w-xl mb-12 leading-relaxed">
-            Licensed, insured, and on your doorstep within the hour. We fix what others can't — from burst mains to full bathroom renovations.
+            Whether it's a 3am emergency or a blocked drain before guests arrive, your problem gets fixed fast — by licensed, insured plumbers who get it right the first time. Serving Sydney CBD, Surry Hills, Pyrmont, and all inner suburbs since 2003.
           </p>
 
           <div class="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4">
@@ -147,14 +147,14 @@ const badges = [
               href="/contact"
               class="w-full sm:w-auto group inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-copper-500 to-copper-600 hover:from-copper-600 hover:to-copper-700 text-white font-bold px-9 py-4.5 rounded-full text-lg shadow-[var(--shadow-copper)] hover:shadow-[0_6px_24px_rgba(200,117,51,0.4)] hover:-translate-y-0.5 transition-all"
             >
-              Get a Free Quote
+              Get Your Free Quote in 60 Seconds
               <svg class="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </a>
             <a
               href="/services"
               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/[0.06] hover:bg-white/[0.1] backdrop-blur-sm border border-white/[0.08] hover:border-copper-500/30 text-white font-semibold px-9 py-4.5 rounded-full text-lg transition-all"
             >
-              Our Services
+              See What We Fix
             </a>
           </div>
         </div>
@@ -271,8 +271,8 @@ const badges = [
         <div class="lg:col-span-7 reveal">
           <p class="section-label mb-3">// SERVICES</p>
           <div class="copper-bar mb-5"></div>
-          <h2 class="text-text-primary mb-4">What We Do <span class="display-heading text-[0.85em]">Best</span></h2>
-          <p class="text-text-secondary text-lg max-w-lg leading-relaxed">Trusted solutions for homes and businesses. Every pipe, every fixture — done right the first time.</p>
+          <h2 class="text-text-primary mb-4">Problems Solved, <span class="display-heading text-[0.85em]">Guaranteed</span></h2>
+          <p class="text-text-secondary text-lg max-w-lg leading-relaxed">From emergency callouts to full renovations, every plumbing job across Sydney CBD and surrounding suburbs is backed by a lifetime workmanship guarantee — so you never pay twice for the same fix.</p>
         </div>
         <div class="lg:col-span-5 flex items-end justify-start lg:justify-end reveal-right">
           <a href="/services" class="inline-flex items-center gap-2 text-copper-600 font-bold text-sm hover:gap-3 transition-all group">
@@ -330,9 +330,9 @@ const badges = [
         <div class="reveal-left">
           <p class="section-label text-copper-400/70 mb-3">// WHY HARTLEY & CO</p>
           <div class="copper-bar mb-6"></div>
-          <h2 class="text-white mb-6">Not Just Another <span class="display-heading text-[0.9em]">Plumber</span></h2>
+          <h2 class="text-white mb-6">Why Sydney Trusts <span class="display-heading text-[0.9em]">Hartley & Co</span></h2>
           <p class="text-navy-300 text-lg leading-relaxed mb-10">
-            We're third-generation plumbers who believe in doing things properly. No shortcuts, no surprises, no dodgy work. Just honest, quality plumbing from people who give a damn.
+            You deserve a plumber who shows up on time, charges what they quoted, and fixes it right the first time. Third-generation tradespeople, no shortcuts, no surprises — just honest work from people who give a damn.
           </p>
 
           <!-- Feature list -->
@@ -342,8 +342,8 @@ const badges = [
                 <svg class="w-5 h-5 text-copper-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               </div>
               <div>
-                <p class="text-white font-bold text-sm mb-1">60-Minute Emergency Response</p>
-                <p class="text-navy-400 text-sm leading-relaxed">We don't make you wait. Our nearest plumber is dispatched the moment you call.</p>
+                <p class="text-white font-bold text-sm mb-1">At Your Door in 60 Minutes</p>
+                <p class="text-navy-400 text-sm leading-relaxed">No waiting, no uncertainty. Your nearest plumber is dispatched the moment you call — day or night.</p>
               </div>
             </div>
             <div class="flex items-start gap-4">
@@ -351,8 +351,8 @@ const badges = [
                 <svg class="w-5 h-5 text-copper-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg>
               </div>
               <div>
-                <p class="text-white font-bold text-sm mb-1">Upfront, Transparent Pricing</p>
-                <p class="text-navy-400 text-sm leading-relaxed">You'll know exactly what it costs before we start. No hidden fees, ever.</p>
+                <p class="text-white font-bold text-sm mb-1">Know the Price Before Work Starts</p>
+                <p class="text-navy-400 text-sm leading-relaxed">You get a written quote upfront — so there are no surprises on your invoice. No hidden fees, ever.</p>
               </div>
             </div>
             <div class="flex items-start gap-4">
@@ -360,8 +360,8 @@ const badges = [
                 <svg class="w-5 h-5 text-copper-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
               </div>
               <div>
-                <p class="text-white font-bold text-sm mb-1">Lifetime Workmanship Guarantee</p>
-                <p class="text-navy-400 text-sm leading-relaxed">If something we fixed breaks, we come back and fix it free. Full stop.</p>
+                <p class="text-white font-bold text-sm mb-1">Guaranteed — or You Don't Pay</p>
+                <p class="text-navy-400 text-sm leading-relaxed">If anything we fixed breaks down, you're covered. We come back and repair it free of charge. Full stop.</p>
               </div>
             </div>
           </div>
@@ -413,8 +413,8 @@ const badges = [
       <div class="text-center mb-16 md:mb-20 reveal">
         <p class="section-label mb-3">// TESTIMONIALS</p>
         <div class="copper-bar mx-auto mb-5"></div>
-        <h2 class="text-text-primary mb-4">What Sydney <span class="display-heading text-[0.9em]">Says</span></h2>
-        <p class="text-text-secondary text-lg max-w-md mx-auto">Real reviews from real customers across Sydney's CBD and inner suburbs.</p>
+        <h2 class="text-text-primary mb-4">Your Neighbours <span class="display-heading text-[0.9em]">Trust Us</span></h2>
+        <p class="text-text-secondary text-lg max-w-md mx-auto">Hear from real homeowners and businesses across Sydney's CBD and inner suburbs.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
@@ -453,9 +453,9 @@ const badges = [
         <div class="reveal-left">
           <p class="section-label mb-3">// SERVICE AREA</p>
           <div class="copper-bar mb-5"></div>
-          <h2 class="text-text-primary mb-4">Covering All of <span class="display-heading text-[0.85em]">Inner Sydney</span></h2>
+          <h2 class="text-text-primary mb-4">A Local Plumber <span class="display-heading text-[0.85em]">Near You</span></h2>
           <p class="text-text-secondary text-lg leading-relaxed mb-8">
-            Based in the CBD, we service all surrounding suburbs within a 15km radius. For larger commercial jobs, we cover the greater Sydney metro area.
+            Based in the CBD, your plumber is always close by — servicing all surrounding suburbs within a 15km radius. For larger commercial jobs, the greater Sydney metro area is covered too.
           </p>
           <!-- Suburb tags -->
           <div class="flex flex-wrap gap-2">
