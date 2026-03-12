@@ -1,15 +1,29 @@
 <section class="relative overflow-hidden">
   <!-- Background with depth -->
   <div class="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary-dark"></div>
-  <!-- Subtle dot pattern -->
-  <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle, white 1px, transparent 1px); background-size: 24px 24px;"></div>
+  <!-- Geometric pattern -->
+  <div class="absolute inset-0 cta-pattern"></div>
+  <!-- Blueprint grid -->
+  <div class="absolute inset-0 blueprint-grid opacity-30"></div>
   <!-- Gradient glow accent -->
   <div class="absolute -top-24 -right-24 w-96 h-96 bg-primary-light/20 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-accent/10 rounded-full blur-3xl pointer-events-none"></div>
+  <!-- Top decorative line -->
+  <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-accent to-transparent"></div>
 
-  <div class="relative max-w-4xl mx-auto px-5 sm:px-8 lg:px-10 py-20 md:py-24 text-center">
+  <div class="relative max-w-4xl mx-auto px-5 sm:px-8 lg:px-10 py-24 md:py-32 text-center">
+    <p class="section-label text-blue-300/40 mb-4">// GET IN TOUCH</p>
     <p class="text-primary-lighter/80 text-sm font-semibold tracking-wide uppercase mb-4">Available 24/7</p>
     <h2 class="text-3xl md:text-4xl lg:text-[42px] font-extrabold text-white mb-4 tracking-tight leading-tight">Need a plumber today?</h2>
     <p class="text-blue-200/70 text-lg md:text-xl mb-10 max-w-xl mx-auto leading-relaxed">Get a free quote in 60 seconds — no obligation, no call-out fee.</p>
+    <!-- Decorative dots -->
+    <div class="flex items-center justify-center gap-2 mb-10">
+      <div class="w-1.5 h-1.5 rounded-full bg-accent/60"></div>
+      <div class="w-8 h-0.5 bg-accent/40"></div>
+      <div class="w-1.5 h-1.5 rounded-full bg-accent"></div>
+      <div class="w-8 h-0.5 bg-accent/40"></div>
+      <div class="w-1.5 h-1.5 rounded-full bg-accent/60"></div>
+    </div>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
       <a
         href="/contact"
