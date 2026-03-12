@@ -1,55 +1,173 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
+/* ============================================
+   DESIGN TOKENS — Full Blue Spectrum + Refined System
+   Trades / Emergency — trust, speed, reliability
+   ============================================ */
 @theme {
-  /* Primary palette — deep navy trust colors */
+  /* Primary blue spectrum — generated from #1E3A5F */
+  --color-primary-50: #EFF6FF;
+  --color-primary-100: #DBEAFE;
+  --color-primary-200: #BFDBFE;
+  --color-primary-300: #93C5FD;
+  --color-primary-400: #60A5FA;
+  --color-primary-500: #3B82F6;
+  --color-primary-600: #2563EB;
+  --color-primary-700: #1E3A5F;
+  --color-primary-800: #162D4A;
+  --color-primary-900: #0F1D33;
+
+  /* Legacy aliases */
   --color-primary: #1E3A5F;
-  --color-primary-dark: #0F2440;
+  --color-primary-dark: #0F1D33;
   --color-primary-light: #3B82F6;
   --color-primary-lighter: #60A5FA;
 
-  /* Accent — warm orange for CTAs */
+  /* Accent — ONLY for CTAs and action elements */
   --color-accent: #F97316;
   --color-accent-hover: #EA580C;
   --color-accent-glow: rgba(249, 115, 22, 0.25);
 
-  /* Neutrals */
+  /* Neutral spectrum — careful grey ladder for depth */
+  --color-bg-white: #FFFFFF;
   --color-bg-light: #F8FAFC;
   --color-bg-warm: #F1F5F9;
+  --color-bg-muted: #E2E8F0;
   --color-text-primary: #0F172A;
   --color-text-secondary: #475569;
   --color-text-muted: #94A3B8;
+  --color-text-faint: #CBD5E1;
   --color-border: #E2E8F0;
+  --color-border-light: #F1F5F9;
 
-  /* Shadows */
-  --shadow-soft: 0 1px 3px rgba(15, 36, 64, 0.04), 0 4px 12px rgba(15, 36, 64, 0.06);
-  --shadow-medium: 0 2px 8px rgba(15, 36, 64, 0.06), 0 8px 24px rgba(15, 36, 64, 0.08);
-  --shadow-elevated: 0 4px 12px rgba(15, 36, 64, 0.08), 0 16px 40px rgba(15, 36, 64, 0.12);
+  /* Layered shadow system (Josh Comeau inspired) */
+  --shadow-xs: 0 1px 2px rgba(15, 29, 51, 0.04);
+  --shadow-soft: 0 1px 3px rgba(15, 29, 51, 0.03), 0 4px 12px rgba(15, 29, 51, 0.05);
+  --shadow-medium: 0 2px 4px rgba(15, 29, 51, 0.03), 0 8px 24px rgba(15, 29, 51, 0.07);
+  --shadow-elevated: 0 4px 8px rgba(15, 29, 51, 0.04), 0 12px 32px rgba(15, 29, 51, 0.08), 0 24px 56px rgba(15, 29, 51, 0.06);
+  --shadow-dramatic: 0 8px 16px rgba(15, 29, 51, 0.06), 0 24px 48px rgba(15, 29, 51, 0.1);
 
   /* Font */
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
 }
 
+/* ============================================
+   BASE — Typography & Rhythm
+   ============================================ */
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'kern' 1, 'liga' 1;
 }
 
 body {
   font-family: var(--font-sans);
   color: var(--color-text-primary);
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: clamp(1rem, 0.2vw + 0.95rem, 1.0625rem);
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+  text-rendering: optimizeLegibility;
 }
 
-/* Smooth transitions for interactive elements */
-a, button {
-  transition: all 0.2s ease;
+/* Typographic scale — 1.25 ratio (Major Third) with clamp() */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  color: var(--color-text-primary);
+  text-wrap: balance;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
 }
 
-/* Custom selection color */
+h1 { font-size: clamp(2.25rem, 4vw + 1rem, 3.75rem); }
+h2 { font-size: clamp(1.75rem, 2.5vw + 0.75rem, 2.75rem); }
+h3 { font-size: clamp(1.25rem, 0.5vw + 1rem, 1.5rem); letter-spacing: -0.02em; }
+h4 { font-size: 1.125rem; letter-spacing: -0.015em; }
+
+/* ============================================
+   SELECTION
+   ============================================ */
 ::selection {
   background-color: rgba(59, 130, 246, 0.15);
   color: var(--color-primary);
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bg-light); }
+::-webkit-scrollbar-thumb { background: var(--color-bg-muted); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-primary-500); }
+
+/* ============================================
+   BUTTONS — Clear action hierarchy
+   Orange = action colour trail (ONLY on CTAs)
+   ============================================ */
+a, button {
+  transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ============================================
+   CARDS — Refined lift + shadow on hover
+   ============================================ */
+.card-lift {
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-elevated);
+}
+
+/* ============================================
+   SCROLL-TRIGGERED REVEAL — Fast for trades (300-400ms)
+   ============================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays for grid items */
+.stagger-1 { transition-delay: 0ms; }
+.stagger-2 { transition-delay: 80ms; }
+.stagger-3 { transition-delay: 160ms; }
+.stagger-4 { transition-delay: 240ms; }
+
+/* ============================================
+   FORM — Oversized inputs for mobile tapping
+   ============================================ */
+input, select, textarea {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1; transform: none; }
 }
