@@ -141,6 +141,17 @@ const { title, description } = Astro.props;
       if (new URLSearchParams(window.location.search).has('preview')) {
         document.querySelectorAll('img[loading="lazy"]').forEach(img => img.loading = 'eager');
         document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => el.classList.add('visible'));
+        let pos = 0, dir = 1;
+        const speed = 0.4;
+        function autoScroll() {
+          const max = document.documentElement.scrollHeight - window.innerHeight;
+          pos += dir * speed;
+          if (pos >= max) { dir = -1; pos = max; }
+          if (pos <= 0) { dir = 1; pos = 0; }
+          window.scrollTo(0, pos);
+          requestAnimationFrame(autoScroll);
+        }
+        requestAnimationFrame(autoScroll);
       }
     </script>
   </body>
