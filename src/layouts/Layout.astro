@@ -144,7 +144,7 @@ const { title, description } = Astro.props;
         document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => el.classList.add('visible'));
         window.addEventListener('load', () => {
           let pos = 0, dir = 1, last = 0;
-          const pxPerSec = 80;
+          const pxPerSec = 150;
           function autoScroll(ts) {
             if (!last) last = ts;
             const dt = ts - last;
