@@ -220,7 +220,7 @@ const faqs = [
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
         <!-- Slider 1 -->
         <div class="reveal stagger-1 space-y-4">
-          <div class="ba-slider relative aspect-[4/3] rounded-2xl overflow-hidden shadow-[var(--shadow-elevated)] cursor-col-resize select-none border border-border-light">
+          <div class="ba-slider relative aspect-[4/3] rounded-2xl overflow-hidden shadow-[var(--shadow-elevated)] cursor-col-resize select-none border border-border-light" tabindex="0" role="slider" aria-label="Before and after comparison: Bathroom renovation" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
             <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&h=450&fit=crop" alt="After: Completed bathroom renovation" class="w-full h-full object-cover" />
             <div class="ba-before absolute inset-0 overflow-hidden" style="width:50%">
               <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=450&fit=crop" alt="Before: Old bathroom needing renovation" class="w-full h-full object-cover" style="min-width: calc(100cqi)" />
@@ -237,7 +237,7 @@ const faqs = [
         </div>
         <!-- Slider 2 -->
         <div class="reveal stagger-2 space-y-4">
-          <div class="ba-slider relative aspect-[4/3] rounded-2xl overflow-hidden shadow-[var(--shadow-elevated)] cursor-col-resize select-none border border-border-light">
+          <div class="ba-slider relative aspect-[4/3] rounded-2xl overflow-hidden shadow-[var(--shadow-elevated)] cursor-col-resize select-none border border-border-light" tabindex="0" role="slider" aria-label="Before and after comparison: Burst pipe repair" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
             <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&h=450&fit=crop" alt="After: Repaired burst pipe" class="w-full h-full object-cover" />
             <div class="ba-before absolute inset-0 overflow-hidden" style="width:50%">
               <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=600&h=450&fit=crop" alt="Before: Burst pipe damage" class="w-full h-full object-cover" style="min-width: calc(100cqi)" />
@@ -254,7 +254,7 @@ const faqs = [
         </div>
         <!-- Slider 3 -->
         <div class="reveal stagger-3 space-y-4">
-          <div class="ba-slider relative aspect-[4/3] rounded-2xl overflow-hidden shadow-[var(--shadow-elevated)] cursor-col-resize select-none border border-border-light">
+          <div class="ba-slider relative aspect-[4/3] rounded-2xl overflow-hidden shadow-[var(--shadow-elevated)] cursor-col-resize select-none border border-border-light" tabindex="0" role="slider" aria-label="Before and after comparison: Hot water system replacement" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
             <img src="https://images.unsplash.com/photo-1585128792020-803d29415281?w=600&h=450&fit=crop" alt="After: New hot water system installed" class="w-full h-full object-cover" />
             <div class="ba-before absolute inset-0 overflow-hidden" style="width:50%">
               <img src="https://images.unsplash.com/photo-1585128792020-803d29415281?w=600&h=450&fit=crop&sat=-20" alt="Before: Old hot water system" class="w-full h-full object-cover" style="min-width: calc(100cqi)" />
@@ -379,6 +379,31 @@ const faqs = [
     slider.addEventListener('touchstart', (e) => { isDragging = true; updatePosition((e as TouchEvent).touches[0].clientX); }, { passive: true });
     document.addEventListener('touchmove', (e) => { if (isDragging) updatePosition(e.touches[0].clientX); });
     document.addEventListener('touchend', () => { isDragging = false; });
+
+    // Keyboard support
+    let currentPercent = 50;
+    slider.addEventListener('keydown', (e) => {
+      const key = (e as KeyboardEvent).key;
+      const step = (e as KeyboardEvent).shiftKey ? 10 : 2;
+      if (key === 'ArrowLeft' || key === 'ArrowDown') {
+        e.preventDefault();
+        currentPercent = Math.max(0, currentPercent - step);
+      } else if (key === 'ArrowRight' || key === 'ArrowUp') {
+        e.preventDefault();
+        currentPercent = Math.min(100, currentPercent + step);
+      } else if (key === 'Home') {
+        e.preventDefault();
+        currentPercent = 0;
+      } else if (key === 'End') {
+        e.preventDefault();
+        currentPercent = 100;
+      } else {
+        return;
+      }
+      beforeEl.style.width = `${currentPercent}%`;
+      handleEl.style.left = `${currentPercent}%`;
+      slider.setAttribute('aria-valuenow', String(Math.round(currentPercent)));
+    });
   });
 
   document.querySelectorAll('.faq-toggle').forEach(button => {
