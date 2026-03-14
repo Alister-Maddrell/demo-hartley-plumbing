@@ -142,21 +142,27 @@ const { title, description } = Astro.props;
         document.documentElement.style.scrollBehavior = 'auto';
         document.querySelectorAll('img[loading="lazy"]').forEach(img => img.loading = 'eager');
         document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => el.classList.add('visible'));
-        window.addEventListener('load', () => {
-          let pos = 0, dir = 1, last = 0;
-          const pxPerSec = 150;
-          function autoScroll(ts) {
-            if (!last) last = ts;
-            const dt = ts - last;
-            last = ts;
-            const max = document.documentElement.scrollHeight - window.innerHeight;
-            pos += dir * pxPerSec * (dt / 1000);
-            if (pos >= max) { dir = -1; pos = max; }
-            if (pos <= 0) { dir = 1; pos = 0; }
-            window.scrollTo(0, pos);
-            requestAnimationFrame(autoScroll);
+        let scrolling = false, pos = 0, dir = 1, last = 0, rafId = 0;
+        const pxPerSec = 150;
+        function autoScroll(ts) {
+          if (!scrolling) return;
+          if (!last) last = ts;
+          const dt = ts - last;
+          last = ts;
+          const max = document.documentElement.scrollHeight - window.innerHeight;
+          pos += dir * pxPerSec * (dt / 1000);
+          if (pos >= max) { dir = -1; pos = max; }
+          if (pos <= 0) { dir = 1; pos = 0; }
+          window.scrollTo(0, pos);
+          rafId = requestAnimationFrame(autoScroll);
+        }
+        window.addEventListener('message', (e) => {
+          if (e.data === 'start-scroll') {
+            if (!scrolling) { scrolling = true; last = 0; rafId = requestAnimationFrame(autoScroll); }
+          } else if (e.data === 'stop-scroll') {
+            scrolling = false; cancelAnimationFrame(rafId);
+            pos = 0; dir = 1; window.scrollTo(0, 0);
           }
-          requestAnimationFrame(autoScroll);
         });
       }
     </script>
