@@ -92,7 +92,7 @@ const badges = [
     <!-- Subtle grid -->
     <div class="absolute inset-0 opacity-[0.04]" style="background-image: linear-gradient(0deg, rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 40px 40px;"></div>
 
-    <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-20 md:py-28 lg:py-36">
+    <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-24 md:py-32 lg:py-40">
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <!-- Content -->
         <div class="text-center lg:text-left">
@@ -121,14 +121,14 @@ const badges = [
           <div class="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3">
             <a
               href="/contact"
-              class="w-full sm:w-auto group inline-flex items-center justify-center gap-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors"
+              class="w-full sm:w-auto group inline-flex items-center justify-center gap-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-4 rounded-lg text-lg btn-primary"
             >
               Get Your Free Quote in 60 Seconds
               <svg class="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </a>
             <a
               href="/services"
-              class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/[0.08] hover:bg-white/[0.12] border border-white/[0.12] hover:border-white/[0.2] text-white font-semibold px-8 py-4 rounded-lg text-lg transition-all"
+              class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/[0.08] hover:bg-white/[0.12] border border-white/[0.12] hover:border-white/[0.2] text-white font-semibold px-8 py-4 rounded-lg text-lg transition-all btn-secondary"
             >
               See What We Fix
             </a>
@@ -139,7 +139,7 @@ const badges = [
         <div class="hidden lg:block">
           <div class="relative">
             <!-- Main image -->
-            <div class="relative rounded-lg overflow-hidden shadow-2xl">
+            <div class="relative rounded-xl overflow-hidden" style="box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.1);">
               <img
                 src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&h=1000&fit=crop"
                 alt="Modern clean bathroom showcasing professional plumbing installation"
@@ -200,13 +200,13 @@ const badges = [
   <!-- ========================================
        STATS — Horizontal stat bars
        ======================================== -->
-  <section class="py-16 md:py-24 bg-white">
+  <section class="py-20 md:py-28 bg-white">
     <div class="max-w-6xl mx-auto px-5 sm:px-8 lg:px-10">
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
         {stats.map((stat, i) => (
           <div class={`reveal stagger-${i + 1} text-center`}>
             <p class="stat-number text-5xl md:text-6xl mb-2">{stat.number}</p>
-            <p class="text-navy-800 font-bold text-sm uppercase tracking-wide" style="font-family: var(--font-display);">{stat.label}</p>
+            <p class="text-navy-800 font-bold text-[0.9375rem] uppercase tracking-wider" style="font-family: var(--font-display);">{stat.label}</p>
             <p class="text-gray-500 text-xs mt-1">{stat.detail}</p>
           </div>
         ))}
@@ -319,7 +319,7 @@ const badges = [
         <!-- Right — Image -->
         <div class="reveal-right hidden lg:block">
           <div class="relative">
-            <div class="relative rounded-lg overflow-hidden shadow-2xl">
+            <div class="relative rounded-xl overflow-hidden" style="box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.1);">
               <img
                 src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=700&h=900&fit=crop"
                 alt="Professional plumber with tools ready for work"
@@ -383,7 +383,7 @@ const badges = [
   <!-- ========================================
        SERVICE AREA — Split layout with map
        ======================================== -->
-  <section class="py-16 md:py-24 bg-white">
+  <section class="py-20 md:py-28 bg-white">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div class="reveal-left">
