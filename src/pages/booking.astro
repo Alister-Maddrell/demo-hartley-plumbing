@@ -1,0 +1,139 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Book a Plumber Online | Hartley & Co Plumbing Sydney"
+  description="Book your plumbing appointment online with Hartley & Co. Choose a time that suits you — consultations, repairs, and installations across Sydney CBD."
+>
+  <!-- Page Header -->
+  <section class="relative bg-navy-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.04]" style="background-image: linear-gradient(0deg, rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+    <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-16 md:py-24 text-center">
+      <p class="section-label text-blue-400 mb-3">Book Online</p>
+      <div class="w-12 h-1 bg-blue-600 mx-auto mb-5"></div>
+      <h1 class="text-white mb-4">
+        Book Your Plumber
+      </h1>
+      <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+        Pick a time that works for you. We'll confirm your booking and have a licensed plumber ready to go.
+      </p>
+    </div>
+  </section>
+
+  <!-- Booking Calendar -->
+  <section class="py-16 md:py-24 bg-bg-cream">
+    <div class="max-w-4xl mx-auto px-5 sm:px-8 lg:px-10">
+      <div class="bg-white rounded-lg shadow-elevated border border-gray-200 relative overflow-hidden">
+        <!-- Blue top border -->
+        <div class="absolute top-0 left-0 right-0 h-1 bg-blue-600"></div>
+
+        <div class="p-7 md:p-9">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-blue-50 border border-blue-100 rounded-lg flex items-center justify-center">
+              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            </div>
+            <div>
+              <h2 class="text-xl font-bold text-navy-800" style="font-family: var(--font-display); text-transform: uppercase;">Select a Time</h2>
+              <p class="text-gray-600 text-sm">Choose an available slot for your consultation</p>
+            </div>
+          </div>
+
+          <!-- Cal.com Embed Container -->
+          <div id="cal-booking" style="min-height: 500px;"></div>
+        </div>
+      </div>
+
+      <!-- Extra info -->
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-5">
+        <div class="flex items-start gap-3 bg-white rounded-lg p-5 border border-gray-200 shadow-soft">
+          <div class="w-9 h-9 bg-blue-50 border border-blue-100 rounded-lg flex items-center justify-center shrink-0">
+            <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <p class="font-bold text-navy-800 text-sm" style="font-family: var(--font-display); text-transform: uppercase;">Quick Response</p>
+            <p class="text-gray-600 text-xs mt-0.5">Booking confirmed within minutes</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 bg-white rounded-lg p-5 border border-gray-200 shadow-soft">
+          <div class="w-9 h-9 bg-blue-50 border border-blue-100 rounded-lg flex items-center justify-center shrink-0">
+            <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <div>
+            <p class="font-bold text-navy-800 text-sm" style="font-family: var(--font-display); text-transform: uppercase;">Licensed & Insured</p>
+            <p class="text-gray-600 text-xs mt-0.5">Fully qualified Sydney plumbers</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 bg-white rounded-lg p-5 border border-gray-200 shadow-soft">
+          <div class="w-9 h-9 bg-blue-50 border border-blue-100 rounded-lg flex items-center justify-center shrink-0">
+            <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <p class="font-bold text-navy-800 text-sm" style="font-family: var(--font-display); text-transform: uppercase;">No Obligation</p>
+            <p class="text-gray-600 text-xs mt-0.5">Free consultation, upfront pricing</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Emergency fallback -->
+      <div class="mt-8 bg-navy-800 rounded-lg p-7 text-white text-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-[0.04]" style="background-image: linear-gradient(0deg, rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 40px 40px;"></div>
+        <div class="relative">
+          <div class="flex items-center justify-center gap-2 mb-3">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-60"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
+            </span>
+            <span class="text-amber-400 text-xs font-bold tracking-widest uppercase">Need a plumber now?</span>
+          </div>
+          <p class="text-gray-300 text-sm mb-4 max-w-md mx-auto">Can't wait for an appointment? Call us directly for same-day emergency service across Sydney CBD.</p>
+          <a href="tel:0412555178" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-lg text-sm transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            Call 0412 555 178
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<!-- Cal.com Inline Embed -->
+<script is:inline>
+  (function (C, A, L) {
+    let p = function (a, ar) { a.q.push(ar); };
+    let d = C.document;
+    C.Cal = C.Cal || function () {
+      let cal = C.Cal;
+      let ar = arguments;
+      if (!cal.loaded) {
+        cal.ns = {};
+        cal.q = cal.q || [];
+        d.head.appendChild(d.createElement("script")).src = A;
+        cal.loaded = true;
+      }
+      if (ar[0] === L) {
+        const api = function () { p(api, arguments); };
+        const namespace = ar[1];
+        api.q = api.q || [];
+        if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar);
+        return;
+      }
+      p(cal, ar);
+    };
+  })(window, "https://app.cal.com/embed/embed.js", "init");
+
+  Cal("init", "consultation", { origin: "https://cal.com" });
+  Cal.ns.consultation("inline", {
+    elementOrSelector: "#cal-booking",
+    calLink: "alister-maddrell-rmtqo9/consultation",
+    layout: "month_view",
+    config: { theme: "light" },
+  });
+  Cal.ns.consultation("ui", {
+    theme: "light",
+    styles: { branding: { brandColor: "#2F6BFB" } },
+    hideEventTypeDetails: false,
+    layout: "month_view",
+  });
+</script>

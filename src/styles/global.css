@@ -719,6 +719,59 @@ footer .border-t.pt-6 {
 }
 
 /* ============================================
+   FLOATING BOOKING CTA
+   ============================================ */
+.floating-cta {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  background: linear-gradient(135deg, #3A7BF8, #2F6BFB, #1D55E0);
+  color: white;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 50px;
+  box-shadow:
+    0 4px 16px rgba(47, 107, 251, 0.35),
+    0 2px 6px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.floating-cta.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.floating-cta:hover {
+  background: linear-gradient(135deg, #2F6BFB, #1D55E0, #1845B8);
+  box-shadow:
+    0 8px 28px rgba(47, 107, 251, 0.45),
+    0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px) scale(1.03);
+}
+
+@media (max-width: 639px) {
+  .floating-cta {
+    bottom: 16px;
+    right: 16px;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.8125rem;
+  }
+}
+
+/* ============================================
    REDUCED MOTION
    ============================================ */
 @media (prefers-reduced-motion: reduce) {
