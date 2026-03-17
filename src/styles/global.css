@@ -65,12 +65,22 @@
   --color-border: #E5E7EB;
   --color-border-light: #F3F4F6;
 
-  /* Shadow system — refined, multi-layered depth */
+  /* Shadow system — premium multi-layered depth */
   --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
   --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
-  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.03);
-  --shadow-elevated: 0 12px 28px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
-  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.03);
+  --shadow-medium:
+    0 4px 12px rgba(0, 0, 0, 0.07),
+    0 1px 4px rgba(0, 0, 0, 0.04),
+    0 0 0 1px rgba(0, 0, 0, 0.02);
+  --shadow-elevated:
+    0 16px 40px rgba(0, 0, 0, 0.1),
+    0 6px 16px rgba(0, 0, 0, 0.06),
+    0 2px 6px rgba(0, 0, 0, 0.03),
+    0 0 0 1px rgba(0, 0, 0, 0.02);
+  --shadow-card:
+    0 1px 3px rgba(0, 0, 0, 0.04),
+    0 4px 14px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
 
   /* Font */
   --font-sans: 'Source Sans 3', ui-sans-serif, system-ui, sans-serif;
@@ -90,24 +100,44 @@ body {
   font-family: var(--font-sans);
   color: var(--color-text-primary);
   font-size: 1rem;
-  line-height: 1.7;
+  line-height: 1.65;
   background: #FFFFFF;
 }
 
-/* Typographic scale — strong, condensed headings */
+/* Typographic scale — strong, condensed headings with premium refinement */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   font-weight: 700;
   text-wrap: balance;
   text-transform: uppercase;
-  letter-spacing: 0.01em;
-  line-height: 1.1;
+  letter-spacing: 0.04em;
+  line-height: 1.05;
 }
 
-h1 { font-size: clamp(2.25rem, 5vw + 1rem, 3.75rem); font-weight: 800; }
-h2 { font-size: clamp(1.75rem, 3vw + 0.75rem, 2.75rem); }
-h3 { font-size: clamp(1.125rem, 0.5vw + 1rem, 1.375rem); }
+h1 {
+  font-size: clamp(2.25rem, 5vw + 1rem, 3.75rem);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+h2 {
+  font-size: clamp(1.75rem, 3vw + 0.75rem, 2.75rem);
+  letter-spacing: 0.04em;
+}
+h3 {
+  font-size: clamp(1.125rem, 0.5vw + 1rem, 1.375rem);
+  letter-spacing: 0.03em;
+}
 h4 { font-size: 1.125rem; }
+
+/* Text shadow for headings on dark backgrounds */
+.bg-navy-800 h1,
+.bg-navy-800 h2,
+.bg-navy-800 h3,
+.bg-navy-900 h1,
+.bg-navy-900 h2,
+.bg-navy-900 h3 {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+}
 
 /* ============================================
    SELECTION
@@ -126,10 +156,30 @@ h4 { font-size: 1.125rem; }
 ::-webkit-scrollbar-thumb:hover { background: var(--color-blue-500); }
 
 /* ============================================
-   TRANSITIONS
+   TRANSITIONS — Smoother, more premium feel
    ============================================ */
 a, button {
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ============================================
+   SECTION SPACING — Premium vertical rhythm
+   ============================================ */
+section {
+  --section-padding: clamp(5rem, 8vw, 8rem);
+}
+
+/* Override section padding on content sections (not hero/badges) */
+.py-20 {
+  padding-top: clamp(5rem, 8vw, 8rem) !important;
+  padding-bottom: clamp(5rem, 8vw, 8rem) !important;
+}
+
+.md\:py-28 {
+  @media (min-width: 768px) {
+    padding-top: clamp(6rem, 10vw, 9rem) !important;
+    padding-bottom: clamp(6rem, 10vw, 9rem) !important;
+  }
 }
 
 /* ============================================
@@ -138,8 +188,8 @@ a, button {
 .reveal {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.5s ease,
-              transform 0.5s ease;
+  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .reveal.visible {
@@ -150,8 +200,8 @@ a, button {
 .reveal-left {
   opacity: 0;
   transform: translateX(-30px);
-  transition: opacity 0.5s ease,
-              transform 0.5s ease;
+  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .reveal-left.visible {
@@ -162,8 +212,8 @@ a, button {
 .reveal-right {
   opacity: 0;
   transform: translateX(30px);
-  transition: opacity 0.5s ease,
-              transform 0.5s ease;
+  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .reveal-right.visible {
@@ -173,11 +223,11 @@ a, button {
 
 /* Stagger delays */
 .stagger-1 { transition-delay: 0ms; }
-.stagger-2 { transition-delay: 80ms; }
-.stagger-3 { transition-delay: 160ms; }
-.stagger-4 { transition-delay: 240ms; }
-.stagger-5 { transition-delay: 320ms; }
-.stagger-6 { transition-delay: 400ms; }
+.stagger-2 { transition-delay: 100ms; }
+.stagger-3 { transition-delay: 200ms; }
+.stagger-4 { transition-delay: 300ms; }
+.stagger-5 { transition-delay: 400ms; }
+.stagger-6 { transition-delay: 500ms; }
 
 /* ============================================
    FORM INPUTS
@@ -200,33 +250,64 @@ select:focus {
 .section-label {
   font-family: var(--font-display);
   font-size: 0.875rem;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   color: var(--color-blue-600);
   text-transform: uppercase;
   font-weight: 600;
 }
 
-/* Blue accent bar */
+/* Blue accent bar — refined with gradient */
 .accent-bar {
   width: 48px;
   height: 3px;
-  background: var(--color-blue-600);
+  background: linear-gradient(90deg, var(--color-blue-600), var(--color-blue-400));
   border-radius: 2px;
 }
 
 /* ============================================
-   CARDS — Clean, bordered
+   NAVBAR — Premium polish
+   ============================================ */
+#navbar #navbar-bg {
+  backdrop-filter: blur(16px) saturate(1.5);
+  -webkit-backdrop-filter: blur(16px) saturate(1.5);
+  border-bottom-color: transparent;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#navbar-bg.shadow-md {
+  border-bottom-color: rgba(0, 0, 0, 0.06) !important;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.04),
+    0 4px 16px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Nav CTA button premium gradient */
+header a[href="tel:0412555178"].bg-blue-600 {
+  background: linear-gradient(135deg, #3A7BF8, #2F6BFB, #1D55E0);
+  box-shadow: 0 2px 8px rgba(47, 107, 251, 0.25);
+}
+
+header a[href="tel:0412555178"].bg-blue-600:hover {
+  background: linear-gradient(135deg, #2F6BFB, #1D55E0, #1845B8);
+  box-shadow: 0 4px 14px rgba(47, 107, 251, 0.35);
+}
+
+/* ============================================
+   CARDS — Premium multi-layered depth
    ============================================ */
 
 /* Service card */
 .service-card {
   position: relative;
   background: white;
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
   border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-card);
-  transition: all 0.25s ease;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.04),
+    0 4px 14px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .service-card::before {
@@ -236,16 +317,21 @@ select:focus {
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--color-blue-600);
+  background: linear-gradient(90deg, var(--color-blue-600), var(--color-blue-400));
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 1;
 }
 
 .service-card:hover {
-  box-shadow: var(--shadow-elevated);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.08),
+    0 16px 40px rgba(0, 0, 0, 0.06),
+    0 2px 6px rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
   border-color: var(--color-blue-200);
-  transform: translateY(-3px);
+  transform: translateY(-4px);
 }
 
 .service-card:hover::before {
@@ -256,20 +342,29 @@ select:focus {
 .testimonial-card {
   position: relative;
   background: white;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-card);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.03),
+    0 4px 14px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
   overflow: hidden;
-  transition: all 0.25s ease;
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .testimonial-card:hover {
-  box-shadow: var(--shadow-medium);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.07),
+    0 16px 36px rgba(0, 0, 0, 0.05),
+    0 2px 6px rgba(0, 0, 0, 0.02),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+  border-color: var(--color-blue-100);
 }
 
 .testimonial-card blockquote {
   font-size: 0.9375rem;
-  line-height: 1.8;
+  line-height: 1.75;
 }
 
 .testimonial-card .quote-mark {
@@ -288,15 +383,21 @@ select:focus {
 /* Trust badge */
 .trust-badge {
   background: white;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid var(--color-border);
   padding: 1.25rem;
-  box-shadow: var(--shadow-card);
-  transition: all 0.2s ease;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.03),
+    0 4px 12px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .trust-badge:hover {
-  box-shadow: var(--shadow-medium);
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.07),
+    0 2px 6px rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
   border-color: var(--color-blue-200);
   transform: translateY(-2px);
 }
@@ -305,30 +406,82 @@ select:focus {
 .stat-number {
   font-family: var(--font-display);
   font-weight: 800;
-  color: var(--color-blue-600);
+  background: linear-gradient(135deg, var(--color-blue-500), var(--color-blue-700));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Stat label refinement */
 .stat-label {
   font-size: 0.9375rem;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
 }
 
 /* ============================================
-   BUTTON ENHANCEMENTS
+   BUTTON ENHANCEMENTS — Premium feel
    ============================================ */
 .btn-primary {
-  transition: all 0.25s ease;
+  padding: 1rem 2.25rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #3A7BF8, #2F6BFB, #1D55E0);
+  box-shadow:
+    0 2px 8px rgba(47, 107, 251, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(47, 107, 251, 0.3);
+  box-shadow:
+    0 8px 24px rgba(47, 107, 251, 0.35),
+    0 4px 12px rgba(47, 107, 251, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.btn-primary:focus-visible {
+  outline: 3px solid rgba(47, 107, 251, 0.5);
+  outline-offset: 3px;
+}
+
+.btn-secondary {
+  border-radius: 10px;
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .btn-secondary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.14);
+}
+
+.btn-secondary:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.4);
+  outline-offset: 3px;
+}
+
+/* CTA section buttons */
+section .btn-primary {
+  padding: 1.05rem 2.5rem;
+}
+
+/* ============================================
+   ACCENT COLOR — Amber gradient refinement
+   ============================================ */
+.bg-amber-500 {
+  background: linear-gradient(135deg, #FBBF24, #F8B400, #D97706) !important;
+}
+
+/* Amber tag on service cards */
+.service-card .bg-amber-500 {
+  box-shadow: 0 2px 8px rgba(248, 180, 0, 0.35);
+}
+
+/* ============================================
+   HERO SECTION REFINEMENTS
+   ============================================ */
+/* Hero availability badge inner glow */
+section.bg-navy-800 .inline-flex.bg-white\/\[0\.08\] {
+  backdrop-filter: blur(8px);
 }
 
 /* ============================================
@@ -345,8 +498,17 @@ select:focus {
 }
 
 /* ============================================
-   FOOTER REFINEMENTS
+   FOOTER REFINEMENTS — Premium breathing room
    ============================================ */
+footer.bg-navy-800 {
+  padding-top: 0;
+}
+
+footer.bg-navy-800 > div:last-child {
+  padding-top: clamp(3rem, 5vw, 4.5rem);
+  padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+
 footer nav a,
 footer ul a,
 footer .text-sm {
@@ -354,7 +516,83 @@ footer .text-sm {
 }
 
 footer ul {
-  line-height: 1.8;
+  line-height: 1.9;
+}
+
+/* Footer link hover — smooth underline effect */
+footer ul a {
+  position: relative;
+  text-decoration: none !important;
+  transition: color 0.3s ease;
+}
+
+footer ul a::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-blue-400), var(--color-blue-600));
+  transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+footer ul a:hover::after {
+  width: 100%;
+}
+
+/* Footer top border — amber gradient accent */
+footer .h-1.bg-blue-600 {
+  background: linear-gradient(90deg, var(--color-blue-700), var(--color-blue-500), var(--color-blue-700)) !important;
+}
+
+/* Footer social icons — refined hover */
+footer .flex.gap-2 a {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+footer .flex.gap-2 a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(47, 107, 251, 0.3);
+}
+
+/* Footer bottom bar — more breathing room */
+footer .border-t.pt-6 {
+  padding-top: 1.75rem;
+  margin-top: 1rem;
+}
+
+/* ============================================
+   DARK SECTION IMAGE OVERLAYS — Premium depth
+   ============================================ */
+.bg-navy-800 .rounded-xl {
+  box-shadow:
+    0 12px 36px rgba(0, 0, 0, 0.3),
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Floating badges on dark bg — premium shadow */
+.bg-navy-800 .shadow-elevated {
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.15),
+    0 6px 16px rgba(0, 0, 0, 0.08),
+    0 2px 6px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* ============================================
+   SUBURB TAGS — Refined styling
+   ============================================ */
+.bg-navy-800.text-white.text-xs {
+  border-radius: 6px;
+  transition: all 0.25s ease;
+}
+
+/* ============================================
+   SERVICE AREA MAP — Premium framing
+   ============================================ */
+.shadow-elevated.border {
+  border-radius: 10px;
 }
 
 /* ============================================
