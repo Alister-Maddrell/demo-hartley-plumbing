@@ -1,88 +1,81 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import CtaBanner from '../components/CtaBanner.astro';
 
 const services = [
   {
-    icon: '<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>',
+    icon: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>',
     title: 'Emergency Repairs',
     description: 'Burst pipes, blocked drains, gas leaks, or flooding — your emergency plumber arrives within 60 minutes, 24/7, so the damage stops before it gets worse.',
-    color: 'bg-amber-50 text-amber-600 border-amber-200',
-    borderColor: 'border-t-amber-500',
     image: 'https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=600&h=400&fit=crop',
     alt: 'Plumbing tools including pipe wrench ready for emergency repair work',
+    accent: 'amber',
   },
   {
-    icon: '<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955a1.126 1.126 0 011.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/></svg>',
+    icon: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955a1.126 1.126 0 011.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/></svg>',
     title: 'Bathroom Renovations',
-    description: 'Get the bathroom you have always wanted. One team handles plumbing, tiling, waterproofing, and fixtures from concept to completion — so you deal with one point of contact, not five.',
-    color: 'bg-blue-50 text-blue-600 border-blue-200',
-    borderColor: 'border-t-blue-600',
+    description: 'Get the bathroom you have always wanted. One team handles plumbing, tiling, waterproofing, and fixtures from concept to completion — one point of contact, not five.',
     image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&h=400&fit=crop',
     alt: 'Modern renovated bathroom with clean white fixtures and elegant tiling',
+    accent: 'blue',
   },
   {
-    icon: '<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/></svg>',
+    icon: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/></svg>',
     title: 'Commercial Plumbing',
-    description: 'Avoid costly shutdowns and compliance headaches. Scheduled maintenance, new fit-outs, and compliance work keep your office, restaurant, or retail space running smoothly.',
-    color: 'bg-navy-50 text-navy-600 border-navy-200',
-    borderColor: 'border-t-navy-700',
+    description: 'Avoid costly shutdowns and compliance headaches. Scheduled maintenance, new fit-outs, and compliance work keep your business running smoothly.',
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop',
     alt: 'Modern commercial office building with glass facade',
+    accent: 'blue',
   },
   {
-    icon: '<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1.001A3.75 3.75 0 0012 18z"/></svg>',
+    icon: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1.001A3.75 3.75 0 0012 18z"/></svg>',
     title: 'Hot Water Systems',
     description: 'No hot water is miserable — get yours back fast. Same-day supply, installation, and repair across all brands: gas, electric, solar, and heat pump.',
-    color: 'bg-orange-50 text-orange-600 border-orange-200',
-    borderColor: 'border-t-orange-500',
     image: 'https://images.unsplash.com/photo-1585128792020-803d29415281?w=600&h=400&fit=crop',
     alt: 'Modern hot water system unit installed in a utility area',
+    accent: 'amber',
   },
   {
-    icon: '<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>',
+    icon: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>',
     title: 'Drain Cleaning',
     description: 'Stop recurring blockages for good. CCTV drain inspections pinpoint the exact problem, then high-pressure jet blasting and root cutting clear it permanently.',
-    color: 'bg-blue-50 text-blue-600 border-blue-200',
-    borderColor: 'border-t-blue-500',
     image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&h=400&fit=crop',
     alt: 'High-pressure water jet used for professional drain cleaning',
+    accent: 'blue',
   },
   {
-    icon: '<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z"/></svg>',
+    icon: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z"/></svg>',
     title: 'Gas Fitting',
     description: 'Protect your family with licensed gas work. Cooktop installations, gas line repairs, leak detection, and compliance certificates — all done safely and to code.',
-    color: 'bg-red-50 text-red-600 border-red-200',
-    borderColor: 'border-t-red-500',
     image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop',
     alt: 'Gas cooktop with blue flames on a modern kitchen stovetop',
+    accent: 'amber',
   },
 ];
 
 const steps = [
   {
     number: '01',
-    title: 'Call or Book Online',
-    description: 'Reach out by phone, form, or text. You hear back within minutes — not hours.',
-    icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>',
+    title: 'Book Online',
+    description: 'Fill out the form or call us. You hear back within minutes — not hours.',
+    icon: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>',
   },
   {
     number: '02',
-    title: 'Get Your Free Quote',
-    description: 'You receive a transparent, written quote before any work starts. No obligation, no pressure.',
-    icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15a2.25 2.25 0 012.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z"/></svg>',
+    title: 'Free Quote',
+    description: 'You receive a transparent, written quote before any work starts. No obligation.',
+    icon: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15a2.25 2.25 0 012.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z"/></svg>',
   },
   {
     number: '03',
-    title: 'Problem Fixed Right',
-    description: 'Your licensed plumber completes the work to the highest standard — on time and on the quoted price.',
-    icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17l-5.66-5.66a8 8 0 1111.31 0l-5.65 5.66zm0 0L12 21"/></svg>',
+    title: 'Problem Fixed',
+    description: 'Your licensed plumber completes the work on time and on the quoted price.',
+    icon: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17l-5.66-5.66a8 8 0 1111.31 0l-5.65 5.66zm0 0L12 21"/></svg>',
   },
   {
     number: '04',
-    title: 'You\'re Covered',
-    description: 'Every job is backed by a lifetime workmanship guarantee. If it breaks, you pay nothing to have it fixed.',
-    icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>',
+    title: "You're Covered",
+    description: 'Every job is backed by a lifetime workmanship guarantee. If it breaks, you pay nothing.',
+    icon: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>',
   },
 ];
 
@@ -93,7 +86,7 @@ const faqs = [
   },
   {
     question: 'Are you available on weekends?',
-    answer: 'Yes. We work Saturdays 8am-2pm for scheduled jobs, and our emergency line is available 24/7 including Sundays and public holidays.',
+    answer: 'Yes. We work Saturdays 8am–2pm for scheduled jobs, and our emergency line is available 24/7 including Sundays and public holidays.',
   },
   {
     question: 'Do you provide written quotes?',
@@ -101,11 +94,11 @@ const faqs = [
   },
   {
     question: 'Are your plumbers licensed?',
-    answer: "Yes — every plumber holds a current NSW plumbing licence and is fully insured. That means your work is covered by insurance and warranty. Licence numbers are available on request.",
+    answer: 'Yes — every plumber holds a current NSW plumbing licence and is fully insured. That means your work is covered by insurance and warranty. Licence numbers are available on request.',
   },
   {
     question: 'What suburbs do you cover?',
-    answer: "If you are in inner Sydney — within 15km of the CBD — you are in the service area. For larger commercial jobs, the greater Sydney metro area is also covered.",
+    answer: 'If you are in inner Sydney — within 15km of the CBD — you are in the service area. For larger commercial jobs, the greater Sydney metro area is also covered.',
   },
 ];
 ---
@@ -114,38 +107,56 @@ const faqs = [
   title="Plumbing Services Sydney CBD | Hartley & Co Plumbing"
   description="Emergency repairs, bathroom renos, hot water systems and more in Sydney CBD. Licensed plumbers, upfront pricing, lifetime guarantee. Book your free quote now."
 >
-  <!-- Page Header -->
-  <section class="relative bg-navy-800 overflow-hidden">
+  <!-- ========================================
+       PAGE HEADER
+       ======================================== -->
+  <section class="relative overflow-hidden" style="background: var(--color-navy);">
     <div class="absolute inset-0 opacity-[0.04]" style="background-image: linear-gradient(0deg, rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 40px 40px;"></div>
 
-    <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-16 md:py-24 text-center">
-      <p class="section-label text-blue-400 mb-3">Our Services</p>
-      <div class="w-12 h-1 bg-blue-600 mx-auto mb-5"></div>
-      <h1 class="text-white mb-4">
-        Every Plumbing Problem Solved
-      </h1>
-      <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+    <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-20 md:py-28 text-center">
+      <p class="section-label justify-center mb-3" style="color: var(--color-blue-light);">Our Services</p>
+      <div class="mx-auto mb-5" style="width: 48px; height: 3px; background: var(--color-blue); border-radius: 8px;"></div>
+      <h1 class="mb-5" style="color: #fff;">Every Plumbing Problem Solved</h1>
+      <p class="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed" style="color: #CBD5E1;">
         From midnight emergencies to dream bathroom renovations — your home and business plumbing needs, handled by licensed Sydney tradespeople.
       </p>
     </div>
   </section>
 
-  <!-- Service Cards -->
-  <section class="py-20 md:py-28 bg-bg-cream">
+  <!-- ========================================
+       SERVICE CARDS
+       ======================================== -->
+  <section class="py-20 md:py-28" style="background: var(--color-slate);">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {services.map((service, i) => (
-          <div class={`reveal stagger-${(i % 3) + 1} group bg-white rounded-lg overflow-hidden border border-gray-200 border-t-3 ${service.borderColor} shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elevated)] transition-all`}>
+          <div class={`reveal stagger-${(i % 6) + 1} card ${service.accent === 'amber' ? 'card-amber' : 'card-blue'} overflow-hidden group`}>
             <!-- Image -->
             <div class="h-48 overflow-hidden relative">
-              <img src={service.image} alt={service.alt} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width="600" height="400" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/15 to-transparent"></div>
+              <img
+                src={service.image}
+                alt={service.alt}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                width="600"
+                height="400"
+              />
+              <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.15), transparent);"></div>
             </div>
+
             <!-- Content -->
             <div class="p-6">
-              <div class:list={['w-12 h-12 rounded-lg flex items-center justify-center mb-4 border', service.color]} set:html={service.icon} />
-              <h3 class="text-lg font-bold text-navy-800 mb-2">{service.title}</h3>
-              <p class="text-gray-600 text-sm leading-relaxed">{service.description}</p>
+              <div
+                class="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+                style={`background: ${service.accent === 'amber' ? 'var(--color-amber-pale)' : 'var(--color-blue-pale)'}; border: 1px solid ${service.accent === 'amber' ? '#FDE68A' : '#BFDBFE'}; color: ${service.accent === 'amber' ? 'var(--color-amber-dark)' : 'var(--color-blue)'};`}
+                set:html={service.icon}
+              />
+              <h3 class="text-lg font-bold mb-2" style="color: var(--color-navy);">{service.title}</h3>
+              <p class="text-sm leading-relaxed mb-5" style="color: var(--color-text-secondary);">{service.description}</p>
+              <a href="/booking" class="link-arrow inline-flex items-center gap-1.5 font-bold text-sm" style="color: var(--color-blue);">
+                Book Now
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </a>
             </div>
           </div>
         ))}
@@ -153,36 +164,35 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Our Process -->
-  <section class="bg-navy-800 py-20 md:py-28 relative overflow-hidden">
+  <!-- ========================================
+       PROCESS
+       ======================================== -->
+  <section class="relative py-20 md:py-28 overflow-hidden" style="background: var(--color-navy);">
     <div class="absolute inset-0 opacity-[0.04]" style="background-image: linear-gradient(0deg, rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 40px 40px;"></div>
 
     <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
       <div class="text-center mb-14 reveal">
-        <p class="section-label text-blue-400 mb-2">How It Works</p>
-        <div class="w-12 h-1 bg-blue-600 mx-auto mb-4"></div>
-        <h2 class="text-white mb-3">How Your Job Gets Done</h2>
-        <p class="text-gray-300 text-lg max-w-md mx-auto">Four simple steps — no runaround, no surprises, no stress.</p>
+        <p class="section-label justify-center mb-2" style="color: var(--color-blue-light);">How It Works</p>
+        <div class="mx-auto mb-5" style="width: 48px; height: 3px; background: var(--color-blue); border-radius: 8px;"></div>
+        <h2 class="mb-3" style="color: #fff;">How Your Job Gets Done</h2>
+        <p class="text-lg max-w-md mx-auto" style="color: #CBD5E1;">Four simple steps — no runaround, no surprises, no stress.</p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {steps.map((step, i) => (
           <div class={`reveal stagger-${i + 1} relative`}>
-            <div class="bg-white rounded-lg p-6 h-full relative overflow-hidden border-t-3 border-t-blue-600">
-              <!-- Step number -->
+            <div class="card card-blue p-6 h-full relative overflow-hidden">
               <div class="flex items-start justify-between mb-4">
                 <span class="stat-number text-4xl leading-none">{step.number}</span>
-                <div class="w-10 h-10 bg-navy-800 rounded-lg flex items-center justify-center text-blue-400 shrink-0" set:html={step.icon} />
+                <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style="background: var(--color-navy); color: var(--color-blue-light);" set:html={step.icon} />
               </div>
-
-              <h3 class="text-base font-bold text-navy-800 mb-2">{step.title}</h3>
-              <p class="text-gray-600 text-sm leading-relaxed">{step.description}</p>
+              <h3 class="text-base font-bold mb-2" style="color: var(--color-navy);">{step.title}</h3>
+              <p class="text-sm leading-relaxed" style="color: var(--color-text-secondary);">{step.description}</p>
             </div>
 
-            <!-- Connector arrow -->
             {i < steps.length - 1 && (
               <div class="hidden lg:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10 w-6 h-6 items-center justify-center">
-                <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="color: var(--color-blue-light);"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
               </div>
             )}
           </div>
@@ -191,94 +201,102 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Before/After Gallery -->
-  <section class="py-20 md:py-28 bg-white">
+  <!-- ========================================
+       BEFORE / AFTER SLIDERS
+       ======================================== -->
+  <section class="py-20 md:py-28" style="background: #fff;">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
       <div class="text-center mb-12 reveal">
-        <p class="section-label mb-2">Our Work</p>
-        <div class="accent-bar mx-auto mb-4"></div>
-        <h2 class="text-navy-800">Before & After</h2>
+        <p class="section-label justify-center mb-2">Our Work</p>
+        <div class="mx-auto mb-5" style="width: 48px; height: 3px; background: var(--color-blue); border-radius: 8px;"></div>
+        <h2 style="color: var(--color-navy);">Before &amp; After</h2>
       </div>
+
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Slider 1 -->
         <div class="reveal stagger-1 space-y-3">
-          <div class="ba-slider relative aspect-[4/3] rounded-lg overflow-hidden shadow-elevated cursor-col-resize select-none border border-gray-200" tabindex="0" role="slider" aria-label="Before and after comparison: Bathroom renovation" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+          <div class="ba-slider relative aspect-[4/3] overflow-hidden cursor-col-resize select-none" style="border-radius: 8px; border: 1px solid var(--color-border); box-shadow: var(--shadow-elevated);" tabindex="0" role="slider" aria-label="Before and after comparison: Bathroom renovation" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
             <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&h=450&fit=crop" alt="After: Completed bathroom renovation" class="w-full h-full object-cover" />
             <div class="ba-before absolute inset-0 overflow-hidden" style="width:50%">
               <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=450&fit=crop" alt="Before: Old bathroom needing renovation" class="w-full h-full object-cover" style="min-width: calc(100cqi)" />
             </div>
-            <div class="ba-handle absolute top-0 bottom-0 w-0.5 bg-blue-600 shadow-lg" style="left:50%">
-              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-9 h-9 bg-blue-600 rounded-lg shadow-lg flex items-center justify-center">
-                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/></svg>
+            <div class="ba-handle absolute top-0 bottom-0" style="left:50%; width: 2px; background: var(--color-blue); box-shadow: 0 0 8px rgba(0,0,0,0.3);">
+              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center" style="background: var(--color-blue); border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">
+                <svg width="16" height="16" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/></svg>
               </div>
             </div>
-            <span class="absolute top-3 left-3 bg-navy-800/90 text-white text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded">Before</span>
-            <span class="absolute top-3 right-3 bg-white/95 text-navy-800 text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded">After</span>
+            <span class="absolute top-3 left-3 text-white text-[10px] font-bold tracking-wider uppercase px-2.5 py-1" style="background: rgba(12,26,46,0.9); border-radius: 8px;">Before</span>
+            <span class="absolute top-3 right-3 text-[10px] font-bold tracking-wider uppercase px-2.5 py-1" style="background: rgba(255,255,255,0.95); color: var(--color-navy); border-radius: 8px;">After</span>
           </div>
-          <p class="text-gray-600 text-sm text-center font-medium">Complete bathroom renovation — Surry Hills</p>
+          <p class="text-sm text-center font-medium" style="color: var(--color-text-secondary);">Complete bathroom renovation — Surry Hills</p>
         </div>
+
         <!-- Slider 2 -->
         <div class="reveal stagger-2 space-y-3">
-          <div class="ba-slider relative aspect-[4/3] rounded-lg overflow-hidden shadow-elevated cursor-col-resize select-none border border-gray-200" tabindex="0" role="slider" aria-label="Before and after comparison: Burst pipe repair" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+          <div class="ba-slider relative aspect-[4/3] overflow-hidden cursor-col-resize select-none" style="border-radius: 8px; border: 1px solid var(--color-border); box-shadow: var(--shadow-elevated);" tabindex="0" role="slider" aria-label="Before and after comparison: Burst pipe repair" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
             <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&h=450&fit=crop" alt="After: Repaired burst pipe" class="w-full h-full object-cover" />
             <div class="ba-before absolute inset-0 overflow-hidden" style="width:50%">
               <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=600&h=450&fit=crop" alt="Before: Burst pipe damage" class="w-full h-full object-cover" style="min-width: calc(100cqi)" />
             </div>
-            <div class="ba-handle absolute top-0 bottom-0 w-0.5 bg-blue-600 shadow-lg" style="left:50%">
-              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-9 h-9 bg-blue-600 rounded-lg shadow-lg flex items-center justify-center">
-                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/></svg>
+            <div class="ba-handle absolute top-0 bottom-0" style="left:50%; width: 2px; background: var(--color-blue); box-shadow: 0 0 8px rgba(0,0,0,0.3);">
+              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center" style="background: var(--color-blue); border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">
+                <svg width="16" height="16" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/></svg>
               </div>
             </div>
-            <span class="absolute top-3 left-3 bg-navy-800/90 text-white text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded">Before</span>
-            <span class="absolute top-3 right-3 bg-white/95 text-navy-800 text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded">After</span>
+            <span class="absolute top-3 left-3 text-white text-[10px] font-bold tracking-wider uppercase px-2.5 py-1" style="background: rgba(12,26,46,0.9); border-radius: 8px;">Before</span>
+            <span class="absolute top-3 right-3 text-[10px] font-bold tracking-wider uppercase px-2.5 py-1" style="background: rgba(255,255,255,0.95); color: var(--color-navy); border-radius: 8px;">After</span>
           </div>
-          <p class="text-gray-600 text-sm text-center font-medium">Emergency burst pipe repair — CBD office</p>
+          <p class="text-sm text-center font-medium" style="color: var(--color-text-secondary);">Emergency burst pipe repair — CBD office</p>
         </div>
+
         <!-- Slider 3 -->
         <div class="reveal stagger-3 space-y-3">
-          <div class="ba-slider relative aspect-[4/3] rounded-lg overflow-hidden shadow-elevated cursor-col-resize select-none border border-gray-200" tabindex="0" role="slider" aria-label="Before and after comparison: Hot water system replacement" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+          <div class="ba-slider relative aspect-[4/3] overflow-hidden cursor-col-resize select-none" style="border-radius: 8px; border: 1px solid var(--color-border); box-shadow: var(--shadow-elevated);" tabindex="0" role="slider" aria-label="Before and after comparison: Hot water system replacement" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
             <img src="https://images.unsplash.com/photo-1585128792020-803d29415281?w=600&h=450&fit=crop" alt="After: New hot water system installed" class="w-full h-full object-cover" />
             <div class="ba-before absolute inset-0 overflow-hidden" style="width:50%">
               <img src="https://images.unsplash.com/photo-1585128792020-803d29415281?w=600&h=450&fit=crop&sat=-20" alt="Before: Old hot water system" class="w-full h-full object-cover" style="min-width: calc(100cqi)" />
             </div>
-            <div class="ba-handle absolute top-0 bottom-0 w-0.5 bg-blue-600 shadow-lg" style="left:50%">
-              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-9 h-9 bg-blue-600 rounded-lg shadow-lg flex items-center justify-center">
-                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/></svg>
+            <div class="ba-handle absolute top-0 bottom-0" style="left:50%; width: 2px; background: var(--color-blue); box-shadow: 0 0 8px rgba(0,0,0,0.3);">
+              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center" style="background: var(--color-blue); border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">
+                <svg width="16" height="16" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/></svg>
               </div>
             </div>
-            <span class="absolute top-3 left-3 bg-navy-800/90 text-white text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded">Before</span>
-            <span class="absolute top-3 right-3 bg-white/95 text-navy-800 text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded">After</span>
+            <span class="absolute top-3 left-3 text-white text-[10px] font-bold tracking-wider uppercase px-2.5 py-1" style="background: rgba(12,26,46,0.9); border-radius: 8px;">Before</span>
+            <span class="absolute top-3 right-3 text-[10px] font-bold tracking-wider uppercase px-2.5 py-1" style="background: rgba(255,255,255,0.95); color: var(--color-navy); border-radius: 8px;">After</span>
           </div>
-          <p class="text-gray-600 text-sm text-center font-medium">Hot water system replacement — Darlinghurst</p>
+          <p class="text-sm text-center font-medium" style="color: var(--color-text-secondary);">Hot water system replacement — Darlinghurst</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="bg-bg-cream py-20 md:py-28">
+  <!-- ========================================
+       FAQ
+       ======================================== -->
+  <section class="py-20 md:py-28" style="background: var(--color-slate);">
     <div class="max-w-3xl mx-auto px-5 sm:px-8 lg:px-10">
       <div class="text-center mb-12 reveal">
-        <p class="section-label mb-2">FAQ</p>
-        <div class="accent-bar mx-auto mb-4"></div>
-        <h2 class="text-navy-800">Common Questions</h2>
+        <p class="section-label justify-center mb-2">FAQ</p>
+        <div class="mx-auto mb-5" style="width: 48px; height: 3px; background: var(--color-blue); border-radius: 8px;"></div>
+        <h2 style="color: var(--color-navy);">Common Questions</h2>
       </div>
+
       <div class="space-y-3">
         {faqs.map((faq, i) => (
-          <div class={`reveal stagger-${(i % 3) + 1} bg-white rounded-lg border border-gray-200 hover:border-blue-200 transition-colors`}>
+          <div class={`reveal stagger-${(i % 3) + 1} faq-item`}>
             <button
               class="faq-toggle w-full flex items-center justify-between px-6 py-4 text-left group"
               aria-expanded="false"
               data-faq={i}
             >
-              <span class="font-bold text-navy-800 text-sm pr-4 group-hover:text-blue-600 transition-colors">{faq.question}</span>
-              <div class="w-7 h-7 bg-gray-100 group-hover:bg-blue-50 rounded-lg flex items-center justify-center shrink-0 transition-colors">
-                <svg class="faq-chevron w-4 h-4 text-gray-500 group-hover:text-blue-600 transition-all duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+              <span class="font-bold text-sm pr-4 transition-colors" style="color: var(--color-navy);">{faq.question}</span>
+              <div class="w-7 h-7 rounded-lg flex items-center justify-center shrink-0 transition-colors" style="background: var(--color-slate);">
+                <svg class="faq-chevron w-4 h-4 transition-all duration-200" style="color: var(--color-text-muted);" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
               </div>
             </button>
             <div class="faq-content hidden">
               <div class="px-6 pb-5 -mt-1">
-                <p class="text-gray-600 text-sm leading-relaxed">{faq.answer}</p>
+                <p class="text-sm leading-relaxed" style="color: var(--color-text-secondary);">{faq.answer}</p>
               </div>
             </div>
           </div>
@@ -287,40 +305,29 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Service Areas -->
-  <section class="py-16 md:py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
-      <div class="text-center mb-10 reveal">
-        <p class="section-label mb-2">Coverage</p>
-        <div class="accent-bar mx-auto mb-4"></div>
-        <h2 class="text-navy-800 mb-3">Your Local Plumber</h2>
-        <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
-          Based in Sydney CBD, your plumber is always nearby — covering Darlinghurst, Surry Hills, Pyrmont, and all surrounding suburbs.
-        </p>
-      </div>
-      <div class="flex flex-wrap items-center justify-center gap-2 mb-8 reveal">
-        {['Sydney CBD', 'Darlinghurst', 'Surry Hills', 'Pyrmont', 'Ultimo', 'Chippendale', 'Glebe', 'Newtown', 'Redfern', 'Paddington'].map(suburb => (
-          <span class="bg-navy-800 text-white text-xs font-semibold px-3 py-1.5 rounded">{suburb}</span>
-        ))}
-      </div>
-      <div class="reveal rounded-lg overflow-hidden shadow-elevated border border-gray-200">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.9!2d151.209!3d-33.867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae3e3f05c8b1%3A0x5017d681632c7e0!2s78%20Pitt%20St%2C%20Sydney%20NSW%202000!5e0!3m2!1sen!2sau!4v1700000000000"
-          width="100%"
-          height="400"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Hartley & Co Plumbing location"
-        ></iframe>
-        <div class="h-1 bg-blue-600"></div>
+  <!-- ========================================
+       CTA
+       ======================================== -->
+  <section class="relative overflow-hidden" style="background: var(--color-navy);">
+    <div class="absolute inset-0 opacity-[0.04]" style="background-image: linear-gradient(0deg, rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+    <div class="relative max-w-3xl mx-auto px-5 sm:px-8 lg:px-10 py-20 md:py-28 text-center">
+      <h2 class="mb-4" style="color: #fff;">Ready to Book Your Plumber?</h2>
+      <p class="text-lg mb-8 max-w-xl mx-auto leading-relaxed" style="color: #CBD5E1;">
+        Whether it's an emergency or a planned job, your licensed plumber is one click away. Free quotes, no obligation.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a href="/booking" class="btn-primary">
+          Book Online Now
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="tel:0412555178" class="btn-outline btn-outline-light">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          Call 0412 555 178
+        </a>
       </div>
     </div>
   </section>
-
-  <!-- CTA -->
-  <CtaBanner />
 </Layout>
 
 <!-- FAQ Schema Markup -->
@@ -352,13 +359,27 @@ const faqs = [
       handleEl.style.left = `${percent}%`;
     }
 
-    slider.addEventListener('mousedown', (e) => { isDragging = true; updatePosition((e as MouseEvent).clientX); });
-    document.addEventListener('mousemove', (e) => { if (isDragging) updatePosition(e.clientX); });
-    document.addEventListener('mouseup', () => { isDragging = false; });
+    slider.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      updatePosition((e as MouseEvent).clientX);
+    });
+    document.addEventListener('mousemove', (e) => {
+      if (isDragging) updatePosition(e.clientX);
+    });
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+    });
 
-    slider.addEventListener('touchstart', (e) => { isDragging = true; updatePosition((e as TouchEvent).touches[0].clientX); }, { passive: true });
-    document.addEventListener('touchmove', (e) => { if (isDragging) updatePosition(e.touches[0].clientX); });
-    document.addEventListener('touchend', () => { isDragging = false; });
+    slider.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      updatePosition((e as TouchEvent).touches[0].clientX);
+    }, { passive: true });
+    document.addEventListener('touchmove', (e) => {
+      if (isDragging) updatePosition(e.touches[0].clientX);
+    });
+    document.addEventListener('touchend', () => {
+      isDragging = false;
+    });
 
     // Keyboard support
     let currentPercent = 50;
@@ -386,6 +407,7 @@ const faqs = [
     });
   });
 
+  // FAQ Toggle Logic
   document.querySelectorAll('.faq-toggle').forEach(button => {
     button.addEventListener('click', () => {
       const content = button.nextElementSibling as HTMLElement;
