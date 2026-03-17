@@ -1,7 +1,5 @@
 ---
 import '../styles/global.css';
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
 
 interface Props {
   title: string;
@@ -19,21 +17,17 @@ const { title, description } = Astro.props;
     <meta name="description" content={description} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/og-image.jpg" />
     <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#0F1B2D" />
+    <meta name="theme-color" content="#0C1A2E" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="canonical" href={Astro.url.href} />
     <title>{title}</title>
 
-    <!-- LocalBusiness Schema Markup -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Plumber",
       "name": "Hartley & Co Plumbing",
-      "image": "/og-image.jpg",
       "url": "https://hartleyplumbing.com.au",
       "telephone": "0412 555 178",
       "email": "info@hartleyplumbing.com.au",
@@ -45,123 +39,71 @@ const { title, description } = Astro.props;
         "postalCode": "2000",
         "addressCountry": "AU"
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -33.867,
-        "longitude": 151.209
-      },
+      "geo": { "@type": "GeoCoordinates", "latitude": -33.867, "longitude": 151.209 },
       "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "07:00",
-          "closes": "18:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Saturday",
-          "opens": "08:00",
-          "closes": "14:00"
-        }
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "18:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "14:00" }
       ],
-      "priceRange": "$$",
-      "areaServed": {
-        "@type": "GeoCircle",
-        "geoMidpoint": {
-          "@type": "GeoCoordinates",
-          "latitude": -33.867,
-          "longitude": 151.209
-        },
-        "geoRadius": "15000"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "200",
-        "bestRating": "5"
-      },
       "foundingDate": "2003",
-      "description": "Sydney CBD's trusted plumber for 20+ years. 24/7 emergency repairs, bathroom renovations, commercial plumbing, hot water systems, and gas fitting. Licensed, insured, and guaranteed.",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Plumbing Services",
-        "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "24/7 Emergency Plumbing" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bathroom Renovations" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Plumbing" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hot Water System Installation & Repair" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Drain Cleaning & CCTV Inspection" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gas Fitting" } }
-        ]
-      }
+      "priceRange": "$$",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "200", "bestRating": "5" },
+      "areaServed": { "@type": "GeoCircle", "geoMidpoint": { "@type": "GeoCoordinates", "latitude": -33.867, "longitude": 151.209 }, "geoRadius": "15000" }
     })} />
   </head>
-  <body class="min-h-screen flex flex-col bg-white antialiased">
-    <Navbar />
-
-    <!-- Emergency Alert Strip -->
-    <div id="emergency-banner" class="relative bg-amber-500 text-navy-900 overflow-hidden">
-      <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-2 sm:py-2.5 flex items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm font-bold">
-        <span class="relative flex h-2.5 w-2.5 shrink-0">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-navy-900 opacity-40"></span>
-          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-navy-900"></span>
-        </span>
-        <span>Emergency Plumber On Call — <a href="tel:0412555178" class="underline underline-offset-2 hover:no-underline transition-colors">0412 555 178</a></span>
-        <button id="dismiss-banner" class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 w-7 h-7 flex items-center justify-center rounded hover:bg-navy-900/10 transition-colors" aria-label="Dismiss banner">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
-      </div>
-    </div>
-
-    <main class="flex-1">
+  <body class="antialiased">
+    <main>
       <slot />
     </main>
-    <Footer />
+
+    <!-- Floating "Book" CTA -->
+    <div class="floating-cta" id="floating-cta">
+      <a href="/contact#booking">
+        <span class="pulse-dot"></span>
+        Book a Plumber
+      </a>
+    </div>
 
     <script>
-      document.getElementById('dismiss-banner')?.addEventListener('click', () => {
-        document.getElementById('emergency-banner')?.remove();
-      });
+      // Reveal animations
+      const revealEls = document.querySelectorAll('.reveal, .reveal-fade');
+      if ('IntersectionObserver' in window) {
+        const obs = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.01, rootMargin: '50px 0px -10px 0px' });
+        revealEls.forEach(el => obs.observe(el));
+      }
+      setTimeout(() => revealEls.forEach(el => el.classList.add('visible')), 3000);
 
-      // Scroll-triggered reveal animations
-      const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+      // Nav scroll
+      const navWrap = document.getElementById('nav-wrap');
+      if (navWrap) {
+        window.addEventListener('scroll', () => {
+          navWrap.classList.toggle('scrolled', window.scrollY > 30);
+        }, { passive: true });
+      }
 
-      document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => revealObserver.observe(el));
-    </script>
-    <script>
-      if (new URLSearchParams(window.location.search).has('preview')) {
-        document.documentElement.style.scrollBehavior = 'auto';
-        document.querySelectorAll('img[loading="lazy"]').forEach(img => img.loading = 'eager');
-        document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => el.classList.add('visible'));
-        let scrolling = false, pos = 0, dir = 1, last = 0, rafId = 0;
-        const pxPerSec = 150;
-        function autoScroll(ts) {
-          if (!scrolling) return;
-          if (!last) last = ts;
-          const dt = ts - last;
-          last = ts;
-          const max = document.documentElement.scrollHeight - window.innerHeight;
-          pos += dir * pxPerSec * (dt / 1000);
-          if (pos >= max) { dir = -1; pos = max; }
-          if (pos <= 0) { dir = 1; pos = 0; }
-          window.scrollTo(0, pos);
-          rafId = requestAnimationFrame(autoScroll);
-        }
-        window.addEventListener('message', (e) => {
-          if (e.data === 'start-scroll') {
-            if (!scrolling) { scrolling = true; last = 0; rafId = requestAnimationFrame(autoScroll); }
-          } else if (e.data === 'stop-scroll') {
-            scrolling = false; cancelAnimationFrame(rafId);
-            pos = 0; dir = 1; window.scrollTo(0, 0);
-          }
+      // Mobile menu
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+          const isOpen = mobileMenu.classList.toggle('open');
+          menuBtn.classList.toggle('open');
+          menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         });
+      }
+
+      // Floating CTA — show after scrolling past hero
+      const floatingCta = document.getElementById('floating-cta');
+      if (floatingCta) {
+        window.addEventListener('scroll', () => {
+          floatingCta.classList.toggle('visible', window.scrollY > 600);
+        }, { passive: true });
       }
     </script>
   </body>
