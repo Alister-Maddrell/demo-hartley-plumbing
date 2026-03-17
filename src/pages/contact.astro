@@ -1,83 +1,83 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
 ---
 
 <Layout
-  title="Book a Plumber in Sydney CBD | Hartley & Co"
-  description="Book your plumber online or call 0412 555 178. Free quote, no obligation, no call-out fee. Available 24/7 for emergencies across Sydney CBD."
+  title="Get a Free Plumbing Quote in Sydney CBD | Hartley & Co"
+  description="Request your free plumbing quote from Hartley & Co in Sydney CBD. Call 0412 555 178 or fill out the form — you'll hear back within 2 hours. No obligation."
 >
-  <Navbar />
-
   <!-- Page Header -->
-  <section class="relative pt-32 pb-14 md:pt-40 md:pb-20" style="background: var(--color-navy);">
-    <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(0deg, rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 40px 40px;"></div>
-    <div class="relative max-w-[1200px] mx-auto px-6 lg:px-10 text-center">
-      <div class="section-label justify-center mb-3 reveal" style="color: var(--color-blue-light);"><span style="color: var(--color-blue-light);">Book a Plumber</span></div>
-      <h1 class="reveal stagger-1" style="color: #fff;">Book Your Plumber Online</h1>
-      <p class="text-[1.0625rem] leading-[1.75] max-w-2xl mx-auto mt-5 reveal stagger-2" style="color: rgba(203, 213, 225, 0.85);">
-        Pick a time that suits you. A licensed plumber will confirm within 2 hours — no obligation, no call-out fee.
+  <section class="relative bg-navy-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.04]" style="background-image: linear-gradient(0deg, rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+    <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-16 md:py-24 text-center">
+      <p class="section-label text-blue-400 mb-3">Contact</p>
+      <div class="w-12 h-1 bg-blue-600 mx-auto mb-5"></div>
+      <h1 class="text-white mb-4">
+        Get Your Free Quote
+      </h1>
+      <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+        Describe your plumbing issue and you'll hear back within 2 hours during business hours. No obligation, no pressure.
       </p>
-      <div class="mt-5 reveal stagger-3">
-        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-[3px] text-[0.6875rem] font-semibold" style="background: rgba(37, 99, 235, 0.15); color: var(--color-blue-light); border: 1px solid rgba(59, 130, 246, 0.2);">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          Free consultation &middot; 30 minutes
-        </span>
-      </div>
     </div>
   </section>
 
-  <!-- Cal.com Booking -->
-  <section id="booking" class="py-16 md:py-24" style="background: var(--color-slate);">
-    <div class="max-w-[1200px] mx-auto px-6 lg:px-10">
-      <div class="text-center mb-10 reveal">
-        <div class="section-label justify-center mb-3">Schedule Your Job</div>
-        <h2 class="reveal stagger-1">Pick a Time That Works</h2>
-        <p class="mt-4 text-[0.9375rem] leading-[1.7] max-w-lg mx-auto reveal stagger-2" style="color: var(--color-text-secondary);">
-          Choose your preferred time below. A licensed plumber will confirm within 2 hours.
-        </p>
-      </div>
-
-      <div class="max-w-3xl mx-auto reveal stagger-2">
-        <div class="card card-blue overflow-hidden">
-          <div id="cal-embed" style="min-height: 400px;"></div>
-        </div>
-        <p class="text-center mt-4 text-[0.6875rem]" style="color: var(--color-text-muted);">
-          Powered by Cal.com
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Form + Details -->
-  <section class="py-16 md:py-24" style="background: var(--color-white);">
-    <div class="max-w-[1200px] mx-auto px-6 lg:px-10">
+  <!-- Contact Content -->
+  <section class="py-16 md:py-24 bg-bg-cream">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
       <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
-        <!-- Form -->
+        <!-- Contact Form -->
         <div class="lg:col-span-3">
-          <div class="section-label mb-3 reveal">Or Send Us a Message</div>
-          <div class="card card-blue overflow-hidden p-7 md:p-9 reveal stagger-1">
+          <div class="bg-white rounded-lg shadow-elevated p-7 md:p-9 border border-gray-200 relative overflow-hidden">
+            <!-- Blue top border -->
+            <div class="absolute top-0 left-0 right-0 h-1 bg-blue-600"></div>
+
+            <h2 class="text-xl font-bold text-navy-800 mb-1" style="font-family: var(--font-display); text-transform: uppercase;">Describe Your Plumbing Issue</h2>
+            <p class="text-gray-600 text-sm mb-7">Tell us what's going on and you'll receive a clear, no-obligation quote — typically within 2 hours.</p>
+
             <form id="contact-form" action="https://formspree.io/f/placeholder" method="POST" class="space-y-5">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label for="name" class="block text-[0.8125rem] font-semibold mb-1.5" style="color: var(--color-navy);">Full Name</label>
-                  <input type="text" id="name" name="name" required class="w-full px-4 py-3 border rounded-[3px] text-[0.875rem]" style="border-color: var(--color-border); background: var(--color-slate);" placeholder="John Smith" />
+                  <label for="name" class="block text-sm font-semibold text-navy-800 mb-1.5">Full Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 outline-none transition-all text-sm placeholder:text-gray-400"
+                    placeholder="John Smith"
+                  />
                 </div>
                 <div>
-                  <label for="email" class="block text-[0.8125rem] font-semibold mb-1.5" style="color: var(--color-navy);">Email</label>
-                  <input type="email" id="email" name="email" required class="w-full px-4 py-3 border rounded-[3px] text-[0.875rem]" style="border-color: var(--color-border); background: var(--color-slate);" placeholder="john@example.com" />
+                  <label for="email" class="block text-sm font-semibold text-navy-800 mb-1.5">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 outline-none transition-all text-sm placeholder:text-gray-400"
+                    placeholder="john@example.com"
+                  />
                 </div>
               </div>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label for="phone" class="block text-[0.8125rem] font-semibold mb-1.5" style="color: var(--color-navy);">Phone</label>
-                  <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border rounded-[3px] text-[0.875rem]" style="border-color: var(--color-border); background: var(--color-slate);" placeholder="0412 345 678" />
+                  <label for="phone" class="block text-sm font-semibold text-navy-800 mb-1.5">Phone</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 outline-none transition-all text-sm placeholder:text-gray-400"
+                    placeholder="0412 345 678"
+                  />
                 </div>
                 <div>
-                  <label for="service" class="block text-[0.8125rem] font-semibold mb-1.5" style="color: var(--color-navy);">Service Needed</label>
-                  <select id="service" name="service" class="w-full px-4 py-3 border rounded-[3px] text-[0.875rem]" style="border-color: var(--color-border); background: var(--color-slate); color: var(--color-text-secondary);">
+                  <label for="service" class="block text-sm font-semibold text-navy-800 mb-1.5">Service Needed</label>
+                  <select
+                    id="service"
+                    name="service"
+                    class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 outline-none transition-all text-sm text-gray-600"
+                  >
                     <option value="">Select a service...</option>
                     <option value="Emergency Repair">Emergency Repair</option>
                     <option value="Bathroom Renovation">Bathroom Renovation</option>
@@ -90,140 +90,171 @@ import '../styles/global.css';
                 </div>
               </div>
               <div>
-                <label for="message" class="block text-[0.8125rem] font-semibold mb-1.5" style="color: var(--color-navy);">Message</label>
-                <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 border rounded-[3px] text-[0.875rem] resize-vertical" style="border-color: var(--color-border); background: var(--color-slate);" placeholder="Tell us about your plumbing issue..."></textarea>
+                <label for="message" class="block text-sm font-semibold text-navy-800 mb-1.5">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                  class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 outline-none transition-all text-sm placeholder:text-gray-400 resize-vertical"
+                  placeholder="Tell us about your plumbing issue or project..."
+                ></textarea>
               </div>
-              <button type="submit" class="btn-primary">
-                Send Message
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
+              <button
+                type="submit"
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-3.5 rounded-lg text-base transition-colors"
+              >
+                Get My Free Quote
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
               </button>
             </form>
 
+            <!-- Success message -->
             <div id="form-success" class="hidden py-12 text-center">
-              <div class="w-14 h-14 rounded-[3px] flex items-center justify-center mx-auto mb-4" style="background: var(--color-blue-subtle); color: var(--color-blue); border: 1px solid var(--color-blue-pale);">
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <div class="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center mx-auto mb-4 border border-blue-100">
+                <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               </div>
-              <h3 class="text-lg font-bold mb-2" style="color: var(--color-navy); font-family: var(--font-display); text-transform: uppercase;">Message Sent!</h3>
-              <p class="text-[0.875rem]" style="color: var(--color-text-secondary);">We'll get back to you within 2 hours during business hours.</p>
+              <h3 class="text-lg font-bold text-navy-800 mb-2" style="font-family: var(--font-display); text-transform: uppercase;">Quote Request Received!</h3>
+              <p class="text-gray-600 text-sm max-w-sm mx-auto">Thank you — a plumber will review your details and get back to you within 2 hours during business hours.</p>
             </div>
           </div>
         </div>
 
-        <!-- Sidebar -->
+        <!-- Contact Details -->
         <div class="lg:col-span-2 space-y-5">
-          <!-- Emergency -->
-          <div class="rounded-[3px] p-7 relative overflow-hidden reveal" style="background: var(--color-navy);">
+          <!-- Emergency call card -->
+          <div class="bg-navy-800 rounded-lg p-7 text-white relative overflow-hidden">
+            <div class="absolute inset-0 opacity-[0.04]" style="background-image: linear-gradient(0deg, rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 40px 40px;"></div>
+
             <div class="relative">
               <div class="flex items-center gap-2 mb-3">
                 <span class="relative flex h-2 w-2">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-60" style="background: var(--color-amber);"></span>
-                  <span class="relative inline-flex rounded-full h-2 w-2" style="background: var(--color-amber);"></span>
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-60"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
                 </span>
-                <span class="text-[0.625rem] font-bold tracking-[0.14em] uppercase" style="color: var(--color-amber);">24/7 Emergency</span>
+                <span class="text-amber-400 text-xs font-bold tracking-widest uppercase">24/7 Emergency</span>
               </div>
-              <h3 class="text-[1rem] font-bold mb-2" style="color: #fff; font-family: var(--font-display); text-transform: uppercase;">Plumbing emergency?</h3>
-              <p class="text-[0.8125rem] mb-5 leading-relaxed" style="color: rgba(148, 163, 184, 0.8);">Skip the form — your plumber can be there in under 60 minutes.</p>
-              <a href="tel:0412555178" class="btn-primary !text-[0.8125rem] !py-2.5 !px-5">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              <h3 class="text-lg font-bold mb-2" style="font-family: var(--font-display); text-transform: uppercase;">Plumbing emergency right now?</h3>
+              <p class="text-gray-300 text-sm mb-5 leading-relaxed">Skip the form — your emergency plumber can be at your door in under 60 minutes, any time of day.</p>
+              <a
+                href="tel:0412555178"
+                class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold px-5 py-2.5 rounded-lg text-sm transition-colors"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                 Call 0412 555 178
               </a>
             </div>
           </div>
 
-          <!-- Details -->
-          <div class="card card-blue p-7 reveal stagger-1">
-            <h3 class="text-[0.875rem] font-bold mb-5" style="color: var(--color-navy); font-family: var(--font-display); text-transform: uppercase;">Business Details</h3>
-            <ul class="space-y-4 text-[0.8125rem]">
+          <!-- Business details card -->
+          <div class="bg-white rounded-lg shadow-elevated p-7 border border-gray-200 relative overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-1 bg-blue-600"></div>
+            <h3 class="text-base font-bold text-navy-800 mb-5" style="font-family: var(--font-display); text-transform: uppercase;">Business Details</h3>
+            <ul class="space-y-4">
               <li class="flex items-start gap-3">
-                <svg class="w-4 h-4 shrink-0 mt-0.5" style="color: var(--color-blue);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                <span style="color: var(--color-text-secondary);">78 Pitt Street, Sydney NSW 2000</span>
+                <div class="w-9 h-9 bg-blue-50 border border-blue-100 rounded-lg flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                </div>
+                <div>
+                  <p class="font-bold text-navy-800 text-sm">Address</p>
+                  <p class="text-gray-600 text-sm mt-0.5">78 Pitt Street, Sydney NSW 2000</p>
+                </div>
               </li>
               <li class="flex items-start gap-3">
-                <svg class="w-4 h-4 shrink-0 mt-0.5" style="color: var(--color-blue);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                <a href="tel:0412555178" class="font-semibold hover:underline underline-offset-4" style="color: var(--color-blue);">0412 555 178</a>
+                <div class="w-9 h-9 bg-blue-50 border border-blue-100 rounded-lg flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                </div>
+                <div>
+                  <p class="font-bold text-navy-800 text-sm">Phone</p>
+                  <a href="tel:0412555178" class="text-blue-600 hover:text-blue-700 text-sm mt-0.5 inline-block transition-colors font-semibold hover:underline underline-offset-4">0412 555 178</a>
+                </div>
               </li>
               <li class="flex items-start gap-3">
-                <svg class="w-4 h-4 shrink-0 mt-0.5" style="color: var(--color-blue);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                <a href="mailto:info@hartleyplumbing.com.au" class="font-semibold hover:underline underline-offset-4 break-all" style="color: var(--color-blue);">info@hartleyplumbing.com.au</a>
+                <div class="w-9 h-9 bg-blue-50 border border-blue-100 rounded-lg flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </div>
+                <div>
+                  <p class="font-bold text-navy-800 text-sm">Email</p>
+                  <a href="mailto:info@hartleyplumbing.com.au" class="text-blue-600 hover:text-blue-700 text-sm mt-0.5 inline-block transition-colors font-semibold hover:underline underline-offset-4">info@hartleyplumbing.com.au</a>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-9 h-9 bg-blue-50 border border-blue-100 rounded-lg flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                </div>
+                <div>
+                  <p class="font-bold text-navy-800 text-sm">ABN</p>
+                  <p class="text-gray-600 text-sm mt-0.5">12 345 678 901</p>
+                </div>
               </li>
             </ul>
 
-            <div class="mt-6 pt-5" style="border-top: 1px solid var(--color-border);">
-              <h4 class="text-[0.75rem] font-bold mb-3 uppercase tracking-[0.1em]" style="color: var(--color-navy); font-family: var(--font-display);">Hours</h4>
-              <ul class="space-y-2 text-[0.8125rem]">
-                <li class="flex justify-between"><span style="color: var(--color-text-secondary);">Mon – Fri</span><span class="font-semibold" style="color: var(--color-navy);">7am – 6pm</span></li>
-                <li class="flex justify-between"><span style="color: var(--color-text-secondary);">Saturday</span><span class="font-semibold" style="color: var(--color-navy);">8am – 2pm</span></li>
-                <li class="flex justify-between"><span style="color: var(--color-text-secondary);">Sunday</span><span class="font-semibold" style="color: var(--color-amber);">Emergency Only</span></li>
+            <!-- Hours -->
+            <div class="mt-6 pt-5 border-t border-gray-100">
+              <h4 class="font-bold text-navy-800 text-sm mb-3 flex items-center gap-2" style="font-family: var(--font-display); text-transform: uppercase;">
+                <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                Business Hours
+              </h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex justify-between">
+                  <span class="text-gray-600">Mon – Fri</span>
+                  <span class="font-semibold text-navy-800">7am – 6pm</span>
+                </li>
+                <li class="flex justify-between">
+                  <span class="text-gray-600">Saturday</span>
+                  <span class="font-semibold text-navy-800">8am – 2pm</span>
+                </li>
+                <li class="flex justify-between">
+                  <span class="text-gray-600">Sunday</span>
+                  <span class="font-semibold text-amber-500">Emergency Only</span>
+                </li>
               </ul>
             </div>
           </div>
 
           <!-- Map -->
-          <div class="rounded-[3px] overflow-hidden border reveal stagger-2" style="border-color: var(--color-border); box-shadow: var(--shadow-card);">
+          <div class="rounded-lg overflow-hidden shadow-elevated border border-gray-200 relative">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.9!2d151.209!3d-33.867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae3e3f05c8b1%3A0x5017d681632c7e0!2s78%20Pitt%20St%2C%20Sydney%20NSW%202000!5e0!3m2!1sen!2sau!4v1700000000000"
-              width="100%" height="240" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Hartley & Co Plumbing location"
+              width="100%"
+              height="280"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Hartley & Co Plumbing location"
             ></iframe>
+            <div class="h-1 bg-blue-600"></div>
           </div>
         </div>
       </div>
     </div>
   </section>
+</Layout>
 
-  <Footer />
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const success = document.getElementById('form-success');
 
-  <script>
-    // Cal.com embed
-    (function (C, A, L) {
-      let p = function (a, ar) { a.q.push(ar); };
-      let d = C.document;
-      C.Cal = C.Cal || function () {
-        let cal = C.Cal;
-        let ar = arguments;
-        if (!cal.loaded) {
-          cal.ns = {};
-          cal.q = cal.q || [];
-          d.head.appendChild(d.createElement("script")).src = A;
-          cal.loaded = true;
-        }
-        if (ar[0] === L) {
-          const api = function () { p(api, arguments); };
-          const namespace = ar[1];
-          api.q = api.q || [];
-          typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar);
-          return;
-        }
-        p(cal, ar);
-      };
-    })(window, "https://app.cal.com/embed/embed.js", "init");
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
 
-    Cal("init", { origin: "https://cal.com" });
-    Cal("inline", {
-      calLink: "alister-maddrell-rmtqo9/consultation",
-      elementOrSelector: "#cal-embed",
-      config: { theme: "light", styles: { branding: { brandColor: "#2563EB" } } }
-    });
-    Cal("ui", { hideEventTypeDetails: false });
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' },
+      });
 
-    // Contact form
-    const form = document.getElementById('contact-form') as HTMLFormElement;
-    const success = document.getElementById('form-success');
-    form?.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { Accept: 'application/json' },
-        });
-        if (response.ok) {
-          form.classList.add('hidden');
-          success?.classList.remove('hidden');
-        }
-      } catch {
+      if (response.ok) {
         form.classList.add('hidden');
         success?.classList.remove('hidden');
       }
-    });
-  </script>
-</Layout>
+    } catch {
+      // If formspree isn't configured, still show success for demo
+      form.classList.add('hidden');
+      success?.classList.remove('hidden');
+    }
+  });
+</script>

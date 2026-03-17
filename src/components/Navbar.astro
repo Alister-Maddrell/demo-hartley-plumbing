@@ -1,68 +1,132 @@
 ---
 const currentPath = Astro.url.pathname;
 const links = [
-  { name: 'Home', href: '/' },
-  { name: 'Services', href: '/services' },
-  { name: 'Contact', href: '/contact' },
+  { href: '/', label: 'Home' },
+  { href: '/services', label: 'Services' },
+  { href: '/contact', label: 'Contact' },
 ];
 ---
 
-<div class="nav-wrap" id="nav-wrap">
-  <nav class="nav-bar" id="main-nav">
-    <div class="nav-inner">
-      <a href="/" class="nav-logo">
-        <div class="nav-logo-icon">
-          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17l-5.66-5.66a8 8 0 1111.31 0l-5.65 5.66zm0 0L12 21"/></svg>
+<!-- Click-to-Call Sticky Bar (Mobile Only) -->
+<div class="fixed top-0 left-0 right-0 z-[60] md:hidden bg-navy-800">
+  <a href="tel:0412555178" class="flex items-center justify-center gap-2 h-11 text-white text-sm font-bold tracking-wide">
+    <span class="relative flex h-2 w-2 shrink-0">
+      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-60"></span>
+      <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
+    </span>
+    <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+    Emergency? Call 0412 555 178
+  </a>
+</div>
+
+<header class="fixed top-11 md:top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar">
+  <!-- Background -->
+  <div class="absolute inset-0 bg-white/95 backdrop-blur-md border-b border-gray-200/80" id="navbar-bg"></div>
+
+  <nav class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+    <div class="flex items-center justify-between h-[72px]">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2.5 group">
+        <div class="w-9 h-9 bg-navy-800 rounded-lg flex items-center justify-center group-hover:bg-blue-600 transition-colors">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17l-5.66-5.66a8 8 0 1111.31 0l-5.65 5.66zm0 0L12 21"/></svg>
         </div>
-        <div>
-          <div class="nav-logo-text">Hartley & Co</div>
-          <div class="nav-logo-sub">Plumbing</div>
+        <div class="flex flex-col leading-none">
+          <span class="text-navy-800 font-bold text-lg tracking-tight" style="font-family: var(--font-display);">HARTLEY & CO</span>
+          <span class="text-blue-600 text-[10px] font-bold tracking-[0.15em] uppercase mt-0.5">Plumbing</span>
         </div>
       </a>
 
-      <div class="nav-links hidden md:flex">
+      <!-- Desktop Nav Links -->
+      <div class="hidden md:flex items-center gap-1">
         {links.map(link => (
-          <a href={link.href} class={`nav-link ${currentPath === link.href ? 'active' : ''}`}>
-            {link.name}
+          <a
+            href={link.href}
+            class:list={[
+              'px-4 py-2 text-sm font-semibold transition-all relative',
+              currentPath === link.href
+                ? 'text-blue-600'
+                : 'text-navy-700 hover:text-blue-600'
+            ]}
+          >
+            {link.label}
+            {currentPath === link.href && (
+              <span class="absolute bottom-0 left-4 right-4 h-0.5 bg-blue-600"></span>
+            )}
           </a>
         ))}
       </div>
 
-      <div class="hidden md:flex items-center gap-3">
-        <a href="tel:0412555178" class="nav-link" style="color: var(--color-amber); font-weight: 600;">
-          <span class="flex items-center gap-1.5">
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-            0412 555 178
-          </span>
-        </a>
-        <a href="/contact#booking" class="nav-cta">
-          Book a Plumber
-        </a>
-      </div>
+      <!-- CTA Button -->
+      <a
+        href="tel:0412555178"
+        class="hidden md:inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold px-5 py-2.5 rounded-lg transition-colors"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        0412 555 178
+      </a>
 
-      <button class="nav-burger md:hidden" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
-        <span class="burger-line"></span>
-        <span class="burger-line"></span>
-        <span class="burger-line"></span>
+      <!-- Mobile Menu Button -->
+      <button id="menu-toggle" class="md:hidden p-2 -mr-2 text-navy-700 hover:text-blue-600 rounded-lg hover:bg-blue-50 transition-colors" aria-label="Toggle menu" aria-expanded="false">
+        <svg id="menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="menu-close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
     </div>
 
-    <div class="nav-mobile md:hidden" id="mobile-menu">
-      <div class="nav-mobile-inner">
-        {links.map(link => (
-          <a href={link.href} class="nav-mobile-link">{link.name}</a>
-        ))}
-        <div class="nav-mobile-divider"></div>
-        <a href="tel:0412555178" class="nav-mobile-link" style="color: var(--color-amber);">
-          <span class="flex items-center gap-2">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-            Emergency: 0412 555 178
-          </span>
-        </a>
-        <a href="/contact#booking" class="nav-cta nav-cta-mobile">
-          Book a Plumber
-        </a>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden pb-5 -mx-1">
+      <div class="bg-gray-50 rounded-lg p-2 mb-3 border border-gray-200">
+        <div class="flex flex-col">
+          {links.map(link => (
+            <a
+              href={link.href}
+              class:list={[
+                'px-4 py-3 rounded-lg text-sm font-semibold transition-all',
+                currentPath === link.href
+                  ? 'bg-white text-blue-600 shadow-sm'
+                  : 'text-navy-700 hover:bg-white hover:text-blue-600'
+              ]}
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
       </div>
+      <a
+        href="tel:0412555178"
+        class="flex items-center justify-center gap-2 bg-blue-600 text-white font-bold px-6 py-3 rounded-lg transition-colors"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        Call Now: 0412 555 178
+      </a>
     </div>
   </nav>
-</div>
+</header>
+
+<!-- Spacer -->
+<div class="h-[116px] md:h-[72px]"></div>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const openIcon = document.getElementById('menu-open-icon');
+  const closeIcon = document.getElementById('menu-close-icon');
+
+  toggle?.addEventListener('click', () => {
+    const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!isExpanded));
+    menu?.classList.toggle('hidden');
+    openIcon?.classList.toggle('hidden');
+    closeIcon?.classList.toggle('hidden');
+  });
+
+  // Navbar shadow on scroll
+  const navbar = document.getElementById('navbar');
+  const navbarBg = document.getElementById('navbar-bg');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      navbarBg?.classList.add('shadow-md');
+    } else {
+      navbarBg?.classList.remove('shadow-md');
+    }
+  });
+</script>
