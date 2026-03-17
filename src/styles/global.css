@@ -667,6 +667,31 @@ footer .border-t.pt-6 {
 }
 
 /* ============================================
+   FULL HD VIEWPORT — Fill hero at 1920×1080
+   ============================================ */
+@media (min-width: 1200px) and (min-height: 960px) {
+  /* Hero fills the viewport, accounting for navbar */
+  section:first-of-type {
+    min-height: calc(100vh - 72px);
+    min-height: calc(100dvh - 72px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Inner container padding — let flexbox center content */
+  section:first-of-type > div:not(.absolute) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  /* Slightly larger heading at big screens */
+  h1 {
+    font-size: clamp(2.75rem, 4vw + 1rem, 4.25rem);
+  }
+}
+
+/* ============================================
    LAPTOP VIEWPORT — Tighter spacing for ≤900px height
    ============================================ */
 @media (min-width: 1024px) and (max-height: 900px) {
