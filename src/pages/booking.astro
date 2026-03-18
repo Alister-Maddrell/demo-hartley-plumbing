@@ -8,13 +8,19 @@ import Layout from '../layouts/Layout.astro';
 >
   <!-- Page Header -->
   <section class="relative overflow-hidden" style="background: var(--color-navy);">
+    <!-- Background image -->
+    <div class="absolute inset-0" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1920&h=600&fit=crop&q=80'); background-size: cover; background-position: center 30%; opacity: 0.15;"></div>
+    <!-- Dark gradient overlay -->
+    <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(12,26,46,0.5) 0%, rgba(12,26,46,0.9) 100%);"></div>
+    <!-- Grid pattern -->
     <div class="absolute inset-0 opacity-[0.04]" style="background-image: linear-gradient(0deg, rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 40px 40px;"></div>
 
-    <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-16 md:py-24 text-center">
+    <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-20 md:py-28 text-center">
       <p class="section-label text-blue-400 mb-3" style="justify-content: center;">Book Online</p>
       <div class="w-12 h-1 mx-auto mb-5" style="background: var(--color-blue);"></div>
       <h1 class="text-white mb-4">
-        Book Your Plumber
+        Schedule Your<br />
+        <span style="color: var(--color-blue-light);">Plumbing Appointment</span>
       </h1>
       <p class="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-5" style="color: var(--color-text-muted);">
         Pick a time that works for you. We'll confirm your booking and have a licensed plumber ready to go.
