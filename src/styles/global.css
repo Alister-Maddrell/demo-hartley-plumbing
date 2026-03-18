@@ -622,6 +622,80 @@ input:focus, select:focus, textarea:focus {
 .faq-chevron.open { transform: rotate(180deg); }
 
 /* ============================================
+   MOBILE LAYOUT OPTIMISATIONS
+   ============================================ */
+@media (max-width: 767px) {
+  /* Fix nav-links specificity — must be hidden on mobile */
+  .nav-links { display: none !important; }
+
+  /* Tighter section padding on mobile */
+  section { padding-top: 3rem; padding-bottom: 3rem; }
+  section[style*="padding: 5rem"] { padding: 3rem 0 !important; }
+
+  /* Hero needs full height but less internal padding */
+  section:first-of-type { padding: 0 !important; }
+
+  /* Full-width CTA buttons on small screens */
+  .btn-primary, .btn-outline { width: 100%; justify-content: center; }
+
+  /* Tighter card padding */
+  .card > div[style*="padding: 1.5rem"] { padding: 1.25rem !important; }
+
+  /* Footer tighter spacing */
+  footer .pt-20 { padding-top: 3rem !important; }
+  footer .pb-16 { padding-bottom: 2.5rem !important; }
+  footer .mb-12 { margin-bottom: 2rem !important; }
+
+  /* Card images shorter on mobile */
+  .card div[style*="height: 13rem"] { height: 10rem !important; }
+
+  /* Testimonial cards tighter padding */
+  .testimonial-card { padding: 1.25rem !important; }
+  .testimonial-card blockquote { font-size: 0.8125rem !important; margin-bottom: 1rem !important; }
+
+  /* FAQ buttons tighter */
+  .faq-toggle { padding: 0.875rem 1.25rem !important; }
+
+  /* Tighter section header margins */
+  [style*="margin-bottom: 3.5rem"] { margin-bottom: 2rem !important; }
+
+  /* Process step cards */
+  .card.card-blue .stat-number { font-size: 1.75rem !important; }
+
+  /* Stats counter smaller on mobile */
+  .stat-number { font-size: 1.25rem !important; }
+
+  /* Section labels smaller spacing */
+  .section-label { font-size: 0.6875rem; }
+}
+
+@media (max-width: 479px) {
+  /* Even tighter on very small screens */
+  h1 { font-size: clamp(1.8rem, 8vw, 2.4rem) !important; }
+  h2 { font-size: clamp(1.4rem, 6vw, 1.9rem) !important; }
+
+  /* Fix button overflow */
+  .btn-primary, .btn-outline {
+    padding: 12px 20px !important;
+    font-size: 0.8125rem !important;
+  }
+
+  /* Floating CTA smaller on tiny screens */
+  .floating-cta a {
+    padding: 8px 14px !important;
+    font-size: 0.6875rem !important;
+  }
+
+  /* Map shorter on very small screens */
+  iframe[title*="Hartley"] { height: 220px !important; }
+}
+
+/* Ensure nav burger always shows below md */
+@media (max-width: 767px) {
+  .nav-burger { display: flex !important; }
+}
+
+/* ============================================
    VIEWPORT OPTIMISATIONS
    ============================================ */
 @media (min-width: 1200px) and (min-height: 960px) {

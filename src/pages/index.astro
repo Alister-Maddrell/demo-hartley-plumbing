@@ -368,6 +368,69 @@ const stats = [
       /* Hero stats: 2x2 grid */
       section:first-of-type [style*="grid-template-columns: repeat(4"] {
         grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.75rem !important;
+      }
+      /* Hero inner padding on mobile */
+      section:first-of-type > div:last-child {
+        padding: 6rem 1.25rem 3rem !important;
+      }
+      /* Hero description text tighter */
+      section:first-of-type p[style*="font-size: 1.125rem"] {
+        font-size: 0.9375rem !important;
+        margin-bottom: 2rem !important;
+      }
+      /* CTA buttons stack vertically on mobile */
+      section:first-of-type [style*="flex-wrap: wrap"] {
+        flex-direction: column !important;
+        width: 100%;
+      }
+      section:first-of-type [style*="flex-wrap: wrap"] > a {
+        width: 100% !important;
+        text-align: center;
+        justify-content: center;
+      }
+      /* Section padding overrides */
+      section:nth-of-type(2),
+      section:nth-of-type(3),
+      section:nth-of-type(4),
+      section:nth-of-type(5) {
+        padding: 3.5rem 0 !important;
+      }
+      /* Section headers tighter margin */
+      section:nth-of-type(2) [style*="margin-bottom: 3.5rem"],
+      section:nth-of-type(4) [style*="margin-bottom: 3.5rem"] {
+        margin-bottom: 2rem !important;
+      }
+      /* CTA section tighter padding */
+      section:last-of-type > div:last-child {
+        padding: 3.5rem 1.25rem !important;
+      }
+      /* Service area map responsive */
+      section:nth-of-type(5) iframe {
+        height: 260px !important;
+      }
+      /* "20+ Years" badge repositioned on mobile */
+      section:nth-of-type(3) [style*="left: -1rem; bottom: -1rem"] {
+        left: 0 !important;
+        bottom: 0 !important;
+        border-radius: 0 8px 0 0 !important;
+      }
+      /* Why Choose Us feature items tighter on mobile */
+      section:nth-of-type(3) [style*="gap: 1.25rem"] {
+        gap: 1rem !important;
+      }
+      section:nth-of-type(3) [style*="width: 2.5rem; height: 2.5rem"] {
+        width: 2rem !important;
+        height: 2rem !important;
+      }
+      /* Testimonials section tighter padding */
+      section:nth-of-type(4) {
+        padding: 3rem 0 !important;
+      }
+      /* Service Area suburb tags smaller on mobile */
+      section:nth-of-type(5) [style*="flex-wrap: wrap; gap: 0.5rem"] span {
+        font-size: 0.6875rem !important;
+        padding: 0.3rem 0.625rem !important;
       }
     }
   </style>
