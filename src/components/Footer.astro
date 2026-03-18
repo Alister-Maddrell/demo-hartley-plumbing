@@ -2,104 +2,151 @@
 const links = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
-  { href: '/booking', label: 'Booking' },
   { href: '/contact', label: 'Contact' },
 ];
 
 const serviceLinks = [
-  'Emergency Repairs', 'Bathroom Renovations', 'Commercial Plumbing',
-  'Hot Water Systems', 'Drain Cleaning', 'Gas Fitting',
+  { href: '/services', label: 'Emergency Repairs' },
+  { href: '/services', label: 'Bathroom Renovations' },
+  { href: '/services', label: 'Commercial Plumbing' },
+  { href: '/services', label: 'Hot Water Systems' },
+  { href: '/services', label: 'Drain Cleaning' },
+  { href: '/services', label: 'Gas Fitting' },
 ];
 ---
 
-<footer style="background: var(--color-navy);">
-  <div class="h-[2px] w-full" style="background: linear-gradient(90deg, var(--color-blue), var(--color-blue-light), var(--color-blue));"></div>
+<footer class="relative overflow-hidden">
+  <!-- Top copper gradient line -->
+  <div class="h-1 bg-gradient-to-r from-navy-900 via-copper-500 to-navy-900"></div>
 
-  <div class="max-w-[1200px] mx-auto px-6 lg:px-10">
-    <div class="pt-20 pb-16 lg:pt-24 lg:pb-20">
-      <!-- Brand -->
-      <div class="mb-12 lg:mb-14">
-        <a href="/" class="inline-flex items-center gap-2.5">
-          <div class="w-8 h-8 rounded-[6px] flex items-center justify-center" style="background: var(--color-blue);">
-            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17l-5.66-5.66a8 8 0 1111.31 0l-5.65 5.66zm0 0L12 21"/></svg>
+  <!-- Main footer content — deep navy -->
+  <div class="bg-navy-900 relative">
+    <!-- Layered background textures -->
+    <div class="absolute inset-0 bg-gradient-to-b from-navy-800/50 to-transparent pointer-events-none"></div>
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle, rgba(200, 117, 51, 0.5) 1px, transparent 1px); background-size: 32px 32px;"></div>
+    <!-- Ambient copper glow -->
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-copper-500/[0.04] rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 pt-20 pb-8">
+      <!-- Top section with logo and tagline -->
+      <div class="flex flex-col lg:flex-row items-start justify-between gap-12 mb-16">
+        <div class="max-w-sm">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="relative w-11 h-11 bg-gradient-to-br from-copper-500 to-copper-700 rounded-xl flex items-center justify-center shadow-[var(--shadow-copper)]">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17l-5.66-5.66a8 8 0 1111.31 0l-5.65 5.66zm0 0L12 21"/></svg>
+            </div>
+            <div class="flex flex-col leading-none">
+              <span class="font-extrabold text-lg tracking-tight text-white">Hartley & Co</span>
+              <span class="text-copper-400 text-[10px] font-bold tracking-[0.2em] uppercase mt-0.5">Plumbing</span>
+            </div>
           </div>
+          <p class="text-navy-300 text-sm leading-relaxed mb-6">
+            Sydney CBD's trusted plumbing experts since 2003. Every pipe, every fixture, every time — done right.
+          </p>
+          <!-- Social links -->
+          <div class="flex gap-2">
+            <a href="#" class="w-10 h-10 bg-white/[0.05] hover:bg-copper-500 border border-white/[0.08] hover:border-copper-500 rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-0.5 group" aria-label="Facebook">
+              <svg class="w-4 h-4 text-navy-400 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" class="w-10 h-10 bg-white/[0.05] hover:bg-copper-500 border border-white/[0.08] hover:border-copper-500 rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-0.5 group" aria-label="Instagram">
+              <svg class="w-4 h-4 text-navy-400 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="#" class="w-10 h-10 bg-white/[0.05] hover:bg-copper-500 border border-white/[0.08] hover:border-copper-500 rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-0.5 group" aria-label="Google">
+              <svg class="w-4 h-4 text-navy-400 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Link columns -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-10 lg:gap-16">
+          <!-- Navigation -->
           <div>
-            <span class="text-[1rem] font-bold tracking-[0.04em] uppercase" style="font-family: var(--font-display); color: #fff;">Hartley & Co</span>
-            <span class="block text-[0.5625rem] font-semibold tracking-[0.14em] uppercase" style="color: var(--color-blue-light);">Plumbing</span>
+            <h3 class="text-copper-400 text-[11px] font-bold tracking-[0.2em] uppercase mb-5">Navigate</h3>
+            <ul class="space-y-3">
+              {links.map(link => (
+                <li>
+                  <a href={link.href} class="text-navy-300 hover:text-white text-sm transition-colors inline-flex items-center gap-2 group">
+                    <span class="w-1 h-1 rounded-full bg-navy-600 group-hover:bg-copper-500 transition-colors"></span>
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
-        </a>
-        <p class="mt-3 text-[0.875rem] leading-relaxed max-w-sm" style="color: rgba(148, 163, 184, 0.8);">
-          Trusted by Sydney CBD homes and businesses since 2003. Licensed, insured, and guaranteed — so your plumbing is always in safe hands.
-        </p>
-      </div>
 
-      <!-- Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
-        <div>
-          <h4 class="text-[0.6875rem] font-bold uppercase tracking-[0.14em] mb-5" style="color: var(--color-blue-light); font-family: var(--font-display);">Navigate</h4>
-          <ul class="space-y-3">
-            {links.map(link => (
+          <!-- Services -->
+          <div>
+            <h3 class="text-copper-400 text-[11px] font-bold tracking-[0.2em] uppercase mb-5">Services</h3>
+            <ul class="space-y-3">
+              {serviceLinks.map(link => (
+                <li>
+                  <a href={link.href} class="text-navy-300 hover:text-white text-sm transition-colors inline-flex items-center gap-2 group">
+                    <span class="w-1 h-1 rounded-full bg-navy-600 group-hover:bg-copper-500 transition-colors"></span>
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="col-span-2 sm:col-span-1">
+            <h3 class="text-copper-400 text-[11px] font-bold tracking-[0.2em] uppercase mb-5">Contact</h3>
+            <ul class="space-y-4 text-sm">
               <li>
-                <a href={link.href} class="text-[0.8125rem] transition-colors duration-300 hover:text-white" style="color: rgba(148, 163, 184, 0.75);">
-                  {link.label}
+                <a href="tel:0412555178" class="text-navy-300 hover:text-white transition-colors flex items-center gap-3">
+                  <div class="w-8 h-8 bg-white/[0.05] rounded-lg flex items-center justify-center shrink-0">
+                    <svg class="w-3.5 h-3.5 text-copper-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                  </div>
+                  0412 555 178
                 </a>
               </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="text-[0.6875rem] font-bold uppercase tracking-[0.14em] mb-5" style="color: var(--color-blue-light); font-family: var(--font-display);">Services</h4>
-          <ul class="space-y-3">
-            {serviceLinks.map(service => (
               <li>
-                <a href="/services" class="text-[0.8125rem] transition-colors duration-300 hover:text-white" style="color: rgba(148, 163, 184, 0.75);">
-                  {service}
+                <a href="mailto:info@hartleyplumbing.com.au" class="text-navy-300 hover:text-white transition-colors flex items-center gap-3">
+                  <div class="w-8 h-8 bg-white/[0.05] rounded-lg flex items-center justify-center shrink-0">
+                    <svg class="w-3.5 h-3.5 text-copper-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                  </div>
+                  info@hartleyplumbing.com.au
                 </a>
               </li>
-            ))}
-          </ul>
-        </div>
+              <li class="flex items-center gap-3 text-navy-300">
+                <div class="w-8 h-8 bg-white/[0.05] rounded-lg flex items-center justify-center shrink-0">
+                  <svg class="w-3.5 h-3.5 text-copper-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                </div>
+                78 Pitt St, Sydney NSW 2000
+              </li>
+            </ul>
 
-        <div>
-          <h4 class="text-[0.6875rem] font-bold uppercase tracking-[0.14em] mb-5" style="color: var(--color-blue-light); font-family: var(--font-display);">Contact</h4>
-          <ul class="space-y-3 text-[0.8125rem]" style="color: rgba(148, 163, 184, 0.75);">
-            <li>78 Pitt Street<br>Sydney NSW 2000</li>
-            <li><a href="tel:0412555178" class="transition-colors duration-300 hover:text-white" style="color: rgba(148, 163, 184, 0.75);">0412 555 178</a></li>
-            <li><a href="mailto:info@hartleyplumbing.com.au" class="transition-colors duration-300 hover:text-white break-all" style="color: rgba(148, 163, 184, 0.75);">info@hartleyplumbing.com.au</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="text-[0.6875rem] font-bold uppercase tracking-[0.14em] mb-5" style="color: var(--color-blue-light); font-family: var(--font-display);">Hours</h4>
-          <ul class="space-y-2.5 text-[0.8125rem]">
-            <li class="flex justify-between" style="color: rgba(148, 163, 184, 0.75);">
-              <span>Mon – Fri</span>
-              <span class="font-medium text-white">7am – 6pm</span>
-            </li>
-            <li class="flex justify-between" style="color: rgba(148, 163, 184, 0.75);">
-              <span>Saturday</span>
-              <span class="font-medium text-white">8am – 2pm</span>
-            </li>
-            <li class="flex justify-between" style="color: rgba(148, 163, 184, 0.75);">
-              <span>Sunday</span>
-              <span class="font-medium" style="color: var(--color-amber);">Emergency Only</span>
-            </li>
-          </ul>
-          <div class="mt-5 pt-4" style="border-top: 1px solid rgba(255,255,255,0.06);">
-            <a href="/booking" class="btn-primary !py-2.5 !px-5 !text-[0.75rem] w-full">Book a Plumber</a>
+            <!-- Hours -->
+            <div class="mt-6 pt-5 border-t border-white/[0.06]">
+              <div class="space-y-2 text-sm">
+                <div class="flex justify-between text-navy-300">
+                  <span>Mon – Fri</span>
+                  <span class="text-white font-medium">7am – 6pm</span>
+                </div>
+                <div class="flex justify-between text-navy-300">
+                  <span>Saturday</span>
+                  <span class="text-white font-medium">8am – 2pm</span>
+                </div>
+                <div class="flex justify-between text-navy-300">
+                  <span>Sunday</span>
+                  <span class="text-copper-400 font-medium">Emergency Only</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="py-7 flex flex-col md:flex-row justify-between items-center gap-3" style="border-top: 1px solid rgba(255,255,255,0.06);">
-      <p class="text-[0.6875rem]" style="color: rgba(148, 163, 184, 0.5);">
-        &copy; 2026 Hartley & Co Plumbing. All rights reserved. ABN 12 345 678 901
-      </p>
-      <p class="text-[0.6875rem]" style="color: rgba(148, 163, 184, 0.5);">
-        Licensed NSW Plumbers &middot; 78 Pitt Street, Sydney NSW 2000
-      </p>
+      <!-- Bottom bar -->
+      <div class="border-t border-white/[0.06] pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p class="text-xs text-navy-500">&copy; 2026 Hartley & Co Plumbing. All rights reserved.</p>
+        <div class="flex items-center gap-4">
+          <p class="text-xs text-navy-500">Licensed NSW Plumbers</p>
+          <span class="text-navy-700">&middot;</span>
+          <p class="text-xs text-navy-500">ABN: 12 345 678 901</p>
+        </div>
+      </div>
     </div>
   </div>
 </footer>
