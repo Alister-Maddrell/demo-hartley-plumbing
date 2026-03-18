@@ -3,92 +3,82 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout
-  title="Contact Us — Hartley & Co Plumbing"
-  description="Get a free plumbing quote from Hartley & Co. Call 0412 555 178 or fill out our contact form. We respond within 2 hours during business hours."
+  title="Get a Free Plumbing Quote in Sydney CBD | Hartley & Co"
+  description="Request your free plumbing quote from Hartley & Co in Sydney CBD. Call 0412 555 178 or fill out the form — you'll hear back within 2 hours. No obligation."
 >
   <!-- Page Header -->
-  <section class="relative overflow-hidden bg-navy-900">
-    <div class="absolute inset-0 bg-gradient-to-br from-navy-950 via-navy-900 to-navy-800"></div>
-    <div class="absolute inset-0 blueprint-grid opacity-20"></div>
-    <div class="absolute inset-0 pipe-lines opacity-20"></div>
-    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-copper-500/[0.05] rounded-full blur-[120px] -translate-y-1/3 translate-x-1/4 pointer-events-none"></div>
-    <div class="absolute top-0 left-[10%] w-px h-full bg-gradient-to-b from-transparent via-copper-500/15 to-transparent"></div>
+  <section class="relative overflow-hidden" style="background: var(--color-navy);">
+    <!-- Background image -->
+    <div class="absolute inset-0" style="background-image: url('https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1920&h=600&fit=crop&q=80'); background-size: cover; background-position: center; opacity: 0.35;"></div>
+    <!-- Dark gradient overlay -->
+    <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(12,26,46,0.4) 0%, rgba(12,26,46,0.75) 100%);"></div>
 
     <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-20 md:py-28 text-center">
-      <p class="section-label text-copper-400/60 mb-4">// CONTACT</p>
-      <div class="copper-bar mx-auto mb-6"></div>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-[-0.03em] leading-[1.05] mb-5">
-        Get In <span class="display-heading text-[0.9em]">Touch</span>
-      </h1>
-      <p class="text-lg md:text-xl text-navy-300 max-w-2xl mx-auto leading-relaxed">
-        Request a free quote or ask us anything. We respond within 2 hours during business hours.
+      <p class="section-label justify-center mb-3" style="color: var(--color-blue-light);">Contact</p>
+      <div class="mx-auto mb-5" style="width: 48px; height: 3px; background: var(--color-blue); border-radius: 8px;"></div>
+      <h1 class="mb-5" style="color: #fff;">Get Your Free Quote</h1>
+      <p class="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed" style="color: #CBD5E1;">
+        Describe your plumbing issue and you'll hear back within 2 hours during business hours. No obligation, no pressure.
       </p>
-    </div>
-
-    <!-- Wave divider -->
-    <div class="wave-divider">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" preserveAspectRatio="none" fill="#FDFBF7">
-        <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,60 L0,60 Z"></path>
-      </svg>
     </div>
   </section>
 
   <!-- Contact Content -->
-  <section class="py-20 md:py-28 bg-bg-cream relative">
-    <div class="absolute inset-0 pipe-lines opacity-15"></div>
-    <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
-      <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14">
+  <section class="py-16 md:py-24" style="background: var(--color-slate);">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
         <!-- Contact Form -->
-        <div class="lg:col-span-3">
-          <div class="bg-white rounded-2xl shadow-[var(--shadow-elevated)] p-8 md:p-10 border border-border-light relative overflow-hidden">
-            <!-- Decorative copper accent -->
-            <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-copper-500 via-copper-400 to-copper-500"></div>
+        <div class="lg:col-span-3 reveal stagger-1">
+          <div class="card card-blue relative overflow-hidden p-7 md:p-9">
+            <h2 class="text-xl font-bold mb-1" style="font-family: var(--font-display); text-transform: uppercase; color: var(--color-navy);">Describe Your Plumbing Issue</h2>
+            <p class="text-sm mb-7" style="color: var(--color-text-secondary);">Tell us what's going on and you'll receive a clear, no-obligation quote — typically within 2 hours.</p>
 
-            <h2 class="text-2xl font-bold text-text-primary tracking-tight mb-2">Send Us a Message</h2>
-            <p class="text-text-secondary text-[15px] mb-8">Fill out the form below and we'll get back to you promptly.</p>
-
-            <form id="contact-form" action="https://formspree.io/f/placeholder" method="POST" class="space-y-6">
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <form id="contact-form" action="https://formspree.io/f/placeholder" method="POST" class="space-y-5">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label for="name" class="block text-sm font-semibold text-text-primary mb-2">Full Name</label>
+                  <label for="name" class="block text-sm font-semibold mb-1.5" style="color: var(--color-navy);">Full Name</label>
                   <input
                     type="text"
                     id="name"
                     name="name"
                     required
-                    class="w-full px-4 py-3.5 bg-bg-light border border-border rounded-xl focus:ring-2 focus:ring-copper-500/20 focus:border-copper-500 outline-none transition-all text-[15px] placeholder:text-text-muted"
+                    class="w-full px-4 py-3 border rounded-lg focus:ring-2 outline-none transition-all text-sm placeholder:text-gray-400"
+                    style="background: var(--color-slate); border-color: var(--color-border); border-radius: 8px;"
                     placeholder="John Smith"
                   />
                 </div>
                 <div>
-                  <label for="email" class="block text-sm font-semibold text-text-primary mb-2">Email</label>
+                  <label for="email" class="block text-sm font-semibold mb-1.5" style="color: var(--color-navy);">Email</label>
                   <input
                     type="email"
                     id="email"
                     name="email"
                     required
-                    class="w-full px-4 py-3.5 bg-bg-light border border-border rounded-xl focus:ring-2 focus:ring-copper-500/20 focus:border-copper-500 outline-none transition-all text-[15px] placeholder:text-text-muted"
+                    class="w-full px-4 py-3 border rounded-lg focus:ring-2 outline-none transition-all text-sm placeholder:text-gray-400"
+                    style="background: var(--color-slate); border-color: var(--color-border); border-radius: 8px;"
                     placeholder="john@example.com"
                   />
                 </div>
               </div>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label for="phone" class="block text-sm font-semibold text-text-primary mb-2">Phone</label>
+                  <label for="phone" class="block text-sm font-semibold mb-1.5" style="color: var(--color-navy);">Phone</label>
                   <input
                     type="tel"
                     id="phone"
                     name="phone"
-                    class="w-full px-4 py-3.5 bg-bg-light border border-border rounded-xl focus:ring-2 focus:ring-copper-500/20 focus:border-copper-500 outline-none transition-all text-[15px] placeholder:text-text-muted"
+                    class="w-full px-4 py-3 border rounded-lg focus:ring-2 outline-none transition-all text-sm placeholder:text-gray-400"
+                    style="background: var(--color-slate); border-color: var(--color-border); border-radius: 8px;"
                     placeholder="0412 345 678"
                   />
                 </div>
                 <div>
-                  <label for="service" class="block text-sm font-semibold text-text-primary mb-2">Service Needed</label>
+                  <label for="service" class="block text-sm font-semibold mb-1.5" style="color: var(--color-navy);">Service Needed</label>
                   <select
                     id="service"
                     name="service"
-                    class="w-full px-4 py-3.5 bg-bg-light border border-border rounded-xl focus:ring-2 focus:ring-copper-500/20 focus:border-copper-500 outline-none transition-all text-[15px] text-text-secondary"
+                    class="w-full px-4 py-3 border rounded-lg focus:ring-2 outline-none transition-all text-sm"
+                    style="background: var(--color-slate); border-color: var(--color-border); border-radius: 8px; color: var(--color-text-secondary);"
                   >
                     <option value="">Select a service...</option>
                     <option value="Emergency Repair">Emergency Repair</option>
@@ -102,58 +92,58 @@ import Layout from '../layouts/Layout.astro';
                 </div>
               </div>
               <div>
-                <label for="message" class="block text-sm font-semibold text-text-primary mb-2">Message</label>
+                <label for="message" class="block text-sm font-semibold mb-1.5" style="color: var(--color-navy);">Message</label>
                 <textarea
                   id="message"
                   name="message"
                   rows="5"
                   required
-                  class="w-full px-4 py-3.5 bg-bg-light border border-border rounded-xl focus:ring-2 focus:ring-copper-500/20 focus:border-copper-500 outline-none transition-all text-[15px] placeholder:text-text-muted resize-vertical"
+                  class="w-full px-4 py-3 border rounded-lg focus:ring-2 outline-none transition-all text-sm placeholder:text-gray-400 resize-vertical"
+                  style="background: var(--color-slate); border-color: var(--color-border); border-radius: 8px;"
                   placeholder="Tell us about your plumbing issue or project..."
                 ></textarea>
               </div>
               <button
                 type="submit"
-                class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-copper-500 to-copper-600 hover:from-copper-600 hover:to-copper-700 text-white font-bold px-10 py-4 rounded-full text-lg shadow-[var(--shadow-copper)] hover:shadow-[0_6px_24px_rgba(200,117,51,0.4)] hover:-translate-y-0.5 transition-all"
+                class="btn-primary w-full sm:w-auto"
+                style="border-radius: 8px;"
               >
-                Send Message
+                Get My Free Quote
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
               </button>
             </form>
 
             <!-- Success message -->
             <div id="form-success" class="hidden py-12 text-center">
-              <div class="w-16 h-16 bg-copper-50 rounded-full flex items-center justify-center mx-auto mb-5 border border-copper-100">
-                <svg class="w-8 h-8 text-copper-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <div class="w-14 h-14 rounded-lg flex items-center justify-center mx-auto mb-4" style="background: var(--color-blue-pale); border: 1px solid var(--color-blue-light); border-radius: 8px;">
+                <svg class="w-7 h-7" style="color: var(--color-blue);" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               </div>
-              <h3 class="text-xl font-bold text-text-primary mb-2">Message Sent!</h3>
-              <p class="text-text-secondary text-[15px] max-w-sm mx-auto">Thanks for reaching out. We'll get back to you within 2 hours during business hours.</p>
+              <h3 class="text-lg font-bold mb-2" style="font-family: var(--font-display); text-transform: uppercase; color: var(--color-navy);">Quote Request Received!</h3>
+              <p class="text-sm max-w-sm mx-auto" style="color: var(--color-text-secondary);">Thank you — a plumber will review your details and get back to you within 2 hours during business hours.</p>
             </div>
           </div>
         </div>
 
         <!-- Contact Details -->
-        <div class="lg:col-span-2 space-y-6">
+        <div class="lg:col-span-2 space-y-5">
           <!-- Emergency call card -->
-          <div class="relative bg-gradient-to-br from-navy-900 to-navy-800 rounded-2xl p-8 text-white overflow-hidden">
-            <!-- Layered textures -->
-            <div class="absolute inset-0 blueprint-grid opacity-15"></div>
-            <div class="absolute top-0 right-0 w-40 h-40 bg-copper-500/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-            <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-copper-500/40 to-transparent"></div>
+          <div class="reveal stagger-2 relative overflow-hidden p-7 text-white" style="background: var(--color-navy); border-radius: 8px;">
+            <div class="absolute inset-0 opacity-[0.04]" style="background-image: linear-gradient(0deg, rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 40px 40px;"></div>
 
             <div class="relative">
               <div class="flex items-center gap-2 mb-3">
-                <span class="relative flex h-2.5 w-2.5">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-copper-400 opacity-60"></span>
-                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-copper-400"></span>
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-60" style="background: var(--color-amber);"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2" style="background: var(--color-amber);"></span>
                 </span>
-                <span class="text-copper-400 text-xs font-bold tracking-widest uppercase">24/7 Emergency</span>
+                <span class="text-xs font-bold tracking-widest uppercase" style="color: var(--color-amber);">24/7 Emergency</span>
               </div>
-              <h3 class="text-xl font-bold mb-2">Need help right now?</h3>
-              <p class="text-navy-300 text-sm mb-6 leading-relaxed">Our emergency team is on call around the clock. Don't wait — call now.</p>
+              <h3 class="text-lg font-bold text-white mb-2" style="font-family: var(--font-display); text-transform: uppercase;">Plumbing emergency right now?</h3>
+              <p class="text-sm mb-5 leading-relaxed" style="color: var(--color-text-muted);">Skip the form — your emergency plumber can be at your door in under 60 minutes, any time of day.</p>
               <a
                 href="tel:0412555178"
-                class="inline-flex items-center gap-2.5 bg-gradient-to-r from-copper-500 to-copper-600 text-white font-bold px-6 py-3 rounded-full text-sm shadow-[var(--shadow-copper)] hover:-translate-y-0.5 transition-all"
+                class="btn-primary text-sm"
+                style="padding: 10px 20px; border-radius: 8px;"
               >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                 Call 0412 555 178
@@ -162,73 +152,72 @@ import Layout from '../layouts/Layout.astro';
           </div>
 
           <!-- Business details card -->
-          <div class="bg-white rounded-2xl shadow-[var(--shadow-elevated)] p-8 border border-border-light relative overflow-hidden">
-            <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-copper-300 to-transparent"></div>
-            <h3 class="text-lg font-bold text-text-primary tracking-tight mb-6">Business Details</h3>
-            <ul class="space-y-5">
-              <li class="flex items-start gap-4">
-                <div class="w-10 h-10 bg-copper-50 border border-copper-100 rounded-xl flex items-center justify-center shrink-0">
-                  <svg class="w-5 h-5 text-copper-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <div class="reveal stagger-3 card card-blue relative overflow-hidden p-7">
+            <h3 class="text-base font-bold mb-5" style="font-family: var(--font-display); text-transform: uppercase; color: var(--color-navy);">Business Details</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0" style="background: var(--color-blue-pale); border: 1px solid var(--color-blue-light); border-radius: 8px;">
+                  <svg class="w-4 h-4" style="color: var(--color-blue);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                 </div>
                 <div>
-                  <p class="font-bold text-text-primary text-sm">Address</p>
-                  <p class="text-text-secondary text-sm mt-0.5">78 Pitt Street, Sydney NSW 2000</p>
+                  <p class="font-bold text-sm" style="color: var(--color-navy);">Address</p>
+                  <p class="text-sm mt-0.5" style="color: var(--color-text-secondary);">78 Pitt Street, Sydney NSW 2000</p>
                 </div>
               </li>
-              <li class="flex items-start gap-4">
-                <div class="w-10 h-10 bg-copper-50 border border-copper-100 rounded-xl flex items-center justify-center shrink-0">
-                  <svg class="w-5 h-5 text-copper-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              <li class="flex items-start gap-3">
+                <div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0" style="background: var(--color-blue-pale); border: 1px solid var(--color-blue-light); border-radius: 8px;">
+                  <svg class="w-4 h-4" style="color: var(--color-blue);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                 </div>
                 <div>
-                  <p class="font-bold text-text-primary text-sm">Phone</p>
-                  <a href="tel:0412555178" class="text-copper-600 hover:text-copper-700 text-sm mt-0.5 inline-block transition-colors font-semibold">0412 555 178</a>
+                  <p class="font-bold text-sm" style="color: var(--color-navy);">Phone</p>
+                  <a href="tel:0412555178" class="text-sm mt-0.5 inline-block font-semibold hover:underline underline-offset-4" style="color: var(--color-blue);">0412 555 178</a>
                 </div>
               </li>
-              <li class="flex items-start gap-4">
-                <div class="w-10 h-10 bg-copper-50 border border-copper-100 rounded-xl flex items-center justify-center shrink-0">
-                  <svg class="w-5 h-5 text-copper-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <li class="flex items-start gap-3">
+                <div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0" style="background: var(--color-blue-pale); border: 1px solid var(--color-blue-light); border-radius: 8px;">
+                  <svg class="w-4 h-4" style="color: var(--color-blue);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                 </div>
                 <div>
-                  <p class="font-bold text-text-primary text-sm">Email</p>
-                  <a href="mailto:info@hartleyplumbing.com.au" class="text-copper-600 hover:text-copper-700 text-sm mt-0.5 inline-block transition-colors font-semibold">info@hartleyplumbing.com.au</a>
+                  <p class="font-bold text-sm" style="color: var(--color-navy);">Email</p>
+                  <a href="mailto:info@hartleyplumbing.com.au" class="text-sm mt-0.5 inline-block font-semibold hover:underline underline-offset-4" style="color: var(--color-blue);">info@hartleyplumbing.com.au</a>
                 </div>
               </li>
-              <li class="flex items-start gap-4">
-                <div class="w-10 h-10 bg-copper-50 border border-copper-100 rounded-xl flex items-center justify-center shrink-0">
-                  <svg class="w-5 h-5 text-copper-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              <li class="flex items-start gap-3">
+                <div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0" style="background: var(--color-blue-pale); border: 1px solid var(--color-blue-light); border-radius: 8px;">
+                  <svg class="w-4 h-4" style="color: var(--color-blue);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                 </div>
                 <div>
-                  <p class="font-bold text-text-primary text-sm">ABN</p>
-                  <p class="text-text-secondary text-sm mt-0.5">12 345 678 901</p>
+                  <p class="font-bold text-sm" style="color: var(--color-navy);">ABN</p>
+                  <p class="text-sm mt-0.5" style="color: var(--color-text-secondary);">12 345 678 901</p>
                 </div>
               </li>
             </ul>
 
             <!-- Hours -->
-            <div class="mt-8 pt-6 border-t border-border-light">
-              <h4 class="font-bold text-text-primary text-sm mb-4 flex items-center gap-2">
-                <svg class="w-4 h-4 text-copper-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <div class="mt-6 pt-5" style="border-top: 1px solid var(--color-border);">
+              <h4 class="font-bold text-sm mb-3 flex items-center gap-2" style="font-family: var(--font-display); text-transform: uppercase; color: var(--color-navy);">
+                <svg class="w-4 h-4" style="color: var(--color-blue);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 Business Hours
               </h4>
-              <ul class="space-y-2.5 text-sm">
+              <ul class="space-y-2 text-sm">
                 <li class="flex justify-between">
-                  <span class="text-text-secondary">Mon – Fri</span>
-                  <span class="font-semibold text-text-primary">7am – 6pm</span>
+                  <span style="color: var(--color-text-secondary);">Mon – Fri</span>
+                  <span class="font-semibold" style="color: var(--color-navy);">7am – 6pm</span>
                 </li>
                 <li class="flex justify-between">
-                  <span class="text-text-secondary">Saturday</span>
-                  <span class="font-semibold text-text-primary">8am – 2pm</span>
+                  <span style="color: var(--color-text-secondary);">Saturday</span>
+                  <span class="font-semibold" style="color: var(--color-navy);">8am – 2pm</span>
                 </li>
                 <li class="flex justify-between">
-                  <span class="text-text-secondary">Sunday</span>
-                  <span class="font-semibold text-copper-600">Emergency Only</span>
+                  <span style="color: var(--color-text-secondary);">Sunday</span>
+                  <span class="font-semibold" style="color: var(--color-amber);">Emergency Only</span>
                 </li>
               </ul>
             </div>
           </div>
 
           <!-- Map -->
-          <div class="rounded-2xl overflow-hidden shadow-[var(--shadow-elevated)] border border-border-light relative">
+          <div class="reveal stagger-4 relative overflow-hidden" style="border-radius: 8px; border: 1px solid var(--color-border); box-shadow: var(--shadow-elevated);">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.9!2d151.209!3d-33.867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae3e3f05c8b1%3A0x5017d681632c7e0!2s78%20Pitt%20St%2C%20Sydney%20NSW%202000!5e0!3m2!1sen!2sau!4v1700000000000"
               width="100%"
@@ -239,7 +228,7 @@ import Layout from '../layouts/Layout.astro';
               referrerpolicy="no-referrer-when-downgrade"
               title="Hartley & Co Plumbing location"
             ></iframe>
-            <div class="h-1 bg-gradient-to-r from-copper-500 via-copper-400 to-copper-500"></div>
+            <div class="h-1" style="background: var(--color-blue);"></div>
           </div>
         </div>
       </div>
