@@ -100,10 +100,10 @@ h1 {
   inset: 0;
   background:
     linear-gradient(180deg,
-      rgba(12,26,46,0.7) 0%,
-      rgba(12,26,46,0.5) 40%,
-      rgba(12,26,46,0.4) 70%,
-      rgba(12,26,46,0.75) 100%);
+      rgba(12,26,46,0.88) 0%,
+      rgba(12,26,46,0.78) 35%,
+      rgba(12,26,46,0.6) 65%,
+      rgba(12,26,46,0.8) 100%);
 }
 
 .hero-content {
@@ -202,7 +202,7 @@ h1 {
 .hero-desc {
   font-family: var(--font-body);
   font-size: 0.875rem;
-  color: #CBD5E1;
+  color: rgba(255,255,255,0.75);
   line-height: 1.55;
   max-width: 420px;
   margin-bottom: 1.25rem;
