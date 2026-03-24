@@ -71,6 +71,254 @@ h1 {
   letter-spacing: 0.025em;
 }
 
+/* ============================================
+   HERO — Mobile-first redesign
+   ============================================ */
+.hero-section {
+  position: relative;
+  background: var(--color-navy);
+  overflow: hidden;
+  min-height: 100dvh;
+  display: flex;
+  align-items: flex-end;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg,
+      rgba(12,26,46,0.2) 0%,
+      rgba(12,26,46,0.35) 30%,
+      rgba(12,26,46,0.75) 60%,
+      rgba(12,26,46,0.92) 100%);
+}
+
+.hero-content {
+  position: relative;
+  width: 100%;
+  padding: 0 1.5rem 2.5rem;
+}
+
+/* Badge */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #34D399;
+  margin-bottom: 1.25rem;
+}
+
+.hero-badge-dot {
+  position: relative;
+  display: flex;
+  width: 7px;
+  height: 7px;
+}
+
+.hero-badge-dot-ping {
+  position: absolute;
+  display: inline-flex;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #34D399;
+  opacity: 0.5;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+.hero-badge-dot-solid {
+  position: relative;
+  display: inline-flex;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #34D399;
+}
+
+/* Response time — the visual anchor */
+.hero-response {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero-response-number {
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 18vw, 8rem);
+  font-weight: 900;
+  line-height: 0.85;
+  color: #fff;
+  letter-spacing: -0.03em;
+}
+
+.hero-response-label {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-blue-light);
+  line-height: 1.3;
+}
+
+/* Headline */
+.hero-headline {
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 6vw, 2.8rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+}
+
+.hero-headline-accent {
+  color: var(--color-blue-light);
+}
+
+/* Description */
+.hero-desc {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: #CBD5E1;
+  line-height: 1.6;
+  max-width: 420px;
+  margin-bottom: 1.75rem;
+}
+
+/* CTAs */
+.hero-ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.hero-cta-primary {
+  width: 100%;
+  justify-content: center;
+  padding: 1rem 2rem;
+  font-size: 0.9375rem;
+  border-radius: 8px;
+}
+
+.hero-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.3s;
+}
+
+.hero-cta-secondary:hover {
+  color: #fff;
+}
+
+.hero-cta-secondary span {
+  transition: transform 0.3s;
+}
+
+.hero-cta-secondary:hover span {
+  transform: translateX(3px);
+}
+
+/* Stats */
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.hero-stat {
+  padding: 0.35rem 0;
+}
+
+.hero-stat-number {
+  font-size: 1.35rem;
+  color: #fff;
+  margin-bottom: 0;
+  line-height: 1.2;
+}
+
+.hero-stat-label {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  color: #94A3B8;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ── Desktop hero adjustments ── */
+@media (min-width: 768px) {
+  .hero-section {
+    align-items: center;
+  }
+
+  .hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6rem 3rem 4rem;
+  }
+
+  .hero-response-number {
+    font-size: clamp(7rem, 12vw, 10rem);
+  }
+
+  .hero-headline {
+    font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+  }
+
+  .hero-desc {
+    font-size: 1.0625rem;
+    max-width: 500px;
+  }
+
+  .hero-ctas {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hero-cta-primary {
+    width: auto;
+  }
+
+  .hero-stats {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 560px;
+    gap: 0 2rem;
+  }
+}
+
 h2 {
   font-size: clamp(1.7rem, 3vw + 0.6rem, 2.6rem);
   font-weight: 800;

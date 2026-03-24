@@ -60,55 +60,63 @@ const stats = [
   description="Burst pipe or blocked drain in Sydney CBD? Hartley & Co plumbers arrive in under 60 minutes, 24/7. Licensed, insured, guaranteed. Get your free quote today."
 >
   <!-- ========================================
-       HERO — Full viewport, navy with grid
+       HERO — Mobile-first, urgency-driven
        ======================================== -->
-  <section style="position: relative; background: var(--color-navy); overflow: hidden; min-height: 100dvh; display: flex; flex-direction: column; justify-content: center;">
-    <!-- Background image — high visibility -->
-    <div style="position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=1920&h=1080&fit=crop&q=80'); background-size: cover; background-position: center;"></div>
-    <!-- Minimal overlay for text legibility only -->
-    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,26,46,0.45) 0%, rgba(12,26,46,0.55) 100%);"></div>
+  <section class="hero-section">
+    <!-- Background -->
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=1920&h=1080&fit=crop&q=80" alt="" loading="eager" />
+    </div>
+    <div class="hero-overlay"></div>
 
-    <div style="position: relative; max-width: 800px; margin: 0 auto; padding: 7rem 1.5rem 4rem; text-align: center;">
+    <!-- Content — left-aligned, bottom-weighted on mobile -->
+    <div class="hero-content">
       <!-- Availability badge -->
-      <div class="reveal stagger-1" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.08); color: #fff; font-family: var(--font-body); font-size: 0.875rem; font-weight: 600; padding: 0.5rem 1rem; border-radius: 8px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.1);">
-        <span style="position: relative; display: flex; width: 8px; height: 8px;">
-          <span style="position: absolute; display: inline-flex; width: 100%; height: 100%; border-radius: 50%; background: #34D399; opacity: 0.6; animation: pulse-dot 2s ease-in-out infinite;"></span>
-          <span style="position: relative; display: inline-flex; width: 8px; height: 8px; border-radius: 50%; background: #34D399;"></span>
+      <div class="hero-badge reveal stagger-1">
+        <span class="hero-badge-dot">
+          <span class="hero-badge-dot-ping"></span>
+          <span class="hero-badge-dot-solid"></span>
         </span>
-        Available 24/7 for emergencies
+        Available 24/7
+      </div>
+
+      <!-- Response time — the hero element -->
+      <div class="hero-response reveal stagger-2">
+        <span class="hero-response-number">60</span>
+        <div class="hero-response-label">
+          <span>Min</span>
+          <span>Response</span>
+        </div>
       </div>
 
       <!-- Headline -->
-      <h1 class="reveal stagger-2" style="color: #fff; font-family: var(--font-display); font-weight: 900; text-transform: uppercase; margin-bottom: 1.25rem; line-height: 1.05;">
-        Burst Pipe? We're There<br />
-        <span style="color: var(--color-blue-light);">in 60 Minutes</span>
+      <h1 class="hero-headline reveal stagger-3">
+        Burst Pipe?<br />
+        <span class="hero-headline-accent">We're There.</span>
       </h1>
 
-      <!-- Accent bar -->
-      <div class="reveal stagger-3" style="width: 4rem; height: 4px; background: var(--color-blue); margin: 0 auto 1.5rem; border-radius: 2px;"></div>
-
-      <!-- Description -->
-      <p class="reveal stagger-3" style="font-family: var(--font-body); font-size: 1.125rem; color: #CBD5E1; max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.7;">
-        Whether it's a 3am emergency or a blocked drain before guests arrive, your problem gets fixed fast — by licensed, insured plumbers who get it right the first time. Serving Sydney CBD, Surry Hills, Pyrmont, and all inner suburbs since 2003.
+      <!-- Short description -->
+      <p class="hero-desc reveal stagger-3">
+        Licensed, insured plumbers who get it right the first time. Serving Sydney CBD, Surry Hills, Pyrmont, and all inner suburbs since 2003.
       </p>
 
-      <!-- CTA buttons -->
-      <div class="reveal stagger-4" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 3rem;">
-        <a href="/booking" class="btn-primary" style="padding: 1rem 2rem; font-size: 1rem; border-radius: 8px;">
+      <!-- CTA -->
+      <div class="hero-ctas reveal stagger-4">
+        <a href="/booking" class="btn-primary hero-cta-primary">
           Book a Plumber Now
-          <svg style="width: 1.25rem; height: 1.25rem;" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
-        <a href="/services" class="btn-outline btn-outline-light" style="padding: 1rem 2rem; font-size: 1rem; border-radius: 8px;">
-          See What We Fix
+        <a href="/services" class="hero-cta-secondary">
+          See What We Fix <span>&rarr;</span>
         </a>
       </div>
 
-      <!-- Inline stats row -->
-      <div class="reveal stagger-5" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; max-width: 600px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
+      <!-- Stats — compact 2x2 on mobile, 4-col on desktop -->
+      <div class="hero-stats reveal stagger-5">
         {stats.map((stat) => (
-          <div style="text-align: center;">
-            <p class="stat-number" style="font-size: 1.5rem; color: #fff; margin-bottom: 0.125rem;">{stat.number}</p>
-            <p style="font-family: var(--font-body); font-size: 0.6875rem; color: #94A3B8; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">{stat.label}</p>
+          <div class="hero-stat">
+            <p class="hero-stat-number stat-number">{stat.number}</p>
+            <p class="hero-stat-label">{stat.label}</p>
           </div>
         ))}
       </div>
