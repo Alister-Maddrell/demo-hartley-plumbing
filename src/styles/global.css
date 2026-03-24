@@ -262,7 +262,7 @@ h1 {
   padding: 0.35rem 0;
 }
 
-.hero-stat-number {
+.hero-stat-number.stat-number {
   font-size: 1.35rem;
   color: #fff;
   margin-bottom: 0;
@@ -272,7 +272,7 @@ h1 {
 .hero-stat-label {
   font-family: var(--font-body);
   font-size: 0.625rem;
-  color: #94A3B8;
+  color: rgba(255,255,255,0.5);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
