@@ -69,56 +69,61 @@ const stats = [
     </div>
     <div class="hero-overlay"></div>
 
-    <!-- Content — left-aligned, bottom-weighted on mobile -->
+    <!-- Content — left-aligned, containerised -->
     <div class="hero-content">
-      <!-- Availability badge -->
-      <div class="hero-badge reveal stagger-1">
-        <span class="hero-badge-dot">
-          <span class="hero-badge-dot-ping"></span>
-          <span class="hero-badge-dot-solid"></span>
-        </span>
-        Available 24/7
-      </div>
+      <!-- Main card — frosted glass container -->
+      <div class="hero-card reveal stagger-1">
+        <!-- Availability badge -->
+        <div class="hero-badge">
+          <span class="hero-badge-dot">
+            <span class="hero-badge-dot-ping"></span>
+            <span class="hero-badge-dot-solid"></span>
+          </span>
+          Available 24/7
+        </div>
 
-      <!-- Response time — the hero element -->
-      <div class="hero-response reveal stagger-2">
-        <span class="hero-response-number">60</span>
-        <div class="hero-response-label">
-          <span>Min</span>
-          <span>Response</span>
+        <!-- Response time — the hero element -->
+        <div class="hero-response">
+          <span class="hero-response-number">60</span>
+          <div class="hero-response-label">
+            <span>Min</span>
+            <span>Response</span>
+          </div>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="hero-headline">
+          Burst Pipe?<br />
+          <span class="hero-headline-accent">We're There.</span>
+        </h1>
+
+        <!-- Short description -->
+        <p class="hero-desc">
+          Licensed, insured plumbers who get it right the first time. Serving Sydney CBD, Surry Hills, Pyrmont, and all inner suburbs since 2003.
+        </p>
+
+        <!-- CTA -->
+        <div class="hero-ctas">
+          <a href="/booking" class="btn-primary hero-cta-primary">
+            Book a Plumber Now
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="/services" class="hero-cta-secondary">
+            See What We Fix <span>&rarr;</span>
+          </a>
         </div>
       </div>
 
-      <!-- Headline -->
-      <h1 class="hero-headline reveal stagger-3">
-        Burst Pipe?<br />
-        <span class="hero-headline-accent">We're There.</span>
-      </h1>
-
-      <!-- Short description -->
-      <p class="hero-desc reveal stagger-3">
-        Licensed, insured plumbers who get it right the first time. Serving Sydney CBD, Surry Hills, Pyrmont, and all inner suburbs since 2003.
-      </p>
-
-      <!-- CTA -->
-      <div class="hero-ctas reveal stagger-4">
-        <a href="/booking" class="btn-primary hero-cta-primary">
-          Book a Plumber Now
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-        </a>
-        <a href="/services" class="hero-cta-secondary">
-          See What We Fix <span>&rarr;</span>
-        </a>
-      </div>
-
-      <!-- Stats — compact 2x2 on mobile, 4-col on desktop -->
-      <div class="hero-stats reveal stagger-5">
-        {stats.map((stat) => (
-          <div class="hero-stat">
-            <p class="hero-stat-number stat-number">{stat.number}</p>
-            <p class="hero-stat-label">{stat.label}</p>
-          </div>
-        ))}
+      <!-- Stats card — separate container -->
+      <div class="hero-stats-card reveal stagger-3">
+        <div class="hero-stats">
+          {stats.map((stat) => (
+            <div class="hero-stat">
+              <p class="hero-stat-number stat-number">{stat.number}</p>
+              <p class="hero-stat-label">{stat.label}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </section>
